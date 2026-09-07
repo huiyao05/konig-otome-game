@@ -703,7 +703,7 @@ window.STORY = {
       "chapter": "第一章 · 角斗士",
       "bg": "arena-stand.jpg",
       "speaker": "",
-      "text": "在满场震耳欲聋、几近疯狂的呐喊与尖叫声中，那个犹如移动铁塔般的男人微微仰起头。",
+      "text": "在满场震耳欲聋、几近疯狂的呐喊与尖叫声中，他微微仰起头。",
       "next": "chapter1_46"
     },
     "chapter1_46": {
