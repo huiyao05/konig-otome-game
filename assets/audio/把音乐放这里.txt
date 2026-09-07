@@ -1,0 +1,10 @@
+序章：
+title.mp3
+forest.mp3
+route-c.mp3
+bad-ending.mp3
+
+第一章：
+chapter1-music1.mp3
+chapter1-music2.mp3
+chapter1-music3.mp3

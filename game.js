@@ -19,6 +19,7 @@
       ambition: 0,
       dependence: 0
     },
+    flags: {},
     history: [],
     bgm: "",
     lastSavedAt: null
@@ -42,6 +43,8 @@
     titleScreen: $("titleScreen"),
     nameScreen: $("nameScreen"),
     chapterIntro: $("chapterIntro"),
+    chapterIntroSmall: $("chapterIntroSmall"),
+    chapterIntroTitle: $("chapterIntroTitle"),
     gameScreen: $("gameScreen"),
     newGameBtn: $("newGameBtn"),
     continueBtn: $("continueBtn"),
@@ -218,6 +221,10 @@
         ...fresh.stats,
         ...(saved?.stats || {})
       },
+      flags: {
+        ...fresh.flags,
+        ...(saved?.flags || {})
+      },
       history: Array.isArray(saved?.history) ? saved.history : []
     };
   }
@@ -254,8 +261,8 @@
       ...entry
     });
 
-    if (state.history.length > 120) {
-      state.history = state.history.slice(-120);
+    if (state.history.length > 500) {
+      state.history = state.history.slice(-500);
     }
   }
 
@@ -265,6 +272,17 @@
     if (!node) {
       console.error("找不到剧情节点：", state.nodeId);
       toast(`找不到剧情节点：${state.nodeId}`);
+      return;
+    }
+
+    if (node.chapterIntro) {
+      const intro = node.chapterIntro;
+      autoSave();
+      playChapterIntro(
+        intro.small || "",
+        intro.title || "",
+        intro.next || node.next || null
+      );
       return;
     }
 
@@ -291,6 +309,7 @@
         btn.addEventListener("click", (event) => {
           event.stopPropagation();
           applyEffects(choice.effects || {});
+          applyFlags(choice.setFlags || {});
           state.nodeId = choice.next;
 
           const targetNode = STORY.nodes[choice.next];
@@ -302,6 +321,25 @@
         });
         els.choices.appendChild(btn);
       });
+      return;
+    }
+
+    if (node.chapterComplete) {
+      els.advanceHint.classList.add("hidden");
+
+      const actions = document.createElement("div");
+      actions.className = "ending-actions single";
+
+      const title = document.createElement("button");
+      title.textContent = "返回标题";
+      title.addEventListener("click", (event) => {
+        event.stopPropagation();
+        returnToTitle();
+      });
+
+      actions.append(title);
+      els.choices.appendChild(actions);
+      autoSave();
       return;
     }
 
@@ -341,9 +379,10 @@
   function advance() {
     const node = STORY.nodes[state.nodeId];
     if (!node || node.ending || (node.choices && node.choices.length)) return;
-    if (!node.next) return;
+    const nextNode = resolveNext(node);
+    if (!nextNode) return;
 
-    state.nodeId = node.next;
+    state.nodeId = nextNode;
     renderNode();
   }
 
@@ -352,6 +391,21 @@
       if (typeof state.stats[key] !== "number") state.stats[key] = 0;
       state.stats[key] += Number(amount) || 0;
     });
+  }
+
+
+  function applyFlags(flags) {
+    if (!flags || typeof flags !== "object") return;
+    Object.assign(state.flags, flags);
+  }
+
+  function resolveNext(node) {
+    if (node?.nextByFlag) {
+      const { key, cases = {}, fallback = null } = node.nextByFlag;
+      const value = state.flags?.[key];
+      return cases[value] || fallback || node.next || null;
+    }
+    return node?.next || null;
   }
 
 
@@ -373,7 +427,13 @@
     window.setTimeout(() => els.playerNameInput.focus(), 100);
   }
 
-  function playChapterIntro() {
+  function playChapterIntro(smallText = "序章", titleText = "困兽", nextNode = null) {
+    setBlackBackground();
+    bgmAudio.pause();
+
+    els.chapterIntroSmall.textContent = smallText;
+    els.chapterIntroTitle.textContent = titleText;
+
     showScreen("chapter");
 
     els.chapterIntro.classList.remove("play");
@@ -382,6 +442,11 @@
 
     window.setTimeout(() => {
       els.chapterIntro.classList.remove("play");
+
+      if (nextNode) {
+        state.nodeId = nextNode;
+      }
+
       showScreen("game");
       renderNode();
     }, 3400);
@@ -402,7 +467,7 @@
     bgmAudio.pause();
     currentBgm = "";
     setBlackBackground();
-    playChapterIntro();
+    playChapterIntro("序章", "困兽", STORY.startNode);
   }
 
   function continueGame() {
@@ -572,6 +637,17 @@
     });
   }
 
+
+  function scrollLogToLatest() {
+    const card = els.logModal.querySelector(".modal-card");
+    if (!card) return;
+
+    // 等弹窗真正显示出来后，再滚到最底部
+    window.requestAnimationFrame(() => {
+      card.scrollTop = card.scrollHeight;
+    });
+  }
+
   function openModal(id) {
     $(id).classList.remove("hidden");
   }
@@ -639,6 +715,7 @@
   els.logBtn.addEventListener("click", () => {
     renderLog();
     openModal("logModal");
+    scrollLogToLatest();
   });
 
   els.restartBtn.addEventListener("click", restartGame);
