@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#111111" />
+  <title>König · 序章：困兽</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="app">
+    <div id="bgLayer" class="bg-layer" aria-hidden="true"></div>
+    <div class="shade" aria-hidden="true"></div>
+
+    <section id="titleScreen" class="screen title-screen">
+      <div class="title-card">
+        <p class="eyebrow">KÖNIG · OTOME STORY</p>
+        <h1 class="untitled-game">KÖNIG</h1>
+                <div class="title-actions">
+          <button id="newGameBtn" class="primary-btn">开始游戏</button>
+          <button id="continueBtn" class="secondary-btn">继续游戏</button>
+          <button id="titleLoadBtn" class="ghost-btn">读取存档</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="nameScreen" class="screen name-screen hidden">
+      <div class="name-card">
+        <p class="eyebrow">AUGUSTUS</p>
+        <h2>请输入你的姓名</h2>
+        <p>这个名字会自动出现在之后的剧情中。</p>
+        <input id="playerNameInput" maxlength="16" autocomplete="off" placeholder="例如：Freya" />
+        <button id="confirmNameBtn" class="primary-btn">确认</button>
+      </div>
+    </section>
+
+
+    <section id="chapterIntro" class="screen chapter-intro hidden">
+      <div class="chapter-intro-text">
+        <div class="chapter-small">序章</div>
+        <div class="chapter-title">困兽</div>
+      </div>
+    </section>
+
+    <section id="gameScreen" class="screen game-screen hidden">
+      <button id="musicBtn" class="music-btn" aria-label="音乐开关">♫</button>
+      <button id="menuBtn" class="menu-btn" aria-label="打开菜单">☰</button>
+
+      <div id="chapterBadge" class="chapter-badge"></div>
+
+      <div id="dialoguePanel" class="dialogue-panel" role="button" tabindex="0" aria-label="点击继续">
+        <div id="speaker" class="speaker"></div>
+        <div id="dialogueText" class="dialogue-text"></div>
+        <div id="choices" class="choices"></div>
+        <div id="advanceHint" class="advance-hint">点击继续 ›</div>
+      </div>
+    </section>
+
+    <div id="menuModal" class="modal hidden" role="dialog" aria-modal="true">
+      <div class="modal-card compact">
+        <button class="close-btn" data-close="menuModal">×</button>
+        <h3>菜单</h3>
+        <button id="saveBtn" class="menu-item">存档</button>
+        <button id="loadBtn" class="menu-item">读档</button>
+        <button id="statusBtn" class="menu-item">状态</button>
+        <button id="logBtn" class="menu-item">回看记录</button>
+        <button id="restartBtn" class="menu-item danger">重新开始</button>
+      </div>
+    </div>
+
+    <div id="saveLoadModal" class="modal hidden" role="dialog" aria-modal="true">
+      <div class="modal-card">
+        <button class="close-btn" data-close="saveLoadModal">×</button>
+        <h3 id="saveLoadTitle">存档</h3>
+        <div id="saveSlots" class="save-slots"></div>
+      </div>
+    </div>
+
+    <div id="statusModal" class="modal hidden" role="dialog" aria-modal="true">
+      <div class="modal-card">
+        <button class="close-btn" data-close="statusModal">×</button>
+        <h3>当前状态</h3>
+        <p class="status-note">这是第一版的可视化状态页。以后如果你不想让玩家看见具体数值，可以一键隐藏。</p>
+        <div id="statusContent" class="status-content"></div>
+      </div>
+    </div>
+
+    <div id="logModal" class="modal hidden" role="dialog" aria-modal="true">
+      <div class="modal-card log-card">
+        <button class="close-btn" data-close="logModal">×</button>
+        <h3>剧情回看</h3>
+        <div id="logContent" class="log-content"></div>
+      </div>
+    </div>
+
+    <div id="toast" class="toast hidden"></div>
+  </main>
+
+  <script src="story.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
