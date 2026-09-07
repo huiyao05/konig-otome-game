@@ -908,14 +908,7 @@ window.STORY = {
       "bg": "dark.jpg",
       "speaker": "König",
       "text": "“刚才我听管事说，您为我下注了。”",
-      "next": "chapter1_bet_branch"
-    },
-    "chapter1_bet_branch": {
-      "chapter": "第一章 · 角斗士",
-      "bg": "dark.jpg",
-      "speaker": "",
-      "text": "",
-      "nextByFlag": {
+       "nextByFlag": {
         "key": "arenaBet",
         "cases": {
           "win": "chapter1_win_01",
