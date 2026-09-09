@@ -203,6 +203,14 @@
   }
 
 
+  // 某些浏览器会在章节转场延迟后重新拦截音频播放。
+  // 玩家之后任意一次点击页面时，如果当前 BGM 被拦住，就自动重试。
+  function retryCurrentBgm() {
+    if (!musicEnabled || !currentBgm || !bgmAudio.paused) return;
+    bgmAudio.play().catch(() => {});
+  }
+
+
   function toast(message) {
     els.toast.textContent = message;
     els.toast.classList.remove("hidden");
@@ -283,6 +291,11 @@
         intro.title || "",
         intro.next || node.next || null
       );
+      return;
+    }
+
+    if (node.currentVersionEnd) {
+      playCurrentVersionEnd();
       return;
     }
 
@@ -450,6 +463,26 @@
       showScreen("game");
       renderNode();
     }, 3400);
+  }
+
+
+  function playCurrentVersionEnd() {
+    // 当前版本只暂时写到这里，不当作正式章节结局。
+    // 最后一行之后给一个纯黑过渡，然后自动回到标题页。
+    bgmAudio.pause();
+    setBlackBackground();
+
+    els.chapterIntro.classList.remove("play");
+    els.chapterIntroSmall.textContent = "";
+    els.chapterIntroTitle.textContent = "";
+    els.chapterIntro.style.background = "#000";
+
+    showScreen("chapter");
+
+    window.setTimeout(() => {
+      els.chapterIntro.style.background = "";
+      returnToTitle();
+    }, 1200);
   }
 
   function confirmName() {
@@ -681,6 +714,10 @@
   els.titleScreen.addEventListener("pointerdown", ensureTitleMusic, { passive: true });
   els.titleScreen.addEventListener("touchstart", ensureTitleMusic, { passive: true });
   els.titleScreen.addEventListener("click", ensureTitleMusic);
+
+  // 全局音频解锁/重试：解决章节标题动画结束后浏览器拒绝自动播放的问题。
+  document.addEventListener("pointerdown", retryCurrentBgm, { passive: true });
+  document.addEventListener("touchstart", retryCurrentBgm, { passive: true });
 
   els.newGameBtn.addEventListener("click", startNewGame);
   els.continueBtn.addEventListener("click", continueGame);

@@ -1,0 +1,49 @@
+《König 文游》V9 素材清单
+
+【序章】
+背景：
+title.jpg
+forest-autumn.jpg
+forest-path.jpg
+bad-ending.jpg
+
+音乐：
+title.mp3
+forest.mp3
+route-c.mp3
+bad-ending.mp3
+
+【第一章 · 角斗士】
+背景：
+indoor.jpg
+arena.jpg
+arena-stand.jpg
+dark.jpg
+
+音乐：
+chapter1-music1.mp3
+chapter1-music2.mp3
+chapter1-music3.mp3
+
+【第二章 · 冬耀日】
+新增背景只需要 2 张：
+church.jpg
+- 冬耀日大教堂内殿
+- 从第二章开始一直使用到“掠夺欲”那一段结束
+
+ballroom.jpg
+- 王宫冬耀日舞会
+- 从典礼结束后的夜晚开始，到第二章结束
+
+新增音乐只需要 2 首：
+chapter2-music1.mp3
+- 教堂 / 冬耀日典礼
+- 建议：圣咏、管风琴、空灵宗教感，不要太强烈
+
+chapter2-music2.mp3
+- 宫廷舞会
+- 建议：华丽、优雅的古典舞曲 / 宫廷圆舞曲，底下可带一点暗流
+
+文件放置位置：
+背景 → assets/backgrounds/
+音乐 → assets/audio/

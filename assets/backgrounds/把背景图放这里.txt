@@ -1,4 +1,3 @@
-序章：
 title.jpg
 forest-autumn.jpg
 forest-path.jpg
@@ -9,3 +8,7 @@ indoor.jpg
 arena.jpg
 arena-stand.jpg
 dark.jpg
+
+第二章：
+church.jpg
+ballroom.jpg

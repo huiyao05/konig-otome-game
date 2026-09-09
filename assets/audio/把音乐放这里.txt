@@ -1,4 +1,3 @@
-序章：
 title.mp3
 forest.mp3
 route-c.mp3
@@ -8,3 +7,7 @@ bad-ending.mp3
 chapter1-music1.mp3
 chapter1-music2.mp3
 chapter1-music3.mp3
+
+第二章：
+chapter2-music1.mp3
+chapter2-music2.mp3
