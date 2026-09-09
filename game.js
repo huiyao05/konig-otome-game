@@ -1,6 +1,9 @@
 (() => {
   "use strict";
 
+  const BUILD_VERSION = "10.4";
+  console.info(`[König Otome] build ${BUILD_VERSION}`);
+
   const STORY = window.STORY;
   const CONFIG = window.GAME_CONFIG || {};
 
@@ -211,6 +214,20 @@
         entry.nodeId === "chapter1_bet_branch"
           ? (saved?.flags?.arenaBet === "lose" ? "ch1_lose_001" : "ch1_win_001")
           : (LEGACY_NODE_MAP[entry.nodeId] || entry.nodeId);
+
+      const currentNode = STORY.nodes[migratedId];
+
+      // 旧存档过去会把当时版本的文字快照保存在 history 里。
+      // 现在只要还能找到对应节点，就用当前 story.js 的最新文本刷新，
+      // 这样改过措辞后，读取旧档的历史记录也不会继续显示旧版本。
+      if (currentNode) {
+        return {
+          ...entry,
+          nodeId: migratedId,
+          speaker: formatText(currentNode.speaker || "", saved?.playerName || ""),
+          text: formatText(currentNode.text || "", saved?.playerName || "")
+        };
+      }
 
       return {
         ...entry,

@@ -1,0 +1,16 @@
+# Keep game code fresh after each GitHub/Netlify deploy.
+/index.html
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/*.js
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/*.css
+  Cache-Control: no-cache, no-store, must-revalidate
+
+# Backgrounds/audio may still be cached because their filenames are stable assets.
+/assets/*
+  Cache-Control: public, max-age=3600
