@@ -1,7 +1,8 @@
 // =========================================
-// V9.3 修正版
-// 第二章最后一句之后：黑屏短暂停留 -> 自动返回标题
-// 不显示“返回标题”按钮，也不把第二章当作正式完结。
+// V9.4
+// - 加入旧版存档兼容迁移
+// - 已发布节点 ID 从此尽量保持稳定
+// - 恢复新游戏开头的两句序章介绍
 // =========================================
 
 window.GAME_CONFIG = {
@@ -12,7 +13,7 @@ window.GAME_CONFIG = {
 };
 
 window.STORY = {
-  "startNode": "prologue_001",
+  "startNode": "opening_001",
   "nodes": {
     "prologue_001": {
       "chapter": "序章 · 困兽",
@@ -1732,6 +1733,21 @@ window.STORY = {
       "speaker": "",
       "text": "",
       "currentVersionEnd": true
+    },
+    "opening_001": {
+      "chapter": "序章 · 困兽",
+      "bg": "forest-autumn.jpg",
+      "bgm": "forest.mp3",
+      "speaker": "",
+      "text": "作为奥古斯都大公唯一的嫡女，从你出生的那一刻起，你的人生轨迹就已经和家族命运紧紧捆绑在一起。",
+      "next": "opening_002"
+    },
+    "opening_002": {
+      "chapter": "序章 · 困兽",
+      "bg": "forest-autumn.jpg",
+      "speaker": "",
+      "text": "「{{playerName}}」小姐，你是王都最耀眼的明珠，是注定要戴上后冠的女人。你的每一个选择都牵动着你的命运。",
+      "next": "prologue_001"
     }
   }
 };

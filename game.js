@@ -4,13 +4,221 @@
   const STORY = window.STORY;
   const CONFIG = window.GAME_CONFIG || {};
 
+
+  const SAVE_VERSION = 2;
+
+  // V6 / V7 / V8 等旧版剧情节点 -> 当前版本剧情节点
+  // 已经发布给玩家的旧存档会在读取时自动迁移。
+  const LEGACY_NODE_MAP = {
+  "prologue_01": "opening_001",
+  "prologue_03": "opening_002",
+  "hunt_01": "prologue_001",
+  "hunt_02": "prologue_002",
+  "hunt_03": "prologue_003",
+  "hunt_04": "prologue_004",
+  "hunt_05": "prologue_005",
+  "hunt_06": "prologue_006",
+  "hunt_07": "prologue_007",
+  "hunt_08": "prologue_008",
+  "hunt_09": "prologue_009",
+  "hunt_10": "prologue_010",
+  "hunt_11": "prologue_011",
+  "hunt_12": "prologue_012",
+  "hunt_13": "prologue_013",
+  "hunt_14": "prologue_014",
+  "hunt_15": "prologue_015",
+  "hunt_16": "prologue_016",
+  "choice_01": "prologue_choice",
+  "ending_strangers": "ending_strangers",
+  "ending_early_death": "ending_early_death",
+  "route_c_01": "prologue_c_001",
+  "route_c_02": "prologue_c_002",
+  "route_c_03": "prologue_c_003",
+  "route_c_04": "prologue_c_004",
+  "route_c_05": "prologue_c_005",
+  "route_c_06": "prologue_c_006",
+  "route_c_07": "prologue_c_007",
+  "route_c_08": "prologue_c_008",
+  "route_c_09": "prologue_c_009",
+  "route_c_10": "prologue_c_010",
+  "route_c_11": "prologue_c_011",
+  "route_c_12": "prologue_c_012",
+  "route_c_13": "prologue_c_013",
+  "route_c_14": "prologue_c_014",
+  "route_c_15": "prologue_c_015",
+  "route_c_16": "prologue_c_016",
+  "route_c_17": "prologue_c_017",
+  "route_c_18": "prologue_c_018",
+  "route_c_19": "prologue_c_019",
+  "route_c_20": "prologue_c_020",
+  "route_c_21": "prologue_c_021",
+  "route_c_22": "prologue_c_022",
+  "prologue_end": "chapter1_intro",
+  "chapter1_01": "ch1_001",
+  "chapter1_02": "ch1_002",
+  "chapter1_03": "ch1_003",
+  "chapter1_04": "ch1_004",
+  "chapter1_05": "ch1_005",
+  "chapter1_06": "ch1_006",
+  "chapter1_07": "ch1_007",
+  "chapter1_08": "ch1_008",
+  "chapter1_09": "ch1_009",
+  "chapter1_10": "ch1_011",
+  "chapter1_11": "ch1_012",
+  "chapter1_12": "ch1_013",
+  "chapter1_13": "ch1_014",
+  "chapter1_14": "ch1_015",
+  "chapter1_15": "ch1_016",
+  "chapter1_16": "ch1_017",
+  "chapter1_17": "ch1_018",
+  "chapter1_18": "ch1_019",
+  "chapter1_19": "ch1_020",
+  "chapter1_20": "ch1_022",
+  "chapter1_21": "ch1_023",
+  "chapter1_22": "ch1_025",
+  "chapter1_23": "ch1_026",
+  "chapter1_24": "ch1_027",
+  "chapter1_25": "ch1_028",
+  "chapter1_26": "ch1_029",
+  "chapter1_27": "ch1_030",
+  "chapter1_28": "ch1_031",
+  "chapter1_29": "ch1_032",
+  "chapter1_30": "ch1_033",
+  "chapter1_31": "ch1_034",
+  "chapter1_32": "ch1_035",
+  "chapter1_33": "ch1_028",
+  "chapter1_34": "ch1_029",
+  "chapter1_35": "ch1_030",
+  "chapter1_36": "ch1_031",
+  "chapter1_37": "ch1_032",
+  "chapter1_38": "ch1_033",
+  "chapter1_39": "ch1_034",
+  "chapter1_40": "ch1_035",
+  "chapter1_choice": "ch1_choice",
+  "chapter1_41": "ch1_post_001",
+  "chapter1_42": "ch1_post_002",
+  "chapter1_43": "ch1_post_003",
+  "chapter1_44": "ch1_post_004",
+  "chapter1_45": "ch1_post_005",
+  "chapter1_46": "ch1_post_006",
+  "chapter1_47": "ch1_post_007",
+  "chapter1_48": "ch1_post_008",
+  "chapter1_49": "ch1_post_009",
+  "chapter1_50": "ch1_post_010",
+  "chapter1_51": "ch1_post_011",
+  "chapter1_52": "ch1_dark_001",
+  "chapter1_53": "ch1_dark_002",
+  "chapter1_54": "ch1_dark_003",
+  "chapter1_55": "ch1_dark_004",
+  "chapter1_56": "ch1_dark_005",
+  "chapter1_57": "ch1_dark_006",
+  "chapter1_58": "ch1_dark_007",
+  "chapter1_59": "ch1_dark_008",
+  "chapter1_60": "ch1_dark_011",
+  "chapter1_61": "ch1_dark_013",
+  "chapter1_62": "ch1_dark_014",
+  "chapter1_63": "ch1_dark_015",
+  "chapter1_64": "ch1_dark_016",
+  "chapter1_65": "ch1_dark_017",
+  "chapter1_66": "ch1_dark_020",
+  "chapter1_67": "ch1_dark_022",
+  "chapter1_68": "ch1_dark_025",
+  "chapter1_69": "ch1_dark_026",
+  "chapter1_70": "ch1_dark_027",
+  "chapter1_71": "ch1_dark_028",
+  "chapter1_72": "ch1_dark_029",
+  "chapter1_73": "ch1_dark_030",
+  "chapter1_74": "ch1_dark_031",
+  "chapter1_win_01": "ch1_win_001",
+  "chapter1_win_02": "ch1_win_002",
+  "chapter1_lose_01": "ch1_lose_001",
+  "chapter1_lose_02": "ch1_lose_002",
+  "chapter1_after_branch_01": "ch1_after_001",
+  "chapter1_after_branch_02": "ch1_after_002",
+  "chapter1_after_branch_03": "ch1_after_003",
+  "chapter1_after_branch_04": "ch1_after_004",
+  "chapter1_after_branch_05": "ch1_after_007",
+  "chapter1_after_branch_06": "ch1_after_008",
+  "chapter1_after_branch_07": "ch1_return_001",
+  "chapter1_after_branch_08": "ch1_return_002",
+  "chapter1_after_branch_09": "ch1_return_004",
+  "chapter1_end": "chapter2_intro"
+};
+
+  const LEGACY_BGM_MAP = {
+    "chapter1.mp3": "chapter1-music1.mp3",
+    "arena.mp3": "chapter1-music2.mp3",
+    "konig-cell.mp3": "chapter1-music3.mp3"
+  };
+
+  function migrateLegacyNodeId(saved) {
+    const oldId = saved?.nodeId || STORY.startNode;
+
+    // 当前版本本来就存在：不用迁移
+    if (STORY.nodes[oldId]) return oldId;
+
+    // 旧版下注分支曾经是一个空节点，需要根据玩家当时的选择跳转
+    if (oldId === "chapter1_bet_branch") {
+      return saved?.flags?.arenaBet === "lose"
+        ? "ch1_lose_001"
+        : "ch1_win_001";
+    }
+
+    const mapped = LEGACY_NODE_MAP[oldId];
+    if (mapped && STORY.nodes[mapped]) return mapped;
+
+    // 最后一层保险：
+    // 如果以后某个旧节点没有登记，尝试用历史记录最后一句找到当前对应节点。
+    const history = Array.isArray(saved?.history) ? saved.history : [];
+    for (let i = history.length - 1; i >= 0; i -= 1) {
+      const oldText = String(history[i]?.text || "").trim();
+      if (!oldText) continue;
+
+      for (const [nodeId, node] of Object.entries(STORY.nodes)) {
+        const currentText = String(node?.text || "")
+          .replaceAll("{{playerName}}", saved?.playerName || "你")
+          .trim();
+
+        if (!currentText) continue;
+
+        if (
+          currentText === oldText ||
+          (currentText.length >= 10 && oldText.includes(currentText))
+        ) {
+          return nodeId;
+        }
+      }
+    }
+
+    // 真正无法识别时保留旧 ID，让程序明确报错，而不是偷偷重置玩家进度。
+    return oldId;
+  }
+
+  function migrateHistory(history, saved) {
+    if (!Array.isArray(history)) return [];
+
+    return history.map((entry) => {
+      if (!entry || typeof entry !== "object") return entry;
+
+      const migratedId =
+        entry.nodeId === "chapter1_bet_branch"
+          ? (saved?.flags?.arenaBet === "lose" ? "ch1_lose_001" : "ch1_win_001")
+          : (LEGACY_NODE_MAP[entry.nodeId] || entry.nodeId);
+
+      return {
+        ...entry,
+        nodeId: migratedId
+      };
+    });
+  }
+
   const STORAGE = {
     auto: "konig_otome_autosave_v1",
     slot: (n) => `konig_otome_save_${n}_v1`
   };
 
   const defaultState = () => ({
-    version: 1,
+    version: SAVE_VERSION,
     playerName: "",
     nodeId: STORY.startNode,
     stats: {
@@ -222,9 +430,15 @@
 
   function normalizeLoadedState(saved) {
     const fresh = defaultState();
+    const migratedNodeId = migrateLegacyNodeId(saved);
+    const migratedBgm =
+      LEGACY_BGM_MAP[saved?.bgm] || saved?.bgm || "";
+
     return {
       ...fresh,
       ...saved,
+      version: SAVE_VERSION,
+      nodeId: migratedNodeId,
       stats: {
         ...fresh.stats,
         ...(saved?.stats || {})
@@ -233,7 +447,8 @@
         ...fresh.flags,
         ...(saved?.flags || {})
       },
-      history: Array.isArray(saved?.history) ? saved.history : []
+      history: migrateHistory(saved?.history, saved),
+      bgm: migratedBgm
     };
   }
 
@@ -511,6 +726,11 @@
     }
 
     state = normalizeLoadedState(saved);
+
+    // 读取旧自动存档后，立即把迁移后的新版节点写回浏览器，
+    // 之后继续游戏和再次刷新都不会再卡在旧 ID。
+    localStorage.setItem(STORAGE.auto, JSON.stringify(state));
+
     restoreBgmForLoadedState();
     showScreen("game");
     renderNode();
@@ -533,6 +753,10 @@
     }
 
     state = normalizeLoadedState(saved);
+
+    // 手动存档同样原地升级，不丢姓名、数值、选择或历史记录。
+    localStorage.setItem(STORAGE.slot(slot), JSON.stringify(state));
+
     restoreBgmForLoadedState();
 
     closeModal("saveLoadModal");
@@ -574,9 +798,12 @@
       meta.className = "save-slot-meta";
 
       if (saved) {
-        const node = STORY.nodes[saved.nodeId];
+        const preview = normalizeLoadedState(saved);
+        const node = STORY.nodes[preview.nodeId];
+        const chapterLabel = node?.chapter || "旧版存档";
+
         meta.textContent =
-          `${saved.playerName || "未命名"} · ${node?.chapter || saved.nodeId} · ${formatDate(saved.lastSavedAt)}`;
+          `${saved.playerName || "未命名"} · ${chapterLabel} · ${formatDate(saved.lastSavedAt)}`;
       } else {
         meta.textContent = "空存档";
       }
