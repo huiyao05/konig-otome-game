@@ -12,3 +12,6 @@ dark.jpg
 第二章：
 church.jpg
 ballroom.jpg
+
+第三章：
+chapter3.jpg

@@ -1,8 +1,10 @@
 // =========================================
-// V9.4
-// - 加入旧版存档兼容迁移
-// - 已发布节点 ID 从此尽量保持稳定
-// - 恢复新游戏开头的两句序章介绍
+// V10
+// 序章《困兽》 + 第一章《角斗士》 + 第二章《冬耀日》 + 第三章《吻痕》
+// IMPORTANT:
+// - 所有已发布节点 ID 保持不变，避免破坏旧存档。
+// - 第三章只使用 chapter3.jpg + chapter3.mp3，全章不切背景/音乐。
+// - 第三章剧情发生时女主已成年。
 // =========================================
 
 window.GAME_CONFIG = {
@@ -142,7 +144,7 @@ window.STORY = {
           "next": "ending_strangers"
         },
         {
-          "text": "B. 你无法忍受这种恃强凌弱的事，直接冲出去指责王储有失风度，勒令他们放开König。",
+          "text": "B. 你无法忍受这种恃强凌弱的事，直接冲出去指责王储有失风度，勒令他们放开Konig。",
           "effects": {
             "redemption": 1
           },
@@ -631,14 +633,14 @@ window.STORY = {
       "chapter": "第一章 · 角斗士",
       "bg": "arena-stand.jpg",
       "speaker": "",
-      "text": "伴随着刺耳的铜锣声，沙地上的厮杀惨烈而极其短暂。",
+      "text": "伴随着刺耳的铜锣声，沙地上的厮杀惨烈而短暂。",
       "next": "ch1_post_002"
     },
     "ch1_post_002": {
       "chapter": "第一章 · 角斗士",
       "bg": "arena-stand.jpg",
       "speaker": "",
-      "text": "他仿佛被某种极其极端的暴戾所彻底驱使，面对那三名凶悍的对手，拔出重剑，利落地送他们见了上帝。",
+      "text": "他仿佛被某种极端的暴戾所彻底驱使，面对那三名凶悍的对手，拔出重剑，利落地送他们见了上帝。",
       "next": "ch1_post_003"
     },
     "ch1_post_003": {
@@ -666,7 +668,7 @@ window.STORY = {
       "chapter": "第一章 · 角斗士",
       "bg": "arena-stand.jpg",
       "speaker": "",
-      "text": "隔着看台的重重防线，越过那些狂热的赌徒，他极其精准地看向了你所在的位置。",
+      "text": "隔着看台的重重防线，越过那些狂热的赌徒，他精准地看向了你所在的位置。",
       "next": "ch1_post_007"
     },
     "ch1_post_007": {
@@ -687,7 +689,7 @@ window.STORY = {
       "chapter": "第一章 · 角斗士",
       "bg": "arena-stand.jpg",
       "speaker": "",
-      "text": "你垂下眼睫，极其自然地微微蹙起眉头，用蕾丝绢帕掩住口鼻：",
+      "text": "你垂下眼睫，自然地微微蹙起眉头，用蕾丝绢帕掩住口鼻：",
       "next": "ch1_post_010"
     },
     "ch1_post_010": {
@@ -730,7 +732,7 @@ window.STORY = {
       "chapter": "第一章 · 角斗士",
       "bg": "dark.jpg",
       "speaker": "",
-      "text": "那个角斗士正背对着你坐在石床上。听到你的脚步声，他并没有防备，而是极其平静地抬起手，摘下了那顶沾满鲜血的头盔。",
+      "text": "那个角斗士正背对着你坐在石床上。听到你的脚步声，他并没有防备，而是平静地抬起手，摘下了那顶沾满鲜血的头盔。",
       "next": "ch1_dark_005"
     },
     "ch1_dark_005": {
@@ -989,7 +991,7 @@ window.STORY = {
       "chapter": "第一章 · 角斗士",
       "bg": "dark.jpg",
       "speaker": "",
-      "text": "他极其绅士地微微欠身，语气重新变得谦卑而疏离，仿佛刚才那个暴徒只是一场幻影。",
+      "text": "他绅士地微微欠身，语气重新变得谦卑而疏离，仿佛刚才那个暴徒只是一场幻影。",
       "next": "ch1_after_006"
     },
     "ch1_after_006": {
@@ -1090,7 +1092,7 @@ window.STORY = {
       "chapter": "第二章 · 冬耀日",
       "bg": "church.jpg",
       "speaker": "",
-      "text": "你身披着极其华贵的纯白狐裘，姿态优雅地踏入大门。",
+      "text": "你身披着华贵的纯白狐裘，姿态优雅地踏入大门。",
       "next": "ch2_007"
     },
     "ch2_007": {
@@ -1338,7 +1340,7 @@ window.STORY = {
       "chapter": "第二章 · 冬耀日",
       "bg": "ballroom.jpg",
       "speaker": "",
-      "text": "Leopold的脸色瞬间变得极其难看。在王权与未婚妻之间，他显然只能选择前者。",
+      "text": "Leopold的脸色瞬间变得很难看。在王权与未婚妻之间，他显然只能选择前者。",
       "next": "ch2_ball_011"
     },
     "ch2_ball_011": {
@@ -1401,7 +1403,7 @@ window.STORY = {
       "chapter": "第二章 · 冬耀日",
       "bg": "ballroom.jpg",
       "speaker": "",
-      "text": "在极其讲究体面的帝国宫廷，把奥古斯都大公的女儿、未来的王储妃独自一人晾在宴会厅，是极其严重的失礼，更是对你家族莫大的羞辱。",
+      "text": "在极其讲究体面的帝国宫廷，把奥古斯都大公的女儿、未来的王储妃独自一人晾在宴会厅，是很严重的失礼，更是对你家族莫大的羞辱。",
       "next": "ch2_ball_020"
     },
     "ch2_ball_020": {
@@ -1429,7 +1431,7 @@ window.STORY = {
       "chapter": "第二章 · 冬耀日",
       "bg": "ballroom.jpg",
       "speaker": "",
-      "text": "他穿着没有任何纹章的纯黑军礼服，走到了你面前。在全场贵族惊愕到几乎呆滞的目光中，极其标准地向你行了一个单膝礼。",
+      "text": "他穿着没有任何纹章的纯黑军礼服，走到了你面前。在全场贵族惊愕到几乎呆滞的目光中，标准地向你行了一个单膝礼。",
       "next": "ch2_ball_024"
     },
     "ch2_ball_024": {
@@ -1565,7 +1567,7 @@ window.STORY = {
       "chapter": "第二章 · 冬耀日",
       "bg": "ballroom.jpg",
       "speaker": "",
-      "text": "你看着他停留在半空的手，只是极其自然地用羽毛扇轻轻放在左脸颊，微微退后了半步，拉开了一个礼貌却不可僭越的距离。",
+      "text": "你看着他停留在半空的手，只是用羽毛扇轻轻放在左脸颊，微微退后了半步，拉开了一个礼貌却不可僭越的距离。",
       "next": "ch2_dance_b_002"
     },
     "ch2_dance_b_002": {
@@ -1727,7 +1729,7 @@ window.STORY = {
       "bg": "ballroom.jpg",
       "speaker": "König",
       "text": "“{{playerName}}小姐，希望您度过一个愉快的夜晚。”",
-      "next": "current_version_end"
+      "next": "chapter3_intro"
     },
     "current_version_end": {
       "speaker": "",
@@ -1746,8 +1748,755 @@ window.STORY = {
       "chapter": "序章 · 困兽",
       "bg": "forest-autumn.jpg",
       "speaker": "",
-      "text": "「{{playerName}}」小姐，你是王都最耀眼的明珠，是注定要戴上后冠的女人。你的每一个选择都牵动着你的命运。",
+      "text": "{{playerName}}小姐，你是王都最耀眼的明珠，是注定要戴上后冠的女人。你的每一个选择都牵动着你的命运。",
       "next": "prologue_001"
+    },
+    "chapter3_intro": {
+      "speaker": "",
+      "text": "",
+      "chapterIntro": {
+        "small": "第三章",
+        "title": "吻痕",
+        "next": "ch3_001"
+      }
+    },
+    "ch3_001": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "bgm": "chapter3.mp3",
+      "speaker": "",
+      "text": "晚宴结束后，由于北方边境的急报，国王连夜将奥古斯都大公也召入议事厅密谈。",
+      "next": "ch3_002"
+    },
+    "ch3_002": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "作为大公的掌上明珠与未来的储妃，你被顺理成章地安置在王宫中最奢华的客房内留宿。",
+      "next": "ch3_003"
+    },
+    "ch3_003": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "沉重的夜色伴随着风雪彻底笼罩了王城。",
+      "next": "ch3_004"
+    },
+    "ch3_004": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "客房内，壁炉里的银炭烧得正旺，散发着安神的暖意。",
+      "next": "ch3_005"
+    },
+    "ch3_005": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "晚宴上的步步为营与虚与委蛇，耗尽了你太多的精力。",
+      "next": "ch3_006"
+    },
+    "ch3_006": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "当侍女为你褪去繁复的长裙，换上柔软的丝绸睡袍后，你没多久就陷入了沉沉的睡梦。",
+      "next": "ch3_007"
+    },
+    "ch3_007": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "不知过了多久。",
+      "next": "ch3_008"
+    },
+    "ch3_008": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "在迷迷糊糊的半梦半醒之间，你感觉到了一丝异样。",
+      "next": "ch3_009"
+    },
+    "ch3_009": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "身侧柔软宽大的床榻，似乎轻微地凹陷了下去。",
+      "next": "ch3_010"
+    },
+    "ch3_010": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "原本充斥着安神香的床幔里，不知何时侵入了一股极具侵略性的男性香水味。",
+      "next": "ch3_011"
+    },
+    "ch3_011": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "你实在太困了，眼皮沉重得像灌了铅。",
+      "next": "ch3_012"
+    },
+    "ch3_012": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "但紧接着，一只宽大、带着粗糙老茧的手掌，悄无声息地抚上了你的脸颊，又轻柔地拨开散落在你脸上的碎发。",
+      "next": "ch3_013"
+    },
+    "ch3_013": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "那手掌滚烫得吓人，带着某种极度压抑的贪婪，非常缓慢、近乎痴迷地下移，摩挲着你柔嫩的侧颈。",
+      "next": "ch3_014"
+    },
+    "ch3_014": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "随后，一个压抑着浓重情潮的吻，落在了你的颈动脉上。",
+      "next": "ch3_015"
+    },
+    "ch3_015": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "男人的呼吸粗重而急促，高挺的鼻骨轻轻蹭过你的下颌，滚烫的唇瓣沿着你的颈线缓缓上移，危险地停留在你的唇边，仿佛下一秒就要将你彻底吞噬。",
+      "next": "ch3_016"
+    },
+    "ch3_016": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "熟悉的压迫感，让你惊觉——是König。",
+      "next": "ch3_017"
+    },
+    "ch3_017": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "他竟然胆大包天到夜闯你歇息的客房，爬上了未来王储妃的床榻。",
+      "next": "ch3_018"
+    },
+    "ch3_018": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "意识在这一刻逐渐回笼，但你的身体依然维持着熟睡的姿态。",
+      "next": "ch3_choice1"
+    },
+    "ch3_choice1": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "【请做出你的选择】",
+      "choices": [
+        {
+          "text": "A. 强撑着困意，睁开眼睛",
+          "effects": {
+            "ambition": 1
+          },
+          "setFlags": {
+            "chapter3FirstChoice": "awake"
+          },
+          "next": "ch3_awake_001"
+        },
+        {
+          "text": "B. 维持着假寐，不睁开眼睛",
+          "effects": {
+            "dark": 1,
+            "dependence": 1
+          },
+          "setFlags": {
+            "chapter3FirstChoice": "pretend"
+          },
+          "next": "ch3_pretend_001"
+        }
+      ]
+    },
+    "ch3_awake_001": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "你强压下身体的绵软，在黑暗中睁开了双眼。",
+      "next": "ch3_awake_002"
+    },
+    "ch3_awake_002": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "刚睁眼的几秒，你的眼睛还无法视物，身体更是瘫软无力。",
+      "next": "ch3_awake_003"
+    },
+    "ch3_awake_003": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "他轻笑一声，直直地吻了下来。",
+      "next": "ch3_awake_004"
+    },
+    "ch3_awake_004": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "你躲避不及，只能任由他强势地覆压下来。",
+      "next": "ch3_awake_005"
+    },
+    "ch3_awake_005": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "这个吻毫无王室的绅士风度可言，充满了野兽般的凶狠与掠夺。",
+      "next": "ch3_awake_006"
+    },
+    "ch3_awake_006": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "他很轻易地用单手将你试图推拒的手腕死死钳制在枕侧，另一只宽大的手掌则托住你的后脑。他滚烫的唇舌霸道地撬开你的齿关，长驱直入，贪婪地汲取着你肺里稀薄的空气，仿佛要将你整个人吞吃入腹。",
+      "next": "ch3_awake_007"
+    },
+    "ch3_awake_007": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "在绝对的力量悬殊下，你无法反制，但你骨子里的骄傲却绝不允许自己像个柔弱的猎物般被动承受。",
+      "next": "ch3_awake_008"
+    },
+    "ch3_awake_008": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "你狠下心，用力咬破了他的下唇。",
+      "next": "ch3_awake_009"
+    },
+    "ch3_awake_009": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "浓重的铁锈味瞬间在你们的唇舌间蔓延开来。",
+      "next": "ch3_awake_010"
+    },
+    "ch3_awake_010": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "吃痛之下，König终于停下了这个令人窒息的深吻，但他并没有拉开距离，反而更贴近了你柔软的身躯。",
+      "next": "ch3_awake_011"
+    },
+    "ch3_awake_011": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "{{playerName}}",
+      "text": "“你疯了吗！”",
+      "next": "ch3_awake_012"
+    },
+    "ch3_awake_012": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "你重获自由的手毫不留情地甩了他一巴掌，却因为力气不够而更像是情趣。",
+      "next": "ch3_awake_013"
+    },
+    "ch3_awake_013": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "König不仅没有动怒，反而顺势抓住了你那只手的手腕，轻轻啄吻。",
+      "next": "ch3_awake_014"
+    },
+    "ch3_awake_014": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "König",
+      "text": "“疯了？也许吧。”",
+      "next": "ch3_awake_015"
+    },
+    "ch3_awake_015": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "König",
+      "text": "“现在，生杀大权在您手里了，{{playerName}}小姐。”",
+      "next": "ch3_awake_016"
+    },
+    "ch3_awake_016": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "他几乎贴着你的唇缝，语气里透着病态的痴迷。",
+      "next": "ch3_awake_017"
+    },
+    "ch3_awake_017": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "König",
+      "text": "“门外不过二十步，就是大公的亲卫。您只需要叫一声，他们就会冲进来，也许明天，我就会被送上绞刑架。”",
+      "next": "ch3_awake_018"
+    },
+    "ch3_awake_018": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "他的手掌顺着你腰间丝滑的布料缓缓上移，带着让人战栗的温度。",
+      "next": "ch3_awake_019"
+    },
+    "ch3_awake_019": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "König",
+      "text": "“但如果……如果您愿意，让我继续。”",
+      "next": "ch3_awake_020"
+    },
+    "ch3_awake_020": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "他停顿了一下，眼底闪过一丝危险的算计。",
+      "next": "ch3_awake_021"
+    },
+    "ch3_awake_021": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "König",
+      "text": "“我会向您证明，我能给您的，远比我那个废物哥哥多得多。”",
+      "next": "ch3_awake_022"
+    },
+    "ch3_awake_022": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "你冷笑了一声，呼吸交错间毫不退让。",
+      "next": "ch3_awake_023"
+    },
+    "ch3_awake_023": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "{{playerName}}",
+      "text": "“就凭你？二殿下，需要我提醒你，你在王城是什么情况吗。”",
+      "next": "ch3_awake_024"
+    },
+    "ch3_awake_024": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "König",
+      "text": "“多谢您的好意，但是不需要了。”",
+      "next": "ch3_awake_025"
+    },
+    "ch3_awake_025": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "他低下头，极具暗示性地吻了吻你的耳垂，声音轻得仿佛毒蛇吐信。",
+      "next": "ch3_awake_026"
+    },
+    "ch3_awake_026": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "König",
+      "text": "“我既然敢说这种话，自然是有我自己的筹码。奥古斯都家族想要的王后的冠冕，我也能给您。”",
+      "next": "ch3_choice2"
+    },
+    "ch3_choice2": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "【请做出你的选择】",
+      "choices": [
+        {
+          "text": "A. 顺水推舟，看看他葫芦里卖的什么药",
+          "effects": {
+            "ambition": 1,
+            "redemption": 1
+          },
+          "setFlags": {
+            "chapter3SecondChoice": "cooperate"
+          },
+          "next": "ch3_awake_a_001"
+        },
+        {
+          "text": "B. 严词拒绝，不愿和他过多纠缠",
+          "effects": {
+            "dark": 1
+          },
+          "setFlags": {
+            "chapter3SecondChoice": "reject"
+          },
+          "next": "ch3_awake_b_001"
+        }
+      ]
+    },
+    "ch3_awake_a_001": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "你反手抓住了他胸前的衣襟，猛地往下一拽。",
+      "next": "ch3_awake_a_002"
+    },
+    "ch3_awake_a_002": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "{{playerName}}",
+      "text": "“大话谁都会说，König。想做我手里的刀，就得先证明你够不够锋利。如果你的能耐，只是半夜爬上女人的床榻……”",
+      "next": "ch3_awake_a_003"
+    },
+    "ch3_awake_a_003": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "你没有说下去，但轻蔑的意味不言而喻。",
+      "next": "ch3_awake_a_004"
+    },
+    "ch3_awake_a_004": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "被你这样轻视，他却爆发出了一种极度兴奋的战栗。",
+      "next": "ch3_awake_a_005"
+    },
+    "ch3_awake_a_005": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "König",
+      "text": "“您会看到的，我的能耐，您会看到的。”",
+      "next": "ch3_awake_a_006"
+    },
+    "ch3_awake_a_006": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "他反握住你的手，随后，他虔诚地低下头，试探着地含吻你的唇。",
+      "next": "ch3_awake_a_007"
+    },
+    "ch3_awake_a_007": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "滚烫的指腹探入你的睡袍边缘，轻柔地揉捏你的大腿，像信徒侍奉神明般取悦着你。",
+      "next": "ch3_awake_a_008"
+    },
+    "ch3_awake_a_008": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "König",
+      "text": "“今夜只是个定金，我的挚爱，我的宝贝……”",
+      "next": "ch3_awake_a_009"
+    },
+    "ch3_awake_a_009": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "他在你耳畔剧烈地喘息着。",
+      "next": "ch3_awake_a_010"
+    },
+    "ch3_awake_a_010": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "König",
+      "text": "“等到加冕典礼那一天，我会让您看到我对您的忠诚。”",
+      "next": "ch3_morning_001"
+    },
+    "ch3_awake_b_001": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "你像触电般地甩开他的手。",
+      "next": "ch3_awake_b_002"
+    },
+    "ch3_awake_b_002": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "{{playerName}}",
+      "text": "“就凭你那点见不得光的小动作，也配来跟我谈条件？”",
+      "next": "ch3_awake_b_003"
+    },
+    "ch3_awake_b_003": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "你冷冷地抬起下巴。",
+      "next": "ch3_awake_b_004"
+    },
+    "ch3_awake_b_004": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "{{playerName}}",
+      "text": "“我最后说一次，从我的床榻上滚下去。如果三秒钟后你还在这个房间里，我会立刻叫亲卫进来，把你的头颅挂在城墙上。”",
+      "next": "ch3_awake_b_005"
+    },
+    "ch3_awake_b_005": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "室内的温度仿佛瞬间降至冰点。",
+      "next": "ch3_awake_b_006"
+    },
+    "ch3_awake_b_006": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "König死死地盯着你，手背上的青筋因为极度的忍耐而根根暴起。",
+      "next": "ch3_awake_b_007"
+    },
+    "ch3_awake_b_007": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "他泄愤一般在你的颈侧咬下去，反复吮吸出一个红色的印记。",
+      "next": "ch3_awake_b_008"
+    },
+    "ch3_awake_b_008": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "König",
+      "text": "“您总是这么高高在上，残忍得令人着迷。”",
+      "next": "ch3_awake_b_009"
+    },
+    "ch3_awake_b_009": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "他缓缓站起身，退后了两步，声音里透着令人毛骨悚然的平静。",
+      "next": "ch3_awake_b_010"
+    },
+    "ch3_awake_b_010": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "König",
+      "text": "“您可以拒绝我今夜的诚意。但很快，当您周围的一切倚靠都消失的时候，您会发现……”",
+      "next": "ch3_awake_b_011"
+    },
+    "ch3_awake_b_011": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "他深深地看了你最后一眼，转身隐入黑暗。",
+      "next": "ch3_awake_b_012"
+    },
+    "ch3_awake_b_012": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "König",
+      "text": "“您只能属于我。”",
+      "next": "ch3_awake_b_013"
+    },
+    "ch3_awake_b_013": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "König",
+      "text": "“除了我，您别无选择。”",
+      "next": "ch3_morning_001"
+    },
+    "ch3_pretend_001": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "你强压下如擂鼓般的心跳，放缓了呼吸，闭着双眼，任由自己继续沉浸在半梦半醒的假象中。",
+      "next": "ch3_pretend_002"
+    },
+    "ch3_pretend_002": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "察觉到你依然毫无防备地“熟睡”着，这头一直死死压抑本性的野兽，终于在黑暗中露出了一丝病态的真面目。",
+      "next": "ch3_pretend_003"
+    },
+    "ch3_pretend_003": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "那指腹带着令人战栗的滚烫温度，极具占有欲地抚上你的脸颊，一寸寸滑过你的眉骨、鼻梁，最终停留在你的下唇。",
+      "next": "ch3_pretend_004"
+    },
+    "ch3_pretend_004": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "他放肆地揉捏着那片柔软，甚至微微撬开你的齿关，探入半寸指尖，去感受你温热的呼吸。",
+      "next": "ch3_pretend_005"
+    },
+    "ch3_pretend_005": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "这种充满亵渎意味的触碰，让你掩藏在被子下的双手不可抑制地攥紧了床单，但你依然死死维持着平稳的呼吸。",
+      "next": "ch3_pretend_006"
+    },
+    "ch3_pretend_006": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "König",
+      "text": "“您真美……”",
+      "next": "ch3_pretend_007"
+    },
+    "ch3_pretend_007": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "他贴在你的耳畔，像是不可抑制般地发出谓叹。",
+      "next": "ch3_pretend_008"
+    },
+    "ch3_pretend_008": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "男人的呼吸越来越粗重。他灼热的唇顺着你的下颌线一路向下，贪婪地嗅闻着你颈间散发的香气。",
+      "next": "ch3_pretend_009"
+    },
+    "ch3_pretend_009": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "在你脆弱的颈侧，他忽然张开嘴，用尖锐的犬齿不轻不重地咬了下去。",
+      "next": "ch3_pretend_010"
+    },
+    "ch3_pretend_010": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "这种尖锐的刺痛感伴随着酥麻瞬间传遍全身。你险些控制不住地倒抽一口凉气，身体本能地微微瑟缩了一下。",
+      "next": "ch3_pretend_011"
+    },
+    "ch3_pretend_011": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "但你死死咬住了舌尖，硬生生将那声痛呼咽了回去，继续扮演着一个“睡美人”。",
+      "next": "ch3_pretend_012"
+    },
+    "ch3_pretend_012": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "他当然察觉到了你那细微的战栗，但他不仅没有停下，反而变本加厉地吮吸着那一小块皮肉，直到留下一个红色的印记。",
+      "next": "ch3_pretend_013"
+    },
+    "ch3_pretend_013": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "König",
+      "text": "“睡吧，我的爱人，做个美梦。”",
+      "next": "ch3_morning_001"
+    },
+    "ch3_morning_001": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "第二天清晨，肆虐了整整一夜的大雪终于停歇。",
+      "next": "ch3_morning_002"
+    },
+    "ch3_morning_002": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "惨白的冬日阳光透过巨大的落地窗，洒在奢华的羊毛地毯上。",
+      "next": "ch3_morning_003"
+    },
+    "ch3_morning_003": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "当你的贴身侍女端着热水和换洗衣物推门而入时，你已经靠在天鹅绒的床头，神色晦暗地看着窗外。",
+      "next": "ch3_morning_004"
+    },
+    "ch3_morning_004": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "侍女",
+      "text": "“小姐，您昨夜睡得好吗？”",
+      "next": "ch3_morning_005"
+    },
+    "ch3_morning_005": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "侍女一边轻声询问，一边伺候你起身梳洗。",
+      "next": "ch3_morning_006"
+    },
+    "ch3_morning_006": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "然而，就在她为你褪去那件真丝睡袍，准备换上今日的宫廷常服时，她的动作突然顿住了。",
+      "next": "ch3_morning_007"
+    },
+    "ch3_morning_007": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "明亮的梳妆镜里，在你白皙娇嫩的颈侧，赫然印着一个深红色的、甚至带着些许齿痕的刺目印记。",
+      "next": "ch3_morning_008"
+    },
+    "ch3_morning_008": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "在周围洁白肌肤的衬托下，那痕迹显得极其狂野且充满暧昧意味——那是一个彻头彻尾属于男人的、带着浓烈占有欲的标记。",
+      "next": "ch3_morning_009"
+    },
+    "ch3_morning_009": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "侍女的脸颊瞬间泛起了一阵红晕。她以为自己撞破了主人们隐秘的浪漫，声音压得极低，带着几分好奇试探道。",
+      "next": "ch3_morning_010"
+    },
+    "ch3_morning_010": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "侍女",
+      "text": "“小姐，您的脖子上……昨夜，是王储殿下来过吗？”",
+      "next": "ch3_morning_011"
+    },
+    "ch3_morning_011": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "你看着镜子里那个无法忽视的印记，指尖无意识地蜷缩了一下。",
+      "next": "ch3_morning_012"
+    },
+    "ch3_morning_012": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "他留下的痕迹，像是在公然挑衅着这座王宫的规矩，更像是一条无形的荆棘，死死缠绕住了你的脖颈。",
+      "next": "ch3_morning_013"
+    },
+    "ch3_morning_013": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "{{playerName}}",
+      "text": "“这不是你该问的。如果你还想要你的舌头，就管好你的眼睛和嘴巴。去，给我拿那件高领的黑色丝绒长裙来。”",
+      "next": "ch3_morning_014"
+    },
+    "ch3_morning_014": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "侍女吓得浑身一颤，立刻跪伏在地上，脸色煞白地连声谢罪。",
+      "next": "ch3_morning_015"
+    },
+    "ch3_morning_015": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "你摆摆手，让她赶紧拿裙子来。",
+      "next": "ch3_morning_016"
+    },
+    "ch3_morning_016": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "看着镜子中的自己，你抬起手，指尖轻轻抚过颈侧那个还在隐隐作痛的齿痕。",
+      "next": "ch3_morning_017"
+    },
+    "ch3_morning_017": {
+      "chapter": "第三章 · 吻痕",
+      "bg": "chapter3.jpg",
+      "speaker": "",
+      "text": "随着太阳的升起，议事厅那扇沉重的橡木门即将打开。你知道，父亲和未婚夫很快就会带着关于北方边境的最终决议走出来。",
+      "next": "current_version_end"
     }
   }
 };

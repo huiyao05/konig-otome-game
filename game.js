@@ -5,7 +5,7 @@
   const CONFIG = window.GAME_CONFIG || {};
 
 
-  const SAVE_VERSION = 2;
+  const SAVE_VERSION = 3;
 
   // V6 / V7 / V8 等旧版剧情节点 -> 当前版本剧情节点
   // 已经发布给玩家的旧存档会在读取时自动迁移。
@@ -153,6 +153,13 @@
 
   function migrateLegacyNodeId(saved) {
     const oldId = saved?.nodeId || STORY.startNode;
+    const oldVersion = Number(saved?.version || 0);
+
+    // V9.4 / V9.5 的“当前版本结束”节点，在 V10 已经有第三章可继续。
+    // 旧存档如果正停在这里，自动接入第三章，而不是继续黑屏回标题。
+    if (oldId === "current_version_end" && oldVersion < 3) {
+      return "chapter3_intro";
+    }
 
     // 当前版本本来就存在：不用迁移
     if (STORY.nodes[oldId]) return oldId;

@@ -47,3 +47,23 @@ chapter2-music2.mp3
 文件放置位置：
 背景 → assets/backgrounds/
 音乐 → assets/audio/
+
+
+【第三章 · 吻痕】
+本章只新增 1 张背景 + 1 首音乐，全章不切换：
+
+背景：
+chapter3.jpg
+- 王宫奢华客房 / 夜晚 / 壁炉 / 风雪氛围
+- 第二天清晨也继续使用同一张，不切背景
+
+音乐：
+chapter3.mp3
+- 第三章标题结束、正文开始时播放
+- 整个第三章持续单曲循环
+- 中途所有选择和分支都不切歌
+- 直到第三章最后、黑屏返回标题时停止
+
+放置位置：
+assets/backgrounds/chapter3.jpg
+assets/audio/chapter3.mp3

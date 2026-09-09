@@ -11,3 +11,6 @@ chapter1-music3.mp3
 第二章：
 chapter2-music1.mp3
 chapter2-music2.mp3
+
+第三章：
+chapter3.mp3
