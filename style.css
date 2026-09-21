@@ -727,3 +727,15 @@ button {
     width: min(66vw, 650px);
   }
 }
+
+/* Save backup controls: keep the title usable on small iPhones. */
+.title-screen { overflow-y: auto; }
+.title-card { max-height: calc(100dvh - 42px); overflow-y: auto; }
+.title-actions { gap: 8px; }
+.title-actions .ghost-btn { min-height: 42px; font-size: 12px; }
+.menu-modal .menu-item { min-height: 43px; }
+@media (max-height: 650px) {
+  .title-card { padding: 25px 20px 22px; }
+  .title-card h1 { font-size: clamp(38px, 12vw, 60px); }
+  .subtitle { margin-bottom: 10px; }
+}

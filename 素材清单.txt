@@ -67,3 +67,15 @@ chapter3.mp3
 放置位置：
 assets/backgrounds/chapter3.jpg
 assets/audio/chapter3.mp3
+
+
+【第四章 · 斯卡兰｜V12（3张背景、2首音乐）】
+
+assets/backgrounds/chapter4-snow.jpg  北境风雪／行军；音乐1开始播放。
+assets/backgrounds/chapter4-tent.jpg  夜间奢华军帐；只换背景，音乐1继续循环，不重播。
+assets/backgrounds/chapter4-war.jpg   黎明突袭、风雪战场；切换到音乐2。
+
+assets/audio/chapter4-music1.mp3   北境开头、军帐内整段、A/B两条分支共用。
+assets/audio/chapter4-music2.mp3   原剧本标注“音乐3”的雪地战争场景；一直循环到章末黑屏。
+
+注意：不需要 chapter4-music3.mp3；压缩包里没有附带你本地找到的媒体文件，须自行放入对应位置，文件名及扩展名严格一致。

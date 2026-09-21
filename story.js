@@ -1,11 +1,6 @@
-// =========================================
-// V10
-// 序章《困兽》 + 第一章《角斗士》 + 第二章《冬耀日》 + 第三章《吻痕》
-// IMPORTANT:
-// - 所有已发布节点 ID 保持不变，避免破坏旧存档。
-// - 第三章只使用 chapter3.jpg + chapter3.mp3，全章不切背景/音乐。
-// - 第三章剧情发生时女主已成年。
-// =========================================
+// König 文游 V12 · 第四章《斯卡兰》
+// 四章已有剧情节点 ID 保持稳定；第三章末尾只更改 next。
+// 第四章：风雪/军帐共用 chapter4-music1.mp3，战场切 chapter4-music2.mp3。
 
 window.GAME_CONFIG = {
   "titleBackground": "title.jpg",
@@ -165,7 +160,7 @@ window.STORY = {
       "bg": "bad-ending.jpg",
       "bgm": "bad-ending.mp3",
       "speaker": "",
-      "text": "十年的时光转瞬即逝。加冕典礼前夜，宫变突生。当高大的新王踹开你的房门时，他的眼中没有一丝留恋。你甚至没来得及求饶，冰冷的剑刃就划破了你的喉咙。在他眼里，你和当年那些霸凌他的人没有任何区别。",
+      "text": "时光转瞬即逝。加冕典礼前夜，宫变突生。当高大的新王踹开你的房门时，他的眼中没有一丝留恋。你甚至没来得及求饶，冰冷的剑刃就划破了你的喉咙。在他眼里，你和当年那些霸凌他的人没有任何区别。",
       "ending": "陌路亡魂"
     },
     "ending_early_death": {
@@ -173,7 +168,7 @@ window.STORY = {
       "bg": "bad-ending.jpg",
       "bgm": "bad-ending.mp3",
       "speaker": "",
-      "text": "你愚蠢的善良和冲动给你和你的家族招来了祸患。王储记恨上了你，不久后，你的家族在政治斗争中被陷害，你甚至没能活到成年嫁入王室的那一天。",
+      "text": "你愚蠢的善良和冲动给你和你的家族招来了祸患。王储记恨上了你，不久后，你的家族在政治斗争中被陷害，你甚至没能活到嫁入王室的那一天。",
       "ending": "早夭的花朵"
     },
     "prologue_c_001": {
@@ -2496,6 +2491,691 @@ window.STORY = {
       "bg": "chapter3.jpg",
       "speaker": "",
       "text": "随着太阳的升起，议事厅那扇沉重的橡木门即将打开。你知道，父亲和未婚夫很快就会带着关于北方边境的最终决议走出来。",
+      "next": "chapter4_intro"
+    },
+    "chapter4_intro": {
+      "speaker": "",
+      "text": "",
+      "chapterIntro": {
+        "small": "第四章",
+        "title": "斯卡兰",
+        "next": "ch4_snow_001"
+      }
+    },
+    "ch4_snow_001": {
+      "speaker": "",
+      "text": "北境的漫天风雪中，掩藏着一场蓄谋已久的杀戮。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-snow.jpg",
+      "bgm": "chapter4-music1.mp3",
+      "next": "ch4_snow_002"
+    },
+    "ch4_snow_002": {
+      "speaker": "",
+      "text": "这次边境的动乱，并非寻常游散部落的劫掠，而是由斯卡兰正式挑起的战火。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-snow.jpg",
+      "next": "ch4_snow_003"
+    },
+    "ch4_snow_003": {
+      "speaker": "",
+      "text": "斯卡兰，那个以狼为图腾的国家，正是König生母的故乡。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-snow.jpg",
+      "next": "ch4_snow_004"
+    },
+    "ch4_snow_004": {
+      "speaker": "",
+      "text": "当年斯卡兰战败，前任斯卡兰国王将自己最不重视的大女儿作为求和的礼物，送入了这座吃人的王城。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-snow.jpg",
+      "next": "ch4_snow_005"
+    },
+    "ch4_snow_005": {
+      "speaker": "",
+      "text": "然而就在上个月，斯卡兰的政局经历了一场血洗。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-snow.jpg",
+      "next": "ch4_snow_006"
+    },
+    "ch4_snow_006": {
+      "speaker": "",
+      "text": "前任国王在睡梦中被刺杀，拥有继承权的王室血脉几乎被屠戮殆尽，唯有一位曾经对König母亲施以微薄善意的公主活了下来。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-snow.jpg",
+      "next": "ch4_snow_007"
+    },
+    "ch4_snow_007": {
+      "speaker": "",
+      "text": "取而代之的，是一位踩着尸山血海踏上王座的新王。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-snow.jpg",
+      "next": "ch4_snow_008"
+    },
+    "ch4_snow_008": {
+      "speaker": "",
+      "text": "传闻中，这位新王总是戴着黑色面罩，无人知晓他的真实面容。任何胆敢质疑他的异心贵族，皆被毫不留情地斩草除根。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-snow.jpg",
+      "next": "ch4_snow_009"
+    },
+    "ch4_snow_009": {
+      "speaker": "",
+      "text": "至此，斯卡兰再无人敢对这位铁血暴君吐露半个不字。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-snow.jpg",
+      "next": "ch4_snow_010"
+    },
+    "ch4_snow_010": {
+      "speaker": "",
+      "text": "而这位新王登基后的第一道王令，便是挥军南下，直指帝国的北部边境。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-snow.jpg",
+      "next": "ch4_snow_011"
+    },
+    "ch4_snow_011": {
+      "speaker": "",
+      "text": "议事厅内，那群傲慢的帝国重臣并未将这个刚刚经历内乱的附属国放在眼里。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-snow.jpg",
+      "next": "ch4_snow_012"
+    },
+    "ch4_snow_012": {
+      "speaker": "",
+      "text": "经过商议，这次“北伐”顺理成章地交由Leopold王储作为主帅，以此来为他即将到来的加冕礼铺垫赫赫战功。而你，则代表着奥古斯都家族随军出征。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-snow.jpg",
+      "next": "ch4_snow_013"
+    },
+    "ch4_snow_013": {
+      "speaker": "",
+      "text": "令你感到些许意外的是，König这次也会一同前往。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-snow.jpg",
+      "next": "ch4_snow_014"
+    },
+    "ch4_snow_014": {
+      "speaker": "",
+      "text": "据说是Leopold亲自向国王进言的结果。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-snow.jpg",
+      "next": "ch4_snow_015"
+    },
+    "ch4_snow_015": {
+      "speaker": "",
+      "text": "坐在颠簸的奢华马车里，你看着窗外逐渐肆虐的风雪，微不可闻地叹了口气。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-snow.jpg",
+      "next": "ch4_snow_016"
+    },
+    "ch4_snow_016": {
+      "speaker": "",
+      "text": "Leopold满脑子只想着把那个拥有异族血统的弟弟带上战场当炮灰、做陪衬。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-snow.jpg",
+      "next": "ch4_snow_017"
+    },
+    "ch4_snow_017": {
+      "speaker": "",
+      "text": "但他绝不会想到，他这个决定有多么愚蠢。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-snow.jpg",
+      "next": "ch4_tent_001"
+    },
+    "ch4_tent_001": {
+      "speaker": "",
+      "text": "最初的几天，战局出乎意料地顺利。Leopold率领的主力军轻易地击溃了几股斯卡兰的先锋军。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_tent_002"
+    },
+    "ch4_tent_002": {
+      "speaker": "",
+      "text": "这接连的“捷报”让你的未婚夫春风得意，他甚至傲慢地宣称，根本用不了几天，他就能光鲜亮丽地班师回朝。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_tent_003"
+    },
+    "ch4_tent_003": {
+      "speaker": "",
+      "text": "入夜，风雪大作。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_tent_004"
+    },
+    "ch4_tent_004": {
+      "speaker": "",
+      "text": "你屏退了侍女，独自靠在主帐内铺着厚厚雪狐皮的贵妃榻上。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_tent_005"
+    },
+    "ch4_tent_005": {
+      "speaker": "",
+      "text": "不出你所料的，门口响起敲门声。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_tent_006"
+    },
+    "ch4_tent_006": {
+      "speaker": "{{playerName}}",
+      "text": "“进来。”",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_tent_007"
+    },
+    "ch4_tent_007": {
+      "speaker": "",
+      "text": "是König，你早知道他要来。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_tent_008"
+    },
+    "ch4_tent_008": {
+      "speaker": "",
+      "text": "今天早些时候，你和Leopold还有他一起吃晚餐。你吃完离开时，他偷偷勾住你的手，在你的掌心轻轻划了两下。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_tent_009"
+    },
+    "ch4_tent_009": {
+      "speaker": "",
+      "text": "他在你身前半跪下，温驯地附身将头搁在你的大腿上。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_tent_010"
+    },
+    "ch4_tent_010": {
+      "speaker": "",
+      "text": "他已褪去冰冷的战甲，但是他身上的血腥气并没有减少。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_tent_011"
+    },
+    "ch4_tent_011": {
+      "speaker": "",
+      "text": "你微微蹙眉。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_tent_012"
+    },
+    "ch4_tent_012": {
+      "speaker": "",
+      "text": "他却不知不觉似的，粗糙的大手顺着你的腰线，环住你，贪婪且痴迷地嗅闻着你真丝睡裙上散发的冷香。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_tent_013"
+    },
+    "ch4_tent_013": {
+      "speaker": "",
+      "text": "你的手指漫不经心地穿插在他有些凌乱的红发间。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_tent_014"
+    },
+    "ch4_tent_014": {
+      "speaker": "{{playerName}}",
+      "text": "“二皇子殿下，又夜访兄长未婚妻闺房，是有什么事吗？”",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_tent_015"
+    },
+    "ch4_tent_015": {
+      "speaker": "König",
+      "text": "“只是想见到您，这个理由够吗？”",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_tent_016"
+    },
+    "ch4_tent_016": {
+      "speaker": "",
+      "text": "就在这时，帐外突然传来脚步声，紧接着，是Leopold轻快、带着几分醉意的敲门声：",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_tent_017"
+    },
+    "ch4_tent_017": {
+      "speaker": "Leopold",
+      "text": "“亲爱的，睡了吗？今天的战报太让人振奋了，我想和你一同庆祝，顺便聊聊我们回王城后的加冕礼。”",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_tent_018"
+    },
+    "ch4_tent_018": {
+      "speaker": "König",
+      "text": "“您要让他进来吗？我是不是不该出现在这。”",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_tent_019"
+    },
+    "ch4_tent_019": {
+      "speaker": "",
+      "text": "König这样说着，却没有半分要走的动作。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_choice"
+    },
+    "ch4_choice": {
+      "speaker": "",
+      "text": "【请做出你的选择】",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "choices": [
+        {
+          "text": "A. 让他进来",
+          "effects": {
+            "ambition": 1,
+            "dark": 1
+          },
+          "setFlags": {
+            "chapter4TentChoice": "let_in"
+          },
+          "next": "ch4_a_001"
+        },
+        {
+          "text": "B. 拒之门外",
+          "effects": {
+            "dependence": 1,
+            "redemption": 1
+          },
+          "setFlags": {
+            "chapter4TentChoice": "refuse"
+          },
+          "next": "ch4_b_001"
+        }
+      ]
+    },
+    "ch4_a_001": {
+      "speaker": "",
+      "text": "你眼底闪过一丝冷芒，一把揪住König的衣领，示意他躲进旁边那张铺着及地的重磅天鹅绒桌布的宽大书桌下。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_a_002"
+    },
+    "ch4_a_002": {
+      "speaker": "",
+      "text": "他顺从地钻了进去，却在彻底隐入阴影前的瞬间，骨节分明的大手猛地扣住你的手腕，带着不容抗拒的力道向下一拽，强行将你拉到了书桌前的高背椅上坐下。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_a_003"
+    },
+    "ch4_a_003": {
+      "speaker": "",
+      "text": "你瞪他一眼，无奈地整理好裙摆，调整呼吸，声音平稳无澜让Leopold进来。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_a_004"
+    },
+    "ch4_a_004": {
+      "speaker": "{{playerName}}",
+      "text": "“殿下，请进吧。”",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_a_005"
+    },
+    "ch4_a_005": {
+      "speaker": "",
+      "text": "Leopold掀开厚重的毡帘走进来，周身裹挟着室外的冷气与刺鼻的酒气。他显然醉得不轻，满面红光地在帐内来回踱步，最后直接将双手撑在你面前的书桌边缘，俯下身，向你喋喋不休地炫耀着他白天那些“英勇”战术。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_a_006"
+    },
+    "ch4_a_006": {
+      "speaker": "",
+      "text": "而在那张垂落的桌布底下，König庞大的身躯委屈地挤在逼仄狭小的空间。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_a_007"
+    },
+    "ch4_a_007": {
+      "speaker": "",
+      "text": "不知是为了报复你让Leopold进来，还是想要夺取你的关注，他滚烫的大掌顺着你微凉的脚踝一寸寸向上，最终撩开了你的真丝睡裙，大掌扣紧了你的大腿外侧。惩罚似的咬住了你大腿上敏感的软肉。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_a_008"
+    },
+    "ch4_a_008": {
+      "speaker": "",
+      "text": "突如其来的濡湿与酥麻顺着尾椎骨骤然窜起，激得你浑身微不可察地轻颤了一下。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_a_009"
+    },
+    "ch4_a_009": {
+      "speaker": "",
+      "text": "你垂在桌下的另一只手死死掐入掌心，强行压下喉间险些溢出的喘息。看着近在咫尺、口若悬河的未婚夫，你扯起唇角，露出一抹完美的假笑：",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_a_010"
+    },
+    "ch4_a_010": {
+      "speaker": "{{playerName}}",
+      "text": "“殿下真是……英勇不凡。”",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_a_011"
+    },
+    "ch4_a_011": {
+      "speaker": "",
+      "text": "他没有真正用力咬下去，而是带着几分漫不经心的恶劣与调情，上下齿尖轻轻拢住，左右来回细细地碾磨、叼扯着。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_a_012"
+    },
+    "ch4_a_012": {
+      "speaker": "",
+      "text": "听到这句称赞，桌底下的男人动作一顿，随即发出一声沉闷而恶劣的低笑。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_war_001"
+    },
+    "ch4_b_001": {
+      "speaker": "",
+      "text": "你正用指尖漫不经心地梳理、缠绕着König暗红色的发丝。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_b_002"
+    },
+    "ch4_b_002": {
+      "speaker": "",
+      "text": "听到Leopold的声音，你指尖的动作微微一顿。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_b_003"
+    },
+    "ch4_b_003": {
+      "speaker": "",
+      "text": "仅仅是这一瞬的停顿，便让趴在你腿上的男人感到了极度的不满。察觉到你的注意力被门外的未婚夫夺走，König眼底瞬间掠过一丝暴戾。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_b_004"
+    },
+    "ch4_b_004": {
+      "speaker": "",
+      "text": "他缓缓抬起头，原本只是虚虚环在你的腰间的大手用力收紧，仿佛在无声地抗议着你刚才的分心。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_b_005"
+    },
+    "ch4_b_005": {
+      "speaker": "",
+      "text": "看着他这个样子，你心底生出一丝连你自己都未曾察觉的纵容。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_b_006"
+    },
+    "ch4_b_006": {
+      "speaker": "",
+      "text": "你没有推开他，而是将指尖重新顺着他的发丝抚上他的侧脸，声音平稳、带着几分慵懒对外开口：",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_b_007"
+    },
+    "ch4_b_007": {
+      "speaker": "{{playerName}}",
+      "text": "“殿下，北境的风雪吹得我有些头痛。更何况您今夜也喝了不少酒，还是早些休息吧。有什么事，明日再说。”",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_b_008"
+    },
+    "ch4_b_008": {
+      "speaker": "",
+      "text": "门外的Leopold吃了个闭门羹，听出你语气里的倦意，只能悻悻地关心了几句，转身离去。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_b_009"
+    },
+    "ch4_b_009": {
+      "speaker": "",
+      "text": "确认那脚步声彻底走远后，紧紧勒在你腰间的大手才终于放松了几分。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_b_010"
+    },
+    "ch4_b_010": {
+      "speaker": "",
+      "text": "König眼底的阴郁与戾气瞬间一扫而空，取而代之的是一种愉悦、甚至透着几分病态的满足感。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_b_011"
+    },
+    "ch4_b_011": {
+      "speaker": "König",
+      "text": "“您为了我……把他赶走了。”",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_b_012"
+    },
+    "ch4_b_012": {
+      "speaker": "",
+      "text": "他将脸颊深深地依恋在你的掌心里蹭了蹭。他仰起头看着你，滚烫的唇瓣虔诚地吻过你的指尖，又顺着你的手腕、小臂一路向上吻去",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_b_013"
+    },
+    "ch4_b_013": {
+      "speaker": "",
+      "text": "他缓缓直起身，深邃的眼眸盯着你，似乎是在征求你的同意。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_b_014"
+    },
+    "ch4_b_014": {
+      "speaker": "",
+      "text": "你错开他热烈的眼神，抿了抿唇。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_b_015"
+    },
+    "ch4_b_015": {
+      "speaker": "",
+      "text": "他低笑一声。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_b_016"
+    },
+    "ch4_b_016": {
+      "speaker": "König",
+      "text": "“这是默许吗？”",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_b_017"
+    },
+    "ch4_b_017": {
+      "speaker": "",
+      "text": "也不等你回答，他就低下头，重重地吻上了你的唇。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_b_018"
+    },
+    "ch4_b_018": {
+      "speaker": "",
+      "text": "起初，这只是一个带着试探与讨好意味的触碰，但感受到你隐隐的纵容时，这头压抑已久的野兽便彻底失控了。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_b_019"
+    },
+    "ch4_b_019": {
+      "speaker": "König",
+      "text": "“我不会再让他打扰我们了……”",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-tent.jpg",
+      "next": "ch4_war_001"
+    },
+    "ch4_war_001": {
+      "speaker": "",
+      "text": "第二天拂晓，凄厉的狼骨号角声，毫无预兆地撕裂了北境灰暗的天空。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-war.jpg",
+      "bgm": "chapter4-music2.mp3",
+      "next": "ch4_war_002"
+    },
+    "ch4_war_002": {
+      "speaker": "",
+      "text": "根本没有什么溃败的游散部落。前几日的胜利，不过是引诱Leopold不断深入腹地的毒饵。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-war.jpg",
+      "next": "ch4_war_003"
+    },
+    "ch4_war_003": {
+      "speaker": "",
+      "text": "如黑色潮水般的斯卡兰骑兵，裹挟着漫天风雪和震碎大地的马蹄声，突袭了毫无防备的帝国大营。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-war.jpg",
+      "next": "ch4_war_004"
+    },
+    "ch4_war_004": {
+      "speaker": "",
+      "text": "火光冲天，浓烟滚滚。那些在王城里养尊处优的帝国士兵，在真正嗜血般的斯卡兰军队面前一触即溃。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-war.jpg",
+      "next": "ch4_war_005"
+    },
+    "ch4_war_005": {
+      "speaker": "",
+      "text": "几名死忠重甲亲卫掩护着你，在一片混乱中走出了营帐。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-war.jpg",
+      "next": "ch4_war_006"
+    },
+    "ch4_war_006": {
+      "speaker": "",
+      "text": "而不远处，那个昨夜还不可一世的Leopold王储，此刻正连滚带爬地跨上一匹快马。他英俊的面孔因极度的恐惧而彻底扭曲。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-war.jpg",
+      "next": "ch4_war_007"
+    },
+    "ch4_war_007": {
+      "speaker": "",
+      "text": "他在混乱中看到了被斯卡兰军队逐渐包围的你。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-war.jpg",
+      "next": "ch4_war_008"
+    },
+    "ch4_war_008": {
+      "speaker": "",
+      "text": "他的眼底闪过了一丝短暂的犹豫，但很快就被求生欲彻底淹没。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-war.jpg",
+      "next": "ch4_war_009"
+    },
+    "ch4_war_009": {
+      "speaker": "Leopold",
+      "text": "“别，别怕！亲爱的！我马上叫援军来救你！”",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-war.jpg",
+      "next": "ch4_war_010"
+    },
+    "ch4_war_010": {
+      "speaker": "",
+      "text": "他毫不犹豫地调转马头，像条丧家之犬般疯狂向南逃窜，把你彻底抛弃在了这片死地。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-war.jpg",
+      "next": "ch4_war_011"
+    },
+    "ch4_war_011": {
+      "speaker": "",
+      "text": "你只是冷漠地看着他落荒而逃的背影，平淡地接受了你的未婚夫是一个懦弱的草包。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-war.jpg",
+      "next": "ch4_war_012"
+    },
+    "ch4_war_012": {
+      "speaker": "",
+      "text": "四周的斯卡兰大军如同绞肉机般推进，已经将你重重包围。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-war.jpg",
+      "next": "ch4_war_013"
+    },
+    "ch4_war_013": {
+      "speaker": "",
+      "text": "这片营地，此时除了你，你的侍女和亲卫，竟无一人生还。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-war.jpg",
+      "next": "ch4_war_014"
+    },
+    "ch4_war_014": {
+      "speaker": "",
+      "text": "然而，诡异的一幕发生了。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-war.jpg",
+      "next": "ch4_war_015"
+    },
+    "ch4_war_015": {
+      "speaker": "",
+      "text": "那些凶神恶煞的异国战士，在距离你十步远的地方，都停下脚步，不再靠近。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-war.jpg",
+      "next": "ch4_war_016"
+    },
+    "ch4_war_016": {
+      "speaker": "",
+      "text": "他们恭敬地退开，让出了一条宽阔的通道。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-war.jpg",
+      "next": "ch4_war_017"
+    },
+    "ch4_war_017": {
+      "speaker": "",
+      "text": "风雪中，一个高大而熟悉的身影，踩着满地的鲜血与帝国的残旗，不疾不徐地朝你走来。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-war.jpg",
+      "next": "ch4_war_018"
+    },
+    "ch4_war_018": {
+      "speaker": "",
+      "text": "他脱下了帝国的铁甲，戴上了黑色面罩，上面画着两道如血泪般的红色痕迹，披着斯卡兰王族最具威慑力的巨大黑狼皮大氅。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-war.jpg",
+      "next": "ch4_war_019"
+    },
+    "ch4_war_019": {
+      "speaker": "",
+      "text": "你认出来了，是König。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-war.jpg",
+      "next": "ch4_war_020"
+    },
+    "ch4_war_020": {
+      "speaker": "",
+      "text": "你心中大惊，面上却不显。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-war.jpg",
+      "next": "ch4_war_021"
+    },
+    "ch4_war_021": {
+      "speaker": "",
+      "text": "所有的斯卡兰将士，在看到他走来的那一刻，齐刷刷地单膝重重跪在雪地里，右手握拳击打左胸，以示忠诚。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-war.jpg",
+      "next": "ch4_war_022"
+    },
+    "ch4_war_022": {
+      "speaker": "",
+      "text": "König穿过跪伏的千军万马，走到你的面前。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-war.jpg",
+      "next": "ch4_war_023"
+    },
+    "ch4_war_023": {
+      "speaker": "",
+      "text": "他不再是那个任人欺凌的帝国二皇子。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-war.jpg",
+      "next": "ch4_war_024"
+    },
+    "ch4_war_024": {
+      "speaker": "",
+      "text": "他居高临下地注视着你，缓缓抬起那只戴着象征斯卡兰最高王权的狼骨扳指的手，极其轻柔、珍重地擦去你脸颊上溅到的一点血星。",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-war.jpg",
+      "next": "ch4_war_025"
+    },
+    "ch4_war_025": {
+      "speaker": "König",
+      "text": "“啊……他把你丢下了。”",
+      "chapter": "第四章 · 斯卡兰",
+      "bg": "chapter4-war.jpg",
       "next": "current_version_end"
     }
   }
