@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const BUILD_VERSION = "12-ch4";
+  const BUILD_VERSION = "12.1-ch4";
   const SAVE = window.KONIG_SAVE;
   if (!SAVE) throw new Error("save-system.js 未加载，游戏已停止以避免存档损坏");
   console.info(`[König Otome] build ${BUILD_VERSION}`);
@@ -101,11 +101,6 @@
     newGameBtn: $("newGameBtn"),
     continueBtn: $("continueBtn"),
     titleLoadBtn: $("titleLoadBtn"),
-    titleExportBtn: $("titleExportBtn"),
-    titleImportBtn: $("titleImportBtn"),
-    menuExportBtn: $("menuExportBtn"),
-    menuImportBtn: $("menuImportBtn"),
-    saveFileInput: $("saveFileInput"),
     playerNameInput: $("playerNameInput"),
     confirmNameBtn: $("confirmNameBtn"),
     musicBtn: $("musicBtn"),
@@ -687,57 +682,6 @@
     openModal("saveLoadModal");
   }
 
-  function exportSaves() {
-    // Always export the current progress, but don't overwrite a bad-ending safe autosave.
-    const node = STORY.nodes[state.nodeId];
-    if (state.playerName && node && !node.ending && !node.currentVersionEnd) autoSave();
-    try {
-      const result = SAVE.downloadBundle();
-      toast(result.message);
-    } catch (error) {
-      console.error(error);
-      toast("导出失败，请检查浏览器是否允许下载");
-    }
-  }
-
-  function requestImport() {
-    els.saveFileInput.value = "";
-    els.saveFileInput.click();
-  }
-
-  async function importSaves(file) {
-    if (!file) return;
-    if (file.size > SAVE.MAX_FILE_BYTES) {
-      toast("文件过大，请选择本游戏导出的 JSON 存档文件"); return;
-    }
-    let data;
-    try { data = JSON.parse(await file.text()); }
-    catch { toast("文件无法读取：请选择有效的 JSON 存档"); return; }
-    // Check file integrity and every scene before confirmation or any write.
-    try {
-      // Package validator is called again transactionally during import.
-      // We validate by importing only AFTER explicit confirmation below.
-      if (data?.format !== "konig-otome-save-bundle" ||
-          !Array.isArray(data?.saves?.slots) || data.saves.slots.length !== 3) {
-        throw new Error("这不是本游戏导出的完整存档文件");
-      }
-      const existing = SAVE.count(SAVE.all());
-      if (existing && !window.confirm(
-        "导入将覆盖此网址下的自动存档和三个手动存档。请先使用「导出全部存档」保存现有进度。确认覆盖吗？"
-      )) return;
-      const quantity = SAVE.importPackage(data, normalizeLoadedState);
-      state = defaultState(); // Don't let the previously running story autosave over imported data.
-      closeAllModals();
-      setTitleBackground();
-      showScreen("title");
-      refreshContinueButton();
-      toast(`已导入 ${quantity} 份存档，请点击「继续游戏」或「读取存档」`);
-    } catch (error) {
-      console.error("Save import:", error);
-      toast(error?.message || "导入失败，原有存档没有被修改");
-    }
-  }
-
   function getMaleLeaning() {
     const { dark, redemption } = state.stats;
     if (dark === redemption) return "尚未明显偏向";
@@ -858,11 +802,6 @@
   els.newGameBtn.addEventListener("click", startNewGame);
   els.continueBtn.addEventListener("click", continueGame);
   els.titleLoadBtn.addEventListener("click", () => openSaveLoad("load"));
-  els.titleExportBtn?.addEventListener("click", exportSaves);
-  els.titleImportBtn?.addEventListener("click", requestImport);
-  els.menuExportBtn.addEventListener("click", exportSaves);
-  els.menuImportBtn.addEventListener("click", requestImport);
-  els.saveFileInput.addEventListener("change", (event) => importSaves(event.target.files?.[0]));
   els.confirmNameBtn.addEventListener("click", confirmName);
 
   els.playerNameInput.addEventListener("keydown", (event) => {

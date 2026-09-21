@@ -7,11 +7,6 @@
     backup: "konig_otome_autosave_backup_v1",
     slot: (n) => `konig_otome_save_${n}_v1`
   });
-  const FORMAT = "konig-otome-save-bundle";
-  const FORMAT_VERSION = 1;
-  const MAX_FILE_BYTES = 4 * 1024 * 1024;
-  const MAX_HISTORY = 500;
-  const ALL_KEYS = [KEYS.auto, KEYS.slot(1), KEYS.slot(2), KEYS.slot(3)];
 
   function plain(v) { return v !== null && typeof v === "object" && !Array.isArray(v); }
   function validState(s) {
@@ -74,62 +69,7 @@
       return false;
     }
   }
-  function all() {
-    return {auto:readAuto(),slots:[read(KEYS.slot(1)),read(KEYS.slot(2)),read(KEYS.slot(3))]};
-  }
-  function count(bundle) { return Number(!!bundle.auto)+bundle.slots.filter(Boolean).length; }
-  function packageData() { return {format:FORMAT,formatVersion:FORMAT_VERSION,exportedAt:new Date().toISOString(),saves:all()}; }
-  function downloadBundle() {
-    const pack=packageData();
-    if (!count(pack.saves)) return {ok:false,message:"没有可备份的存档"};
-    const blob=new Blob([JSON.stringify(pack,null,2)],{type:"application/json;charset=utf-8"});
-    const url=URL.createObjectURL(blob);
-    const a=document.createElement("a");
-    a.href=url; a.download=`Konig-存档备份-${new Date().toISOString().slice(0,10)}.json`;
-    document.body.appendChild(a); a.click(); a.remove();
-    window.setTimeout(()=>URL.revokeObjectURL(url),60000);
-    return {ok:true,message:"已请求下载存档，请确认文件确实保存成功"};
-  }
-  function extractPackage(bundle, normalize) {
-    if (!plain(bundle) || bundle.format!==FORMAT || bundle.formatVersion!==FORMAT_VERSION ||
-        !plain(bundle.saves) || !Array.isArray(bundle.saves.slots) || bundle.saves.slots.length!==3)
-      throw new Error("不是本游戏的有效存档备份文件");
-    const entries=[bundle.saves.auto,...bundle.saves.slots];
-    if (entries.every(v=>v==null)) throw new Error("备份文件没有存档");
-    return entries.map((value,i)=>{
-      if (value==null) return null;
-      if (!validState(value)) throw new Error(`存档 ${i || "自动"} 数据损坏`);
-      const normalized=normalize(value);
-      if (!validState(normalized)) throw new Error(`存档 ${i || "自动"} 无法读取`);
-      normalized.history=(normalized.history||[]).slice(-MAX_HISTORY);
-      return normalized;
-    });
-  }
-  function importPackage(bundle,normalize) {
-    const entries=extractPackage(bundle,normalize); // validate everything BEFORE writing anything
-    const s=storage(); if (!s) throw new Error("浏览器禁止本地存储，不能导入");
-    const keys=[...ALL_KEYS,KEYS.backup];
-    const original=keys.map(k=>s.getItem(k));
-    try {
-      entries.forEach((entry,i)=>{
-        if (entry===null) s.removeItem(ALL_KEYS[i]);
-        else s.setItem(ALL_KEYS[i],JSON.stringify(entry));
-      });
-      if (entries[0]===null) s.removeItem(KEYS.backup);
-      else s.setItem(KEYS.backup,JSON.stringify(entries[0]));
-      if (entries.some((entry,i)=>{
-        const data=s.getItem(ALL_KEYS[i]);
-        return entry===null ? data!==null : data!==JSON.stringify(entry);
-      })) throw new Error("存储写入后校验失败");
-    } catch(error) {
-      keys.forEach((key,i)=>{
-        try {if(original[i]===null) s.removeItem(key); else s.setItem(key,original[i]);}
-        catch(e){console.error("存档回滚失败",e);}
-      });
-      throw new Error("存档导入失败；已经尝试恢复原来的存档");
-    }
-    return entries.filter(Boolean).length;
-  }
-  window.KONIG_SAVE=Object.freeze({keys:KEYS,inspect,inspectAuto,read,readAuto,write,all,
-    validState,safeParse,count,packageData,downloadBundle,importPackage,MAX_FILE_BYTES});
+  // Browser-local autosave recovery remains internal; no file export/import UI or APIs.
+  window.KONIG_SAVE=Object.freeze({keys:KEYS,inspect,inspectAuto,read,readAuto,write,
+    validState,safeParse});
 })();
