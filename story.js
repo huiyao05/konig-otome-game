@@ -1,7 +1,6 @@
-// König 文游 V12 · 第四章《斯卡兰》
-// 四章已有剧情节点 ID 保持稳定；第三章末尾只更改 next。
-// 第四章：风雪/军帐共用 chapter4-music1.mp3，战场切 chapter4-music2.mp3。
-
+// König 文游 V13 · 第五章《抉择》与四个终章
+// 已发布的第一至四章节点 ID 均保持不变，save schema 不升级。
+// 结局背景采用纯 CSS 抽象主题，无需结局专用 JPG。
 window.GAME_CONFIG = {
   "titleBackground": "title.jpg",
   "titleBgm": "title.mp3",
@@ -1729,7 +1728,12 @@ window.STORY = {
     "current_version_end": {
       "speaker": "",
       "text": "",
-      "currentVersionEnd": true
+      "chapter": "第五章 · 抉择",
+      "chapterIntro": {
+        "small": "第五章",
+        "title": "抉择",
+        "next": "ch5_war_001"
+      }
     },
     "opening_001": {
       "chapter": "序章 · 困兽",
@@ -3176,7 +3180,4214 @@ window.STORY = {
       "text": "“啊……他把你丢下了。”",
       "chapter": "第四章 · 斯卡兰",
       "bg": "chapter4-war.jpg",
-      "next": "current_version_end"
+      "next": "chapter5_intro"
+    },
+    "chapter5_intro": {
+      "chapter": "第五章 · 抉择",
+      "chapterIntro": {
+        "small": "第五章",
+        "title": "抉择",
+        "next": "ch5_war_001"
+      }
+    },
+    "ch5_war_001": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "极致的死寂笼罩了这片刚刚经历过屠戮的雪原。",
+      "bg": "chapter4-war.jpg",
+      "bgm": "chapter5-music1.mp3",
+      "next": "ch5_war_002"
+    },
+    "ch5_war_002": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "斯卡兰的将士如同石雕般单膝跪地，只余下风雪的呼啸与旌旗的猎猎作响。没有一个人敢抬起头，哪怕是多看一眼站在中央的你，以及他们那位如同杀神降世般的新王。",
+      "bg": "chapter4-war.jpg",
+      "next": "ch5_war_003"
+    },
+    "ch5_war_003": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "在这般处境下，你心底的暗流剧烈翻涌。",
+      "bg": "chapter4-war.jpg",
+      "next": "ch5_war_choice"
+    },
+    "ch5_war_choice": {
+      "chapter": "第五章 · 抉择",
+      "bg": "chapter4-war.jpg",
+      "speaker": "",
+      "text": "【请做出你的选择】",
+      "choices": [
+        {
+          "text": "A. 感到一丝后怕，庆幸他爱上了你",
+          "effects": {
+            "dependence": 1
+          },
+          "setFlags": {
+            "lastHeroineChoice": "dependence"
+          },
+          "next": "ch5_war_after_001"
+        },
+        {
+          "text": "B. 感到一丝兴奋，觉得他可以为你所用",
+          "effects": {
+            "ambition": 1
+          },
+          "setFlags": {
+            "lastHeroineChoice": "ambition"
+          },
+          "next": "ch5_war_after_001"
+        }
+      ]
+    },
+    "ch5_war_after_001": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "压下心中那些翻涌的复杂情绪，你维持着贵族千金的仪态，微微扬起下巴，抬眸直视着他。",
+      "bg": "chapter4-war.jpg",
+      "next": "ch5_war_after_002"
+    },
+    "ch5_war_after_002": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "{{playerName}}",
+      "text": "“二殿下，怎么会是你？”",
+      "bg": "chapter4-war.jpg",
+      "next": "ch5_war_after_003"
+    },
+    "ch5_war_after_003": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "他擦掉你脸颊上那点殷红的血迹后，并没有移开手，而是轻轻掐住了你的下巴。",
+      "bg": "chapter4-war.jpg",
+      "next": "ch5_war_after_004"
+    },
+    "ch5_war_after_004": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "König",
+      "text": "“不要再叫我二殿下了。”",
+      "bg": "chapter4-war.jpg",
+      "next": "ch5_war_after_005"
+    },
+    "ch5_war_after_005": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "他的声音低沉沙哑，带着一丝将旧日伪装彻底撕裂的快意。",
+      "bg": "chapter4-war.jpg",
+      "next": "ch5_war_after_006"
+    },
+    "ch5_war_after_006": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "{{playerName}}",
+      "text": "“那，陛下？”",
+      "bg": "chapter4-war.jpg",
+      "next": "ch5_war_after_007"
+    },
+    "ch5_war_after_007": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "他深邃的眼眸危险地暗了暗，掐住你下巴的手指稍稍收紧，不带一丝痛感，却透着不容拒绝的强硬：",
+      "bg": "chapter4-war.jpg",
+      "next": "ch5_war_after_008"
+    },
+    "ch5_war_after_008": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "König",
+      "text": "“叫我的名字。”",
+      "bg": "chapter4-war.jpg",
+      "next": "ch5_war_after_009"
+    },
+    "ch5_war_after_009": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "{{playerName}}",
+      "text": "“König……”",
+      "bg": "chapter4-war.jpg",
+      "next": "ch5_war_after_010"
+    },
+    "ch5_war_after_010": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "你似乎还有些不适应这样直呼一位“敌国暴君”的名讳。",
+      "bg": "chapter4-war.jpg",
+      "next": "ch5_war_after_011"
+    },
+    "ch5_war_after_011": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "这两个简短的音节从你舌尖滚落，在寒风中竟平添了几分缱绻。",
+      "bg": "chapter4-war.jpg",
+      "next": "ch5_war_after_012"
+    },
+    "ch5_war_after_012": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "König满意地松开了手，发出一阵低沉的轻笑。",
+      "bg": "chapter4-war.jpg",
+      "next": "ch5_war_after_013"
+    },
+    "ch5_war_after_013": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "他没有再征求你的意见，而是直接将那件宽大的黑狼皮大氅裹在你的身上，彻底掩盖了你身上象征帝国的华丽衣袍。",
+      "bg": "chapter4-war.jpg",
+      "next": "ch5_war_after_014"
+    },
+    "ch5_war_after_014": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "König",
+      "text": "“跟我回斯卡兰吧。”",
+      "bg": "chapter4-war.jpg",
+      "next": "ch5_palace_001"
+    },
+    "ch5_palace_001": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "你并没有被扔进战俘营，而是被妥善安置在了这座北境权力最中心的地方——斯卡兰新王的宫殿。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_palace_002"
+    },
+    "ch5_palace_002": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "沉重的鎏金橡木门被推开。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_palace_003"
+    },
+    "ch5_palace_003": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "König连身上的风雪都未完全拂去，便匆匆结束了军机会议赶回来看你。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_palace_004"
+    },
+    "ch5_palace_004": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "他看都没看旁边瑟瑟发抖侍奉着的侍女，不耐地挥了挥手，让他们全部退下。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_palace_005"
+    },
+    "ch5_palace_005": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "寝殿内只剩下你们两人。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_palace_006"
+    },
+    "ch5_palace_006": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "他走到你坐着的贵妃榻前，居高临下地注视着你。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_palace_007"
+    },
+    "ch5_palace_007": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "König",
+      "text": "“Leopold已经逃回了王城。”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_palace_008"
+    },
+    "ch5_palace_008": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "König的嗓音里带着毫不掩饰的嘲弄与杀意。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_palace_009"
+    },
+    "ch5_palace_009": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "König",
+      "text": "“为了掩盖他临阵脱逃和全军覆没的丑闻，他直接封锁了北境的消息，向议事厅谎报了一场‘惨烈但伟大的胜利’。他宣称先锋营与斯卡兰军队同归于尽，而你也在混乱中失踪。为了在谎言败露前彻底坐实他的权力，他已经迫不及待地宣布，要在半个月后提前举行加冕典礼。”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_palace_010"
+    },
+    "ch5_palace_010": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "听闻此言，你心下已有决定。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_coop_choice"
+    },
+    "ch5_coop_choice": {
+      "chapter": "第五章 · 抉择",
+      "bg": "chapter5-palace.jpg",
+      "speaker": "",
+      "text": "【请做出你的选择】",
+      "choices": [
+        {
+          "text": "A. 主动提出与他合作，向那个丢下你的未婚夫和腐朽的帝国复仇",
+          "effects": {
+            "redemption": 1
+          },
+          "setFlags": {
+            "ch5Cooperation": "yes"
+          },
+          "next": "ch5_cooperate_001"
+        },
+        {
+          "text": "B. 虽然对未婚夫感到失望，但是也不愿和他一起对抗帝国",
+          "effects": {
+            "dark": 1
+          },
+          "setFlags": {
+            "ch5Cooperation": "no"
+          },
+          "next": "ch5_refuse_001"
+        }
+      ]
+    },
+    "ch5_cooperate_001": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "{{playerName}}",
+      "text": "“既然他急着戴上那顶虚假的王冠，那我们就成全他。”",
+      "bg": "chapter5-palace.jpg",
+      "bgm": "chapter5-music2.mp3",
+      "next": "ch5_cooperate_002"
+    },
+    "ch5_cooperate_002": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "你抿了一口手中的红茶，平静地开口，就像讨论天气那样。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_cooperate_003"
+    },
+    "ch5_cooperate_003": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "{{playerName}}",
+      "text": "“我有一个办法。”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_cooperate_004"
+    },
+    "ch5_cooperate_004": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "他微微挑眉，示意你接着说下去。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_cooperate_005"
+    },
+    "ch5_cooperate_005": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "{{playerName}}",
+      "text": "“把我送回去。”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_cooperate_006"
+    },
+    "ch5_cooperate_006": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "你放下茶杯，声音平稳得没有一丝波澜。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_cooperate_007"
+    },
+    "ch5_cooperate_007": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "此话一出，寝殿内的温度仿佛瞬间降至冰点。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_cooperate_008"
+    },
+    "ch5_cooperate_008": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "König脸上的神情寸寸破裂，他猛地俯下身，一把掐住你的手腕，将你强行拽向他。那双幽暗的眼眸里瞬间翻涌起极度危险的暴戾：",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_cooperate_009"
+    },
+    "ch5_cooperate_009": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "König",
+      "text": "“你说什么？你就这么着急回到他身边？”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_cooperate_010"
+    },
+    "ch5_cooperate_010": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "{{playerName}}",
+      "text": "“冷静点。”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_cooperate_011"
+    },
+    "ch5_cooperate_011": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "你另一只手安抚似的按住他青筋暴起的手背，语气带着一种令人信服的蛊惑。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_cooperate_012"
+    },
+    "ch5_cooperate_012": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "{{playerName}}",
+      "text": "“Leopold现在最害怕的，就是奥古斯都家族因为我的失踪而向他发难。如果我‘九死一生’地逃回了王都，并且带回了斯卡兰‘致命’的兵力部署图，你猜，急于在加冕礼上得到我父亲支持的他，会不会把我当成救命稻草？”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_cooperate_013"
+    },
+    "ch5_cooperate_013": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "König的呼吸微微一滞，他紧紧盯着你的眼睛，已经明白了你的意图。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_cooperate_014"
+    },
+    "ch5_cooperate_014": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "{{playerName}}",
+      "text": "“加冕典礼的前夜，那是他们最警惕，也最松懈的时候。”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_cooperate_015"
+    },
+    "ch5_cooperate_015": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "你眼底闪烁着政客的冷酷与野心。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_cooperate_016"
+    },
+    "ch5_cooperate_016": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "{{playerName}}",
+      "text": "“你只需要率领精锐突袭王城。而我，我会动用奥古斯都家族的力量，从内部帮你打开城门。”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_cooperate_017"
+    },
+    "ch5_cooperate_017": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "里应外合，釜底抽薪。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_cooperate_018"
+    },
+    "ch5_cooperate_018": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "König看着眼前这个美丽、冷血又危险的女人，胸膛剧烈地起伏着。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_cooperate_019"
+    },
+    "ch5_cooperate_019": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "他不得不承认，这个计划是完美的。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_cooperate_020"
+    },
+    "ch5_cooperate_020": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "也不得不承认，他完全为这样的你而着迷。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_cooperate_021"
+    },
+    "ch5_cooperate_021": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "他缓缓松开捏着你手腕的手，粗糙的指腹眷恋且危险地摩挲过你脖颈的大动脉：",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_cooperate_022"
+    },
+    "ch5_cooperate_022": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "König",
+      "text": "“奥古斯都家族唯一的掌上明珠，果然是从不吃亏的执棋者。那么，告诉我……”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_cooperate_023"
+    },
+    "ch5_cooperate_023": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "他低下头，嘴唇几乎贴上你的耳廓。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_cooperate_024"
+    },
+    "ch5_cooperate_024": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "König",
+      "text": "“你冒着这么大的风险帮我，你想要从我这里，得到什么？”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_reign_choice"
+    },
+    "ch5_reign_choice": {
+      "chapter": "第五章 · 抉择",
+      "bg": "chapter5-palace.jpg",
+      "speaker": "",
+      "text": "【请做出你的选择】",
+      "choices": [
+        {
+          "text": "A. “你吞并帝国后，后位，是我的。”",
+          "effects": {
+            "dependence": 5
+          },
+          "setFlags": {
+            "lastHeroineChoice": "dependence"
+          },
+          "next": "ch5_consort_offer_001"
+        },
+        {
+          "text": "B. “我要你扶我坐上，帝国的王座。”",
+          "effects": {
+            "ambition": 5
+          },
+          "setFlags": {
+            "lastHeroineChoice": "ambition"
+          },
+          "next": "ch5_queen_offer_001"
+        }
+      ]
+    },
+    "ch5_consort_offer_001": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "你微微仰起头，将自己最脆弱的脖颈彻底展露在他的面前。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_consort_offer_002"
+    },
+    "ch5_consort_offer_002": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "你见识过了帝国的腐朽，也见识过了眼前这个男人足以摧毁一切的力量与手腕。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_consort_offer_003"
+    },
+    "ch5_consort_offer_003": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "与其负隅顽抗，不如早早向他抛出筹码，以此保全整个奥古斯都家族的无上荣光。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_consort_offer_004"
+    },
+    "ch5_consort_offer_004": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "毕竟，奥古斯都家族只是需要一个王后，至于坐在王座上的国王是谁，根本无关紧要。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_consort_offer_005"
+    },
+    "ch5_consort_offer_005": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "{{playerName}}",
+      "text": "“帝国已经烂透了。”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_consort_offer_006"
+    },
+    "ch5_consort_offer_006": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "你伸出双臂，主动地环住了他的脖颈，声音轻柔却带着毋庸置疑的笃定。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_consort_offer_007"
+    },
+    "ch5_consort_offer_007": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "{{playerName}}",
+      "text": "“我要这片大陆上只飘扬斯卡兰的黑狼旗帜。而我，要在你的身旁。”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_consort_offer_008"
+    },
+    "ch5_consort_offer_008": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "König怔愣了一瞬。随即，他的手臂托住你的腿弯，用力将你整个人抱了起来，让你稳稳地坐在他结实的臂弯里。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_consort_offer_009"
+    },
+    "ch5_consort_offer_009": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "视线交错，此刻轮到你居高临下地俯视着这位不可一世的新王。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_consort_offer_010"
+    },
+    "ch5_consort_offer_010": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "König",
+      "text": "“你知道这意味什么吗？”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_consort_offer_011"
+    },
+    "ch5_consort_offer_011": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "他沙哑地呢喃，仰头看着你，眼底的狂热几乎要将你融化。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_consort_offer_012"
+    },
+    "ch5_consort_offer_012": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "{{playerName}}",
+      "text": "“怎么，你的后位难道还有其他人选？”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_consort_offer_013"
+    },
+    "ch5_consort_offer_013": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "你轻笑一声。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_consort_offer_014"
+    },
+    "ch5_consort_offer_014": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "听到你这句带着几分高傲的调侃，König笑了一声，把你往上颠了颠。他抱着你，稳步走向那张柔软的宽大床榻。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_consort_offer_015"
+    },
+    "ch5_consort_offer_015": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "König",
+      "text": "“没有别人。从来都只有你。”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_consort_offer_016"
+    },
+    "ch5_consort_offer_016": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "他将你珍重地放下，单膝跪在床沿，双手撑在你的身侧。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_consort_offer_017"
+    },
+    "ch5_consort_offer_017": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "König低下头，吻落在你的唇上，带着虔诚与渴求。他耐心地描摹着你的唇线，直到你微微启唇，主动接纳了他的气息，这个吻才逐渐变得深沉而缠绵。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_consort_offer_018"
+    },
+    "ch5_consort_offer_018": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "他的手指穿过你的长发，温柔地托住你的后脑，另一只手顺着你的腰际轻轻抚摸。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_consort_offer_019"
+    },
+    "ch5_consort_offer_019": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "房间里的温度在壁炉的烘烤下不断攀升。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_consort_offer_020"
+    },
+    "ch5_consort_offer_020": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "你微凉的指尖顺着他的领口探入，触碰到了他胸膛上那些交错的旧疤，怜惜地顺着一条条伤痕划过。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_consort_offer_021"
+    },
+    "ch5_consort_offer_021": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "这个安抚般的动作，让König的呼吸瞬间变得有些急促。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_consort_offer_022"
+    },
+    "ch5_consort_offer_022": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "他低喘了一声，滚烫的吻顺着你的唇角滑落至修长的颈项，留下温热湿润的触感。他动作利落却又无比轻柔地替你解开繁复的衣带，粗糙带有薄茧的掌心贴上你细腻的肌肤，激起阵阵难以抑制的酥麻与战栗。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_consort_offer_023"
+    },
+    "ch5_consort_offer_023": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "他与你紧紧地十指相扣，一遍又一遍地向你确认，向你索取。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_consort_offer_024"
+    },
+    "ch5_consort_offer_024": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "König",
+      "text": "“我的王后……我爱你。”",
+      "bg": "chapter5-palace.jpg",
+      "nextByAxis": {
+        "left": "ambition",
+        "right": "dependence",
+        "leftNext": "ending_iris_intro",
+        "rightNext": "ending_joint_intro",
+        "tieFlag": "lastHeroineChoice",
+        "tieLeftValue": "ambition",
+        "tieRightValue": "dependence",
+        "fallback": "ending_joint_intro"
+      }
+    },
+    "ch5_queen_offer_001": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "你攥住他的衣领，将他一把拽向自己。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_queen_offer_002"
+    },
+    "ch5_queen_offer_002": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "你们身体之间的距离被猛地拉近。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_queen_offer_003"
+    },
+    "ch5_queen_offer_003": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "{{playerName}}",
+      "text": "“帝国的王冠，从来不属于那个草包。”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_queen_offer_004"
+    },
+    "ch5_queen_offer_004": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "此刻，你将自己的野心毫无保留地摊开在他的面前。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_queen_offer_005"
+    },
+    "ch5_queen_offer_005": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "你看着他的眼睛，一字一顿地宣告：",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_queen_offer_006"
+    },
+    "ch5_queen_offer_006": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "{{playerName}}",
+      "text": "“我觉得，以我的才智与手腕，由我坐上那个王座，才是让帝国走向繁荣的唯一正解。”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_queen_offer_007"
+    },
+    "ch5_queen_offer_007": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "König深深地凝视着你。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_queen_offer_008"
+    },
+    "ch5_queen_offer_008": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "良久，他胸腔里震荡出一阵极度愉悦、低沉而疯狂的笑声。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_queen_offer_009"
+    },
+    "ch5_queen_offer_009": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "König",
+      "text": "“我就知道……你这具美丽的皮囊下，藏着比我还要贪婪的怪物。”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_queen_offer_010"
+    },
+    "ch5_queen_offer_010": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "他眼底的欣赏与爱慕几乎要满溢而出。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_queen_offer_011"
+    },
+    "ch5_queen_offer_011": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "他并不介意被你当作登上王位的利刃，相反，只要能成为你手里最有价值的底牌，被你所需要，他就甘之如饴。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_queen_offer_012"
+    },
+    "ch5_queen_offer_012": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "König",
+      "text": "“但锋利的剑，是需要极其昂贵的保养费的。”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_queen_offer_013"
+    },
+    "ch5_queen_offer_013": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "他顺势倾身，双臂撑在你的身侧，将你抵在贵妃榻的边缘。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_queen_offer_014"
+    },
+    "ch5_queen_offer_014": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "{{playerName}}",
+      "text": "“你觉得我，付不起吗？”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_queen_offer_015"
+    },
+    "ch5_queen_offer_015": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "你毫不退让地挑眉，直接仰起头，重重地吻上他的唇。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_queen_offer_016"
+    },
+    "ch5_queen_offer_016": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "这个吻带着破釜沉舟的试探与暧昧的挑逗。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_queen_offer_017"
+    },
+    "ch5_queen_offer_017": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "在唇齿纠缠的间隙，你微微退开半寸，趁着换气的功夫，气息微喘地看着他：",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_queen_offer_018"
+    },
+    "ch5_queen_offer_018": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "{{playerName}}",
+      "text": "“你是答应，还是不答应？”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_queen_offer_019"
+    },
+    "ch5_queen_offer_019": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "König意犹未尽，欲求不满地盯着你水润的唇。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_queen_offer_020"
+    },
+    "ch5_queen_offer_020": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "König",
+      "text": "“……遵命，我的女王陛下。”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_queen_offer_021"
+    },
+    "ch5_queen_offer_021": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "话音未落，他便反客为主，再次吻了下来。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_queen_offer_022"
+    },
+    "ch5_queen_offer_022": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "壁炉里的火光将室内的温度烘烤得极高。在急促而灼热的呼吸中，繁复的衣物成了最碍眼的阻碍。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_queen_offer_023"
+    },
+    "ch5_queen_offer_023": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "你温凉的指尖灵巧地扯开他单衣的系带，掌心直接贴上他滚烫坚实、布满旧疤的胸膛。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_queen_offer_024"
+    },
+    "ch5_queen_offer_024": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "你稍稍推开他的脑袋，在他的伤痕上落下一个接一个轻柔的吻。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_queen_offer_025"
+    },
+    "ch5_queen_offer_025": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "他似乎有些没料到你的动作，愣了一下。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_queen_offer_026"
+    },
+    "ch5_queen_offer_026": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "你滚烫的吻犹如细碎的火星，彻底点燃了他心底的欲火。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_queen_offer_027"
+    },
+    "ch5_queen_offer_027": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "肌肤相贴的瞬间，他像渴了很久的旅人终于找到绿洲一样，发出满足的谓叹。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_queen_offer_028"
+    },
+    "ch5_queen_offer_028": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "König",
+      "text": "“我会是您最锋利的剑，最忠实的信徒。”",
+      "bg": "chapter5-palace.jpg",
+      "nextByAxis": {
+        "left": "ambition",
+        "right": "dependence",
+        "leftNext": "ending_iris_intro",
+        "rightNext": "ending_joint_intro",
+        "tieFlag": "lastHeroineChoice",
+        "tieLeftValue": "ambition",
+        "tieRightValue": "dependence",
+        "fallback": "ending_joint_intro"
+      }
+    },
+    "ch5_refuse_001": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "你端坐在贵妃榻上，目光平静而坚决地迎上他的视线。你当然恨Leopold的懦弱与背叛，但你姓奥古斯都。你的家族、你的根基、你从小接受的贵族荣耀，全都深深扎根在帝国的疆土之上。让你对抗帝国——这绝无可能。",
+      "bg": "chapter5-palace.jpg",
+      "bgm": "chapter5-music3.mp3",
+      "next": "ch5_refuse_002"
+    },
+    "ch5_refuse_002": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "{{playerName}}",
+      "text": "“Leopold是个无可救药的蠢货，他死不足惜。”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_refuse_003"
+    },
+    "ch5_refuse_003": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "你深吸了一口气，字字清晰地开口。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_refuse_004"
+    },
+    "ch5_refuse_004": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "{{playerName}}",
+      "text": "“但我不会和你一起对抗帝国。那里是我的故国，王城里有我的父亲，有奥古斯都家族世代守护的基业。König，如果你想利用我来摧毁帝国，那你找错人了。”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_refuse_005"
+    },
+    "ch5_refuse_005": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "良久，他的喉咙里发出一阵压抑、低沉而危险的冷笑。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_refuse_006"
+    },
+    "ch5_refuse_006": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "König",
+      "text": "“为了你的父亲？为了你的家族？”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_refuse_007"
+    },
+    "ch5_refuse_007": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "他向前逼近了一步，那张俊美而充满野性的面孔在火光下显得格外骇人。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_refuse_008"
+    },
+    "ch5_refuse_008": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "König",
+      "text": "“别用这些冠冕堂皇的借口来敷衍我。你心里真正放不下的，是你那个完美的未婚夫，对吗？”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_refuse_009"
+    },
+    "ch5_refuse_009": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "{{playerName}}",
+      "text": "“你胡说什么？我刚刚才说过他死不足惜！”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_refuse_010"
+    },
+    "ch5_refuse_010": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "你被这突如其来的无端指控激怒，霍然起身。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_refuse_011"
+    },
+    "ch5_refuse_011": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "König却听不进你的话。他的眼底翻涌着不再压抑的嫉妒与疯狂。他一把抓住你的手腕，力道极大，仿佛要将你整个人揉碎在掌心里。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_refuse_012"
+    },
+    "ch5_refuse_012": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "König",
+      "text": "“他已经丢下你了！只有我，只有我才是真正的爱你！”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_refuse_013"
+    },
+    "ch5_refuse_013": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "{{playerName}}",
+      "text": "“我守护的是奥古斯都家族的尊严，不是他！”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_refuse_014"
+    },
+    "ch5_refuse_014": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "你用力想要甩开他的手，骨子里的傲慢让你不愿再退让半步。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_refuse_015"
+    },
+    "ch5_refuse_015": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "{{playerName}}",
+      "text": "“放手！我就算做不成帝国的皇后，也绝不会沦为你的政治筹码！”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_refuse_016"
+    },
+    "ch5_refuse_016": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "这句话，成了彻底点燃他愤怒的最后一点火星。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_refuse_017"
+    },
+    "ch5_refuse_017": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "König",
+      "text": "“不愿做筹码？”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_refuse_018"
+    },
+    "ch5_refuse_018": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "他冷笑了一声，眼神彻底暗沉下来，像一潭深不见底的死水。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_refuse_019"
+    },
+    "ch5_refuse_019": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "König",
+      "text": "“那你就留在这里，做我的笼中雀。”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_refuse_020"
+    },
+    "ch5_refuse_020": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "下一秒，他猛地将你拽入怀中，凶狠地吻住了你的唇。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_refuse_021"
+    },
+    "ch5_refuse_021": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "这更像是一场充斥着愤怒、嫉妒与疯狂的撕咬。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_refuse_022"
+    },
+    "ch5_refuse_022": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "他野蛮地撬开你的齿关，长驱直入。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_refuse_023"
+    },
+    "ch5_refuse_023": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "“啪！”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_refuse_024"
+    },
+    "ch5_refuse_024": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "你在极度的愤怒中挣脱出一只手，毫不留情地甩了他一个耳光。清脆的巴掌声在寝殿内回荡。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_refuse_025"
+    },
+    "ch5_refuse_025": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "König被打得偏过头去。但他非但没有停下，反而因为这个巴掌被激出了更疯狂的凶性。他舔去了被你咬破的唇角溢出的鲜血，转过头，深邃的眼底燃烧着足以将你焚毁的烈火。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_refuse_026"
+    },
+    "ch5_refuse_026": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "他猛地将你扛起，大步走到那张宽大的床榻前，将你扔进柔软的被褥里。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_refuse_027"
+    },
+    "ch5_refuse_027": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "在你还没来得及起身的瞬间，他庞大的身躯已经极具压迫感地覆了上来，把你笼罩在他的阴影之下。他灼热的吻将你所有的反抗都卷入这场失控的情潮之中。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_refuse_028"
+    },
+    "ch5_refuse_028": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "König",
+      "text": "“我会让你看到的……”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_refuse_029"
+    },
+    "ch5_refuse_029": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "他在唇齿交缠的间隙，发出犹如野兽般粗重的喘息，他的吻犹如暴雨般落在你的侧颈、锁骨、胸口，一路向下。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_refuse_030"
+    },
+    "ch5_refuse_030": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "König",
+      "text": "“我会踏平帝国的城墙，杀了那个废物，让你看到谁才是真正够格与你并肩的人。”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_refuse_031"
+    },
+    "ch5_refuse_031": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "{{playerName}}",
+      "text": "“疯子……”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_refuse_032"
+    },
+    "ch5_refuse_032": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "你胸口剧烈起伏着，双手死死抵住他，指关节都用力得微微泛白。你想要推开他，可身体却不可抑止地发颤。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_refuse_033"
+    },
+    "ch5_refuse_033": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "König",
+      "text": "“我是疯了。我早就疯了。”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_refuse_034"
+    },
+    "ch5_refuse_034": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "他有些粗暴地撕开你碍事的繁复衣裙，肌肤相亲的瞬间，他的理智几乎被烧为灰烬。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_refuse_035"
+    },
+    "ch5_refuse_035": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "König",
+      "text": "“你只能是我的……你永远都只能留在我身边！”",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_refuse_036"
+    },
+    "ch5_refuse_036": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "这一夜，是一场没有赢家的死斗。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_refuse_037"
+    },
+    "ch5_refuse_037": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "你们像两头困在绝境里的野兽，用最原始的方式互相撕咬、抵死缠绵。极度的愤怒、不甘的爱慕交织在一起，让这场充斥着怒火的纠缠化作了一场极致的沉沦。",
+      "bg": "chapter5-palace.jpg",
+      "next": "ch5_refuse_day_001"
+    },
+    "ch5_refuse_day_001": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "第二天。",
+      "bg": "chapter5-palace-day.jpg",
+      "next": "ch5_refuse_day_002"
+    },
+    "ch5_refuse_day_002": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "当你在酸痛与疲惫中重新恢复意识时，寝殿里的壁炉已经只剩下微弱的余烬。",
+      "bg": "chapter5-palace-day.jpg",
+      "next": "ch5_refuse_day_003"
+    },
+    "ch5_refuse_day_003": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "阳光透过厚重的彩色琉璃窗，在地毯上投下斑驳的冷光。那张宽大的拔步床上，此刻只有你一个人。",
+      "bg": "chapter5-palace-day.jpg",
+      "next": "ch5_refuse_day_004"
+    },
+    "ch5_refuse_day_004": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "一丝强烈的不安涌上心头。你忍着浑身的酸痛，快步走到那扇沉重的鎏金橡木门前，用力拉了拉门把手。",
+      "bg": "chapter5-palace-day.jpg",
+      "next": "ch5_refuse_day_005"
+    },
+    "ch5_refuse_day_005": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "纹丝不动。",
+      "bg": "chapter5-palace-day.jpg",
+      "next": "ch5_refuse_day_006"
+    },
+    "ch5_refuse_day_006": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "{{playerName}}",
+      "text": "“开门！”",
+      "bg": "chapter5-palace-day.jpg",
+      "next": "ch5_refuse_day_007"
+    },
+    "ch5_refuse_day_007": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "你用力拍打着门板。",
+      "bg": "chapter5-palace-day.jpg",
+      "next": "ch5_refuse_day_008"
+    },
+    "ch5_refuse_day_008": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "门外传来轻微的金属碰撞声，紧接着，是一个斯卡兰守卫粗犷而恭敬的声音：",
+      "bg": "chapter5-palace-day.jpg",
+      "next": "ch5_refuse_day_009"
+    },
+    "ch5_refuse_day_009": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "斯卡兰守卫",
+      "text": "“王后殿下，陛下有令，为了您的安全着想，在战事结束前，不得让您离开寝殿。”",
+      "bg": "chapter5-palace-day.jpg",
+      "next": "ch5_refuse_day_010"
+    },
+    "ch5_refuse_day_010": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "你微微一怔，一股彻骨的寒意瞬间从脚底直窜心头。",
+      "bg": "chapter5-palace-day.jpg",
+      "next": "ch5_refuse_day_011"
+    },
+    "ch5_refuse_day_011": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "软禁。",
+      "bg": "chapter5-palace-day.jpg",
+      "next": "ch5_refuse_day_012"
+    },
+    "ch5_refuse_day_012": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "{{playerName}}",
+      "text": "“你们陛下呢？”",
+      "bg": "chapter5-palace-day.jpg",
+      "next": "ch5_refuse_day_013"
+    },
+    "ch5_refuse_day_013": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "",
+      "text": "你勉强找回来自己的声音，试探地问到。",
+      "bg": "chapter5-palace-day.jpg",
+      "next": "ch5_refuse_day_014"
+    },
+    "ch5_refuse_day_014": {
+      "chapter": "第五章 · 抉择",
+      "speaker": "斯卡兰守卫",
+      "text": "“陛下已经率兵出征。王后殿下，请您安心在此等候陛下凯旋。”",
+      "bg": "chapter5-palace-day.jpg",
+      "nextByAxis": {
+        "left": "ambition",
+        "right": "dependence",
+        "leftNext": "ending_thorn_intro",
+        "rightNext": "ending_cage_intro",
+        "tieFlag": "lastHeroineChoice",
+        "tieLeftValue": "ambition",
+        "tieRightValue": "dependence",
+        "fallback": "ending_cage_intro"
+      }
+    },
+    "ending_cage_001": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "被软禁在这座宫殿，时间的流逝变得模糊，唯有窗外呼啸的北风和偶尔掠过的飞雪，在丈量着日夜的交替。",
+      "bgTheme": "cage",
+      "bgm": "ending-cage.mp3",
+      "next": "ending_cage_002"
+    },
+    "ending_cage_002": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "没有任何人敢对你不敬，所有人对你的态度，都恭顺得如同面对真正的神明。",
+      "bgTheme": "cage",
+      "next": "ending_cage_003"
+    },
+    "ending_cage_003": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "但唯独，那扇沉重的鎏金橡木门，再也没有为你从里面打开过。",
+      "bgTheme": "cage",
+      "next": "ending_cage_004"
+    },
+    "ending_cage_004": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "外界的战报，成了你在这座华丽牢笼里唯一能触碰到的“现实”。",
+      "bgTheme": "cage",
+      "next": "ending_cage_005"
+    },
+    "ending_cage_005": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "正如你所预料的那样，帝国那些早已被奢靡掏空了身体的贵族将领，在König率领的斯卡兰军队面前，简直不堪一击。他直接撕裂了帝国北部的防线，以一种令人胆寒的推进速度，直逼帝国的腹地。",
+      "bgTheme": "cage",
+      "next": "ending_cage_006"
+    },
+    "ending_cage_006": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "你那位愚蠢的未婚夫Leopold，在王城里甚至还没来得及编造完他那套“惨烈胜利”的谎言，前线的溃败战报就已经像雪花一样飞回了议事厅。",
+      "bgTheme": "cage",
+      "next": "ending_cage_007"
+    },
+    "ending_cage_007": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "但Leopold已经骑虎难下。",
+      "bgTheme": "cage",
+      "next": "ending_cage_008"
+    },
+    "ending_cage_008": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "为了稳固濒临崩溃的军心，也为了拿到他心中最重要的王权，他疯狂地决定，加冕典礼如期举行。他要在神圣的教廷里戴上皇冠，以此来宣告他才是帝国正统的主宰。",
+      "bgTheme": "cage",
+      "next": "ending_cage_009"
+    },
+    "ending_cage_009": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "然而，那场加冕典礼，最终沦为了帝国历史上最荒诞、也最血腥的一场葬礼。",
+      "bgTheme": "cage",
+      "next": "ending_cage_010"
+    },
+    "ending_cage_010": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "当教皇那双枯槁的手颤抖着捧起皇冠，即将戴在Leopold头上的那一刻，König已经杀进了教堂。",
+      "bgTheme": "cage",
+      "next": "ending_cage_011"
+    },
+    "ending_cage_011": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "他并没有带面罩，暗红色的发丝被风吹动，露出那张属于帝国二皇子的脸。",
+      "bgTheme": "cage",
+      "next": "ending_cage_012"
+    },
+    "ending_cage_012": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "大殿内死寂得落针可闻。Leopold吓得瘫软在地上，连滚带爬地想要逃离，却被König手中的长矛精准地钉死在了他梦寐以求的皇冠前。",
+      "bgTheme": "cage",
+      "next": "ending_cage_013"
+    },
+    "ending_cage_013": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "不出半月，帝国的权柄彻底易主。那些曾经高高在上的贵族，此刻全都跪伏在这个拥有异族血统的暴君脚下瑟瑟发抖。而你的父亲，奥古斯都大公，在审时度势之后，为了保全家族的血脉与荣耀，清醒地交出了手里的兵权，选择了向新王俯首。",
+      "bgTheme": "cage",
+      "next": "ending_cage_014"
+    },
+    "ending_cage_014": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "这一切的消息传回北境时，你正靠在窗边，看着外面逐渐消融的冰雪。",
+      "bgTheme": "cage",
+      "next": "ending_cage_015"
+    },
+    "ending_cage_015": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "你早就知道他会赢，只是没料到，他会把这个曾经不可一世的帝国，摧毁得如此彻底。",
+      "bgTheme": "cage",
+      "next": "ending_cage_016"
+    },
+    "ending_cage_016": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "沉重的大门发出“咔哒”一声闷响。",
+      "bgTheme": "cage",
+      "next": "ending_cage_017"
+    },
+    "ending_cage_017": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "König回来了。",
+      "bgTheme": "cage",
+      "next": "ending_cage_018"
+    },
+    "ending_cage_018": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "他身上还穿着那件象征着绝对权力的黑色重甲，肩膀上沾染着风雪与尘埃。但在踏入寝殿的那一刻，他却没有立刻走向你，而是站在门口，脱下了那身带着血腥味与寒气的冰冷铠甲，甚至用一旁的温水洗净了双手，才一步步朝你走来。",
+      "bgTheme": "cage",
+      "next": "ending_cage_019"
+    },
+    "ending_cage_019": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "他已然是这片大陆上真正的主宰。只要他一声令下，千军万马都会为他赴汤蹈火。",
+      "bgTheme": "cage",
+      "next": "ending_cage_020"
+    },
+    "ending_cage_020": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "然而，当他走到你的贵妃榻前时，他却自然地、没有任何犹豫地单膝跪在了你的脚边，把头轻轻搁在了你的膝上。",
+      "bgTheme": "cage",
+      "next": "ending_cage_021"
+    },
+    "ending_cage_021": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "König",
+      "text": "“我回来了。”",
+      "bgTheme": "cage",
+      "next": "ending_cage_022"
+    },
+    "ending_cage_022": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "他的声音沙哑，透着连日征战的极度疲惫，但那双仰视着你的深邃眼眸里，却还是你熟悉的狂热爱意。",
+      "bgTheme": "cage",
+      "next": "ending_cage_023"
+    },
+    "ending_cage_023": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "König",
+      "text": "“Leopold，还有老国王都死了。议事厅被我血洗了一半，剩下的，都是听话的。奥古斯都家族，包括你的父亲，都很安全。”",
+      "bgTheme": "cage",
+      "next": "ending_cage_024"
+    },
+    "ending_cage_024": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "König珍重地捧起你的手背，将炽热的吻烙印在你的指尖，仿佛在向他唯一的神明献上祭品：",
+      "bgTheme": "cage",
+      "next": "ending_cage_025"
+    },
+    "ending_cage_025": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "König",
+      "text": "“我说过，我会把帝国的王座抢过来……”",
+      "bgTheme": "cage",
+      "next": "ending_cage_026"
+    },
+    "ending_cage_026": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "他起身，拿过放在一旁的精致镶金锦盒，缓缓打开，里面是耀眼夺目的帝国皇后的王冠。",
+      "bgTheme": "cage",
+      "next": "ending_cage_027"
+    },
+    "ending_cage_027": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "你垂下眼眸，静静地看着跪在脚边的这个男人，又看了看那顶触手可及的帝国王冠。",
+      "bgTheme": "cage",
+      "next": "ending_cage_028"
+    },
+    "ending_cage_028": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "在这一刻，你终于彻底看清了这个名为“权力”的牢笼，究竟有多么华丽，又有多么令人窒息。",
+      "bgTheme": "cage",
+      "next": "ending_cage_029"
+    },
+    "ending_cage_029": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "他把你所有的退路、所有的依靠，全部碾碎。他毁掉了你的世界，然后为你重新铸造了一个只有他存在的帝国。",
+      "bgTheme": "cage",
+      "next": "ending_cage_030"
+    },
+    "ending_cage_030": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "你依然是高高在上的奥古斯都大公唯一的女儿，你拥有了一切——除了离开他的自由。",
+      "bgTheme": "cage",
+      "next": "ending_cage_031"
+    },
+    "ending_cage_031": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "你没有接那顶王冠，而是缓缓伸出手，带着一丝叹息般地抚上了他的脸庞。",
+      "bgTheme": "cage",
+      "next": "ending_cage_032"
+    },
+    "ending_cage_032": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "{{playerName}}",
+      "text": "“你赢了，König。”",
+      "bgTheme": "cage",
+      "next": "ending_cage_033"
+    },
+    "ending_cage_033": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "你的声音轻柔得仿佛一片落在雪地里的羽毛。",
+      "bgTheme": "cage",
+      "next": "ending_cage_034"
+    },
+    "ending_cage_034": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "但听到这句话的König却像是得到了神明的认可般激动。他死死地抱住你的腰，将脸深深地埋进你的衣裙里，发出了沉闷的喘息。",
+      "bgTheme": "cage",
+      "next": "ending_cage_035"
+    },
+    "ending_cage_035": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "半个月后，帝国迎来了新的主人。",
+      "bgTheme": "cage",
+      "next": "ending_cage_036"
+    },
+    "ending_cage_036": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "一场极其盛大、奢靡到足以载入史册的封后大典，在帝国宫殿内举行。",
+      "bgTheme": "cage",
+      "next": "ending_cage_037"
+    },
+    "ending_cage_037": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "你穿着那件由数百名工匠耗时半月赶制而成的华服，在万众瞩目下登场。",
+      "bgTheme": "cage",
+      "next": "ending_cage_038"
+    },
+    "ending_cage_038": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "König站在光里，温柔地牵起你的手，与你一同走向王座。",
+      "bgTheme": "cage",
+      "next": "ending_cage_039"
+    },
+    "ending_cage_039": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "沿途，所有的帝国旧贵族、教廷的主教、以及斯卡兰的悍将，全都恭敬地向你们跪伏。你的父亲站在最前方，用复杂却又夹杂着欣慰的目光看着你——因为你的存在，奥古斯都家族在这场改朝换代的血洗中，不仅毫发无损，反而登上了前所未有的权力巅峰。",
+      "bgTheme": "cage",
+      "next": "ending_cage_040"
+    },
+    "ending_cage_040": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "在教皇战战兢兢的祈祷声中，他没有让任何人插手，而是亲自拿起了那顶后冠，小心翼翼地戴在了你的头上。",
+      "bgTheme": "cage",
+      "next": "ending_cage_041"
+    },
+    "ending_cage_041": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "然后，等待着你，他的王后，他的神明，他的爱人，为他带上国王的冠冕。",
+      "bgTheme": "cage",
+      "next": "ending_cage_042"
+    },
+    "ending_cage_042": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "当他牵着你的手，与你一同转身俯视着这片广袤的疆土和臣服的臣民时，外界的所有人都以为，你不仅是帝国的皇后，更是与这位暴君平分秋色的共主。",
+      "bgTheme": "cage",
+      "next": "ending_cage_043"
+    },
+    "ending_cage_043": {
+      "chapter": "终章 · 笼中雀",
+      "speaker": "",
+      "text": "但只有你知道，这顶后冠，就是他为你亲手锁上的、最华丽的镣铐。",
+      "bgTheme": "cage",
+      "next": "ending_cage_complete"
+    },
+    "ending_cage_complete": {
+      "chapter": "终章 · 笼中雀",
+      "bgTheme": "cage",
+      "speaker": "",
+      "text": "",
+      "ending": "笼中雀"
+    },
+    "ending_cage_intro": {
+      "chapter": "终章 · 笼中雀",
+      "chapterIntro": {
+        "small": "终章",
+        "title": "笼中雀",
+        "next": "ending_cage_001"
+      }
+    },
+    "ending_thorn_001": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "{{playerName}}",
+      "text": "“凯旋？”",
+      "bgTheme": "thorn",
+      "bgm": "ending-thorn.mp3",
+      "next": "ending_thorn_002"
+    },
+    "ending_thorn_002": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "你扯起唇角，无声地冷笑了一下。",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_003"
+    },
+    "ending_thorn_003": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "作为奥古斯都家族的继承人，哪怕被关在笼子里，你也不会是柔弱的金丝雀，而是会咬人的鹰。",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_004"
+    },
+    "ending_thorn_004": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "接下来的半个月，你在这座奢华的牢笼里，极其平静地等待着。",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_005"
+    },
+    "ending_thorn_005": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "期间只提过一个要求，那就是每天都要有鲜花，花瓶要瓷的。",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_006"
+    },
+    "ending_thorn_006": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "想到他们国王对你的态度，你提出的要求肯定要满足。马上就有侍女捧着插好花的花瓶走进来，放在了桌上。",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_007"
+    },
+    "ending_thorn_007": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "直到那一天，鎏金橡木门被人从外面重重推开。",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_008"
+    },
+    "ending_thorn_008": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "König站在门口，虽然已经卸下战甲，但战场的硝烟味和血腥味却没有散去。他犹如一头刚刚饱餐过血肉的凶兽，餍足却又不满地一步步走到你的面前。",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_009"
+    },
+    "ending_thorn_009": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "“当啷——”",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_010"
+    },
+    "ending_thorn_010": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "一顶沾着血迹、甚至已经微微变形的帝国皇冠，被他极其随意地扔在了你的脚边。",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_011"
+    },
+    "ending_thorn_011": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "König",
+      "text": "“Leopold死了。”",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_012"
+    },
+    "ending_thorn_012": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "König居高临下地看着你，眼底闪烁着病态的狂热。",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_013"
+    },
+    "ending_thorn_013": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "König",
+      "text": "“帝国，现在是我的了。”",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_014"
+    },
+    "ending_thorn_014": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "他张开双臂，像是在等待着你因为失去一切而崩溃，等待着你别无选择地扑进他的怀里，彻底向他这个唯一的胜利者臣服。",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_015"
+    },
+    "ending_thorn_015": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "你垂下眼眸，看了一眼脚边那顶象征着帝国至高权力的王冠。",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_016"
+    },
+    "ending_thorn_016": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "随后，你极其平淡地弯下腰，将那顶带血的王冠捡了起来，准备放在桌上。",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_017"
+    },
+    "ending_thorn_017": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "就在这时，你状似不经意地碰倒了花瓶，瓷瓶立刻碎裂成很多片锋利的瓷片。",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_018"
+    },
+    "ending_thorn_018": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "他立刻担心地走过来，弯腰想查看你的手。",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_019"
+    },
+    "ending_thorn_019": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "你抬起头，冲他露出了一个美丽却令人毛骨悚然的微笑。",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_020"
+    },
+    "ending_thorn_020": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "在他因为你的笑颜而微微怔愣的瞬间，你瞬间抓住一个瓷片精准且狠戾地抵住了他颈侧的大动脉。似乎只要你再稍微用力半寸，就能瞬间结束他的生命。",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_021"
+    },
+    "ending_thorn_021": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "空气在这一刻彻底凝固。",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_022"
+    },
+    "ending_thorn_022": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "König没有躲。他完全有能力在你出手前拧断你的手腕，但他甚至连眼睛都没有眨一下，只是任由你将瓷片死死压在他的脖颈上，压出了一道殷红的血痕。",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_023"
+    },
+    "ending_thorn_023": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "König",
+      "text": "“你想杀我？”",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_024"
+    },
+    "ending_thorn_024": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "他垂眸看着你，非但没有动怒，喉咙里反而溢出一阵愉悦的低笑。",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_025"
+    },
+    "ending_thorn_025": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "König",
+      "text": "“为了给那个废物报仇？还是为了所谓的帝国？”",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_026"
+    },
+    "ending_thorn_026": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "{{playerName}}",
+      "text": "“他们也配？”",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_027"
+    },
+    "ending_thorn_027": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "你毫不客气地冷嗤一声。",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_028"
+    },
+    "ending_thorn_028": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "{{playerName}}",
+      "text": "“听着，König，我从小被当作奥古斯都家族的继承人培养，你想要我乖乖做你的金丝雀，不可能。”",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_029"
+    },
+    "ending_thorn_029": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "你直视着他的眼睛，野心在这一刻毫无保留地彻底爆发：",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_030"
+    },
+    "ending_thorn_030": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "{{playerName}}",
+      "text": "“我要权力。我要做帝国的女王。”",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_031"
+    },
+    "ending_thorn_031": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "König死死盯着你，胸腔因为极度的兴奋而剧烈起伏着。他能感觉到颈侧传来的尖锐刺痛，也能闻到你身上那种比任何催情药都要吸引他的，致命的野心与杀意。",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_032"
+    },
+    "ending_thorn_032": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "König",
+      "text": "“如果我不答应呢？”",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_033"
+    },
+    "ending_thorn_033": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "他故意向前倾身，让刀刃更深地陷进自己的皮肉里，鲜血蜿蜒流下。",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_034"
+    },
+    "ending_thorn_034": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "König",
+      "text": "“你要杀了我吗，{{playerName}}小姐？杀了我，你应该也活不过明天。”",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_035"
+    },
+    "ending_thorn_035": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "你不仅没有退缩，反而傲慢地扬起下巴，眼神里的疯狂甚至超越了他：",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_036"
+    },
+    "ending_thorn_036": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "{{playerName}}",
+      "text": "“不要小看我啊，König。大不了，和你一起共赴黄泉地狱。”",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_037"
+    },
+    "ending_thorn_037": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "你凑近他的耳畔，用最轻柔的声音，吐出最恶毒的挑衅：",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_038"
+    },
+    "ending_thorn_038": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "{{playerName}}",
+      "text": "“但是万一我活下来了，凭借奥古斯都家族的积累和我的能力，我仍然有信心当上天下霸主。”“至于男人……你以为你很不可替代吗？等我坐上那个位置，我可以养一百个，一千个比你听话、比你俊美的男宠。”",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_039"
+    },
+    "ending_thorn_039": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "他极其神经质地大笑起来。",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_040"
+    },
+    "ending_thorn_040": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "你爱上别人，才是他最不可以接受的未来。",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_041"
+    },
+    "ending_thorn_041": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "König",
+      "text": "“好……真是太好了……”",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_042"
+    },
+    "ending_thorn_042": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "他不仅没有推开你手里的刀，反而极其强硬地一把扣住你的后脑勺，就着那把抵在自己大动脉上的致命凶器，猛地低头，极其凶狠地吻住了你。",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_043"
+    },
+    "ending_thorn_043": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "这根本不是一个情人之间缠绵的吻。",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_044"
+    },
+    "ending_thorn_044": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "他粗暴地吮吸着你的唇，像是想要将你一口一口地吃掉，让你和他永远合为一体。",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_045"
+    },
+    "ending_thorn_045": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "König",
+      "text": "“你想要权力？可以！”",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_046"
+    },
+    "ending_thorn_046": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "他在你唇边剧烈地喘息着，宛如一个彻底疯魔的信徒，压上他的所有去换取神明的一丝垂怜。",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_047"
+    },
+    "ending_thorn_047": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "König",
+      "text": "“你想要的一切，我都可以给你。但你听清楚了——”",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_048"
+    },
+    "ending_thorn_048": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "他一把攥住你握刀的手，眼神偏执得令人战栗：",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_049"
+    },
+    "ending_thorn_049": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "König",
+      "text": "“这辈子，站在你身边的男人，你最锋利的剑，你最忠实的狗……永远只能有我一个！”",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_050"
+    },
+    "ending_thorn_050": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "达成目的，你丢下瓷片，搂住他的脖子再次吻了上去。",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_051"
+    },
+    "ending_thorn_051": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "心里却有些可惜，早知道就再多要点好处了。",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_052"
+    },
+    "ending_thorn_052": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "他不爽你的走神，惩罚似的咬了你的下唇一口。拉回你的注意力。",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_053"
+    },
+    "ending_thorn_053": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "这场“谈判”最后进行到了床上，你们不死不休般地折腾了一整晚。",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_054"
+    },
+    "ending_thorn_054": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "第二日一早，König就吩咐了下去，你的加冕礼，他的加冕礼，还有你们的婚礼，都要在同一天举行。",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_055"
+    },
+    "ending_thorn_055": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "你们都不是什么善类。",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_056"
+    },
+    "ending_thorn_056": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "在鲜血与白骨堆积的称王之路上，你们谁也无法真正驯服谁，却又谁也无法离开谁。",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_057"
+    },
+    "ending_thorn_057": {
+      "chapter": "终章 · 荆棘冠",
+      "speaker": "",
+      "text": "你们在无数个白日里争锋相对，又在无数个夜晚里相拥亲吻",
+      "bgTheme": "thorn",
+      "next": "ending_thorn_complete"
+    },
+    "ending_thorn_complete": {
+      "chapter": "终章 · 荆棘冠",
+      "bgTheme": "thorn",
+      "speaker": "",
+      "text": "",
+      "ending": "荆棘冠"
+    },
+    "ending_thorn_intro": {
+      "chapter": "终章 · 荆棘冠",
+      "chapterIntro": {
+        "small": "终章",
+        "title": "荆棘冠",
+        "next": "ending_thorn_001"
+      }
+    },
+    "ending_joint_001": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "第一缕晨光照进寝殿时，König依然没有睡。他侧撑着头，深邃的眼眸一瞬不瞬地凝视着你沉睡的面容，粗糙的指腹克制、轻柔地描摹着你的眉眼。",
+      "bgTheme": "joint",
+      "bgm": "ending-joint1.mp3",
+      "next": "ending_joint_002"
+    },
+    "ending_joint_002": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "你微微睁开眼，慵懒地将脸颊贴进他宽大温暖的掌心里。",
+      "bgTheme": "joint",
+      "next": "ending_joint_003"
+    },
+    "ending_joint_003": {
+      "chapter": "终章 · 共王座",
+      "speaker": "{{playerName}}",
+      "text": "“不去整顿你的军队吗，陛下？”",
+      "bgTheme": "joint",
+      "next": "ending_joint_004"
+    },
+    "ending_joint_004": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "König低声笑了，胸腔的震动透过相贴的肌肤传来。他低下头，虔诚地吻了吻你的额头。",
+      "bgTheme": "joint",
+      "next": "ending_joint_005"
+    },
+    "ending_joint_005": {
+      "chapter": "终章 · 共王座",
+      "speaker": "König",
+      "text": "“我曾经以为，只有碾过帝国的城池，才能将你锁在我身边。”",
+      "bgTheme": "joint",
+      "next": "ending_joint_006"
+    },
+    "ending_joint_006": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "你抬起手，微凉的指尖穿过他暗红色的发丝。",
+      "bgTheme": "joint",
+      "next": "ending_joint_007"
+    },
+    "ending_joint_007": {
+      "chapter": "终章 · 共王座",
+      "speaker": "{{playerName}}",
+      "text": "“你想错了。我会帮你坐上王座，但你得跟我保证，不准滥杀无辜，收起你的疯狗做派。”",
+      "bgTheme": "joint",
+      "next": "ending_joint_008"
+    },
+    "ending_joint_008": {
+      "chapter": "终章 · 共王座",
+      "speaker": "König",
+      "text": "“如你所愿，我的爱人。我可以这样说了吗？”",
+      "bgTheme": "joint",
+      "next": "ending_joint_009"
+    },
+    "ending_joint_009": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "他将你的手拉到唇边，亲吻你的指尖。",
+      "bgTheme": "joint",
+      "next": "ending_joint_010"
+    },
+    "ending_joint_010": {
+      "chapter": "终章 · 共王座",
+      "speaker": "{{playerName}}",
+      "text": "“我说不可以，你就会不说吗？”",
+      "bgTheme": "joint",
+      "next": "ending_joint_011"
+    },
+    "ending_joint_011": {
+      "chapter": "终章 · 共王座",
+      "speaker": "König",
+      "text": "“不会。既然你给了我机会，我就再也不会松手。”",
+      "bgTheme": "joint",
+      "next": "ending_joint_012"
+    },
+    "ending_joint_012": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "五日后，你穿着一身被荆棘划破、沾着干涸血迹的长裙，倒在了距离帝国边境哨塔不到半里的雪地里，被巡逻的士兵“奇迹般”地救回。",
+      "bgTheme": "joint",
+      "next": "ending_joint_013"
+    },
+    "ending_joint_013": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "消息传回王都，整个议事厅彻底沸腾。",
+      "bgTheme": "joint",
+      "next": "ending_joint_014"
+    },
+    "ending_joint_014": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "当你乘坐着带有奥古斯都家族家徽的马车，在一队重甲骑兵的护卫下驶入王城大门时，你透过车窗的缝隙，冷冷地注视着这座依然沉浸在虚假繁荣中的腐朽都城。",
+      "bgTheme": "joint",
+      "next": "ending_joint_015"
+    },
+    "ending_joint_015": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "最先赶来见你的，是你那位刚刚在议事厅里结束了一场争权夺利、满头大汗的未婚夫。",
+      "bgTheme": "joint",
+      "next": "ending_joint_016"
+    },
+    "ending_joint_016": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "当他看到你虚弱地靠在软榻上时，他脸上闪过一丝不明显的诧异，随即又换上了惊喜与深情的表情。",
+      "bgTheme": "joint",
+      "next": "ending_joint_017"
+    },
+    "ending_joint_017": {
+      "chapter": "终章 · 共王座",
+      "speaker": "Leopold",
+      "text": "“神明保佑！我的挚爱，你竟然逃出来了！”",
+      "bgTheme": "joint",
+      "next": "ending_joint_018"
+    },
+    "ending_joint_018": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "他大步走上前来，想要握住你的手。",
+      "bgTheme": "joint",
+      "next": "ending_joint_019"
+    },
+    "ending_joint_019": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "你躲了过去，用咳嗽掩饰了眼底深处的厌恶，避开了他的触碰。",
+      "bgTheme": "joint",
+      "next": "ending_joint_020"
+    },
+    "ending_joint_020": {
+      "chapter": "终章 · 共王座",
+      "speaker": "{{playerName}}",
+      "text": "“殿下……”",
+      "bgTheme": "joint",
+      "next": "ending_joint_021"
+    },
+    "ending_joint_021": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "你垂下眼睫，用一种恰到好处的、带着劫后余生般颤抖的嗓音开口。",
+      "bgTheme": "joint",
+      "next": "ending_joint_022"
+    },
+    "ending_joint_022": {
+      "chapter": "终章 · 共王座",
+      "speaker": "{{playerName}}",
+      "text": "“我拼死逃回来，是为了将这个交给您。”",
+      "bgTheme": "joint",
+      "next": "ending_joint_023"
+    },
+    "ending_joint_023": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "你从贴身的暗袋里，掏出了一份沾着血迹的羊皮卷，递了过去。",
+      "bgTheme": "joint",
+      "next": "ending_joint_024"
+    },
+    "ending_joint_024": {
+      "chapter": "终章 · 共王座",
+      "speaker": "{{playerName}}",
+      "text": "“这是斯卡兰主力的兵力部署图……”",
+      "bgTheme": "joint",
+      "next": "ending_joint_025"
+    },
+    "ending_joint_025": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "Leopold的眼睛瞬间亮得可怕。他甚至没有耐心听你说完，也完全不关心你是怎样拿到的，要付出什么样的代价。他只知道，有了这个，他一定能稳坐王位。",
+      "bgTheme": "joint",
+      "next": "ending_joint_026"
+    },
+    "ending_joint_026": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "他一把夺过那份羊皮卷，贪婪地扫视着。",
+      "bgTheme": "joint",
+      "next": "ending_joint_027"
+    },
+    "ending_joint_027": {
+      "chapter": "终章 · 共王座",
+      "speaker": "Leopold",
+      "text": "“你简直是整个帝国最聪明勇敢的女人，是我最完美的皇后！”",
+      "bgTheme": "joint",
+      "next": "ending_joint_028"
+    },
+    "ending_joint_028": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "Leopold激动得浑身发抖，他将羊皮卷死死捏在手里，眼神狂热。",
+      "bgTheme": "joint",
+      "next": "ending_joint_029"
+    },
+    "ending_joint_029": {
+      "chapter": "终章 · 共王座",
+      "speaker": "Leopold",
+      "text": "“有了这个，等我戴上皇冠，我立刻就派兵去把他们全部杀光！”",
+      "bgTheme": "joint",
+      "next": "ending_joint_030"
+    },
+    "ending_joint_030": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "看着他这副愚蠢而狂妄的嘴脸，你心底发出一声嗤笑，面上却依然维持着那副虚弱而忠诚的模样。",
+      "bgTheme": "joint",
+      "next": "ending_joint_031"
+    },
+    "ending_joint_031": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "你很清楚，他根本不会去核实这份地图的真伪，因为他太渴望这场“胜利”了。",
+      "bgTheme": "joint",
+      "next": "ending_joint_032"
+    },
+    "ending_joint_032": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "应付完Leopold后，你终于有时间去见你真正在意的人——你的父亲，奥古斯都大公。",
+      "bgTheme": "joint",
+      "next": "ending_joint_033"
+    },
+    "ending_joint_033": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "在书房里，他屏退了所有仆从。这位在帝国政坛上屹立了数十年的男人，看着你毫发无损地站在他面前，那双锐利的眼眸里闪过一丝极深的审视。",
+      "bgTheme": "joint",
+      "next": "ending_joint_034"
+    },
+    "ending_joint_034": {
+      "chapter": "终章 · 共王座",
+      "speaker": "奥古斯都大公",
+      "text": "“地图是假的。”",
+      "bgTheme": "joint",
+      "next": "ending_joint_035"
+    },
+    "ending_joint_035": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "大公看着你，语气笃定。",
+      "bgTheme": "joint",
+      "next": "ending_joint_036"
+    },
+    "ending_joint_036": {
+      "chapter": "终章 · 共王座",
+      "speaker": "奥古斯都大公",
+      "text": "“斯卡兰现在的那个国王，不可能犯这种致命的错误。”",
+      "bgTheme": "joint",
+      "next": "ending_joint_037"
+    },
+    "ending_joint_037": {
+      "chapter": "终章 · 共王座",
+      "speaker": "{{playerName}}",
+      "text": "“是的，父亲。”",
+      "bgTheme": "joint",
+      "next": "ending_joint_038"
+    },
+    "ending_joint_038": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "你不再伪装，脊背挺得笔直，眼神里满是奥古斯都家族继承人该有的深沉与野心。",
+      "bgTheme": "joint",
+      "next": "ending_joint_039"
+    },
+    "ending_joint_039": {
+      "chapter": "终章 · 共王座",
+      "speaker": "奥古斯都大公",
+      "text": "“你和他达成了交易？”",
+      "bgTheme": "joint",
+      "next": "ending_joint_040"
+    },
+    "ending_joint_040": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "你摇摇头。",
+      "bgTheme": "joint",
+      "next": "ending_joint_041"
+    },
+    "ending_joint_041": {
+      "chapter": "终章 · 共王座",
+      "speaker": "{{playerName}}",
+      "text": "“不是交易，是结盟。”",
+      "bgTheme": "joint",
+      "next": "ending_joint_042"
+    },
+    "ending_joint_042": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "你向前两步，走到书桌前，直视着你的父亲。",
+      "bgTheme": "joint",
+      "next": "ending_joint_043"
+    },
+    "ending_joint_043": {
+      "chapter": "终章 · 共王座",
+      "speaker": "{{playerName}}",
+      "text": "“Leopold是个烂泥扶不上墙的蠢货，他能在战场上抛弃我，就能为了权力而针对奥古斯都家族。帝国已经从根上烂透了，我们需要一个真正能撑起这片大陆的国王。”",
+      "bgTheme": "joint",
+      "next": "ending_joint_044"
+    },
+    "ending_joint_044": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "你将König的真实身份、他在北境那支不可战胜的军队、以及你们约定的计划，冷静地全盘托出。",
+      "bgTheme": "joint",
+      "next": "ending_joint_045"
+    },
+    "ending_joint_045": {
+      "chapter": "终章 · 共王座",
+      "speaker": "{{playerName}}",
+      "text": "“他答应我，奥古斯都的领地与兵权分毫不动，而我，将是这片大陆唯一的王后。”",
+      "bgTheme": "joint",
+      "next": "ending_joint_046"
+    },
+    "ending_joint_046": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "你双手撑在桌面上，一字一顿地宣告。",
+      "bgTheme": "joint",
+      "next": "ending_joint_047"
+    },
+    "ending_joint_047": {
+      "chapter": "终章 · 共王座",
+      "speaker": "{{playerName}}",
+      "text": "“父亲，帝国的王座上换一个人，对我们来说没有任何损失。打开城门，奥古斯都家族将迎来前所未有的全盛时代。”",
+      "bgTheme": "joint",
+      "next": "ending_joint_048"
+    },
+    "ending_joint_048": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "他盯着你，良久，他突然发出一阵低沉的笑声。他看着自己亲手教导出来的女儿，眼底满是赞赏与骄傲。",
+      "bgTheme": "joint",
+      "next": "ending_joint_049"
+    },
+    "ending_joint_049": {
+      "chapter": "终章 · 共王座",
+      "speaker": "奥古斯都大公",
+      "text": "“不愧是我的女儿。放手去做吧。奥古斯都家族的力量，全凭你调遣。”",
+      "bgTheme": "joint",
+      "next": "ending_joint_050"
+    },
+    "ending_joint_050": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "加冕礼前夜。",
+      "bgTheme": "joint",
+      "next": "ending_joint_051"
+    },
+    "ending_joint_051": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "午夜时分，你披上一件黑色斗篷，从奥古斯都府邸的侧门离开。",
+      "bgTheme": "joint",
+      "next": "ending_joint_052"
+    },
+    "ending_joint_052": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "你赶往王都的主城门。今夜轮值的将领，来自奥古斯都家族。",
+      "bgTheme": "joint",
+      "next": "ending_joint_053"
+    },
+    "ending_joint_053": {
+      "chapter": "终章 · 共王座",
+      "speaker": "守城将领",
+      "text": "“{{playerName}}小姐？”",
+      "bgTheme": "joint",
+      "next": "ending_joint_054"
+    },
+    "ending_joint_054": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "守城将领匆匆从塔楼下来，神色有些紧张。他看了一眼你身后空无一人的街道，又抬头看向漆黑的城外。",
+      "bgTheme": "joint",
+      "next": "ending_joint_055"
+    },
+    "ending_joint_055": {
+      "chapter": "终章 · 共王座",
+      "speaker": "守城将领",
+      "text": "“您怎么来了？”",
+      "bgTheme": "joint",
+      "next": "ending_joint_056"
+    },
+    "ending_joint_056": {
+      "chapter": "终章 · 共王座",
+      "speaker": "{{playerName}}",
+      "text": "“父亲没有告诉你吗？”",
+      "bgTheme": "joint",
+      "next": "ending_joint_057"
+    },
+    "ending_joint_057": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "男人的脸色微微一变。片刻后，他低下头。",
+      "bgTheme": "joint",
+      "next": "ending_joint_058"
+    },
+    "ending_joint_058": {
+      "chapter": "终章 · 共王座",
+      "speaker": "守城将领",
+      "text": "“公爵大人只告诉我，今晚无论您下达什么命令，都等同于他的命令。”",
+      "bgTheme": "joint",
+      "next": "ending_joint_059"
+    },
+    "ending_joint_059": {
+      "chapter": "终章 · 共王座",
+      "speaker": "{{playerName}}",
+      "text": "“很好。”",
+      "bgTheme": "joint",
+      "next": "ending_joint_060"
+    },
+    "ending_joint_060": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "你抬起眼，看向那扇紧闭的城门。",
+      "bgTheme": "joint",
+      "next": "ending_joint_061"
+    },
+    "ending_joint_061": {
+      "chapter": "终章 · 共王座",
+      "speaker": "{{playerName}}",
+      "text": "“那就打开它。”",
+      "bgTheme": "joint",
+      "next": "ending_joint_062"
+    },
+    "ending_joint_062": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "他并未质疑你的命令，转身吩咐下去。沉重的锁链开始转动，齿轮发出令人牙酸的摩擦声，巨大的铁栓被一点点抽出。驻守在城墙上的士兵面面相觑，却没有一个人阻止。",
+      "bgTheme": "joint",
+      "next": "ending_joint_063"
+    },
+    "ending_joint_063": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "因为今夜负责看守城门的每一个军官，都来自奥古斯都的领地。",
+      "bgTheme": "joint",
+      "next": "ending_joint_064"
+    },
+    "ending_joint_064": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "厚重的城门缓缓向两侧开启，寒风裹着大雪灌入城内。",
+      "bgTheme": "joint",
+      "next": "ending_joint_065"
+    },
+    "ending_joint_065": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "城外漆黑一片，那支不久前让帝国军队溃败的斯卡兰军队，就站在那片黑暗里。",
+      "bgTheme": "joint",
+      "next": "ending_joint_066"
+    },
+    "ending_joint_066": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "而在最前方，你看见了那个熟悉的身影。",
+      "bgTheme": "joint",
+      "next": "ending_joint_067"
+    },
+    "ending_joint_067": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "König骑在那匹黑色战马上，暗红色的长发被风吹得有些凌乱，半张脸隐没在夜色里。",
+      "bgTheme": "joint",
+      "next": "ending_joint_068"
+    },
+    "ending_joint_068": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "这一夜，可以说是没有发生真正意义上的战争，平民百姓们并不知道在他们睡梦时，这座王城已经换了主人。",
+      "bgTheme": "joint",
+      "next": "ending_joint_069"
+    },
+    "ending_joint_069": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "奥古斯都家族控制的军队率先倒戈。",
+      "bgTheme": "joint",
+      "next": "ending_joint_070"
+    },
+    "ending_joint_070": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "那些高高在上的贵族们，在得知斯卡兰军队已经进入王城时，一个比一个投降得快。",
+      "bgTheme": "joint",
+      "next": "ending_joint_071"
+    },
+    "ending_joint_071": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "毕竟自己的性命才是更重要的。",
+      "bgTheme": "joint",
+      "next": "ending_joint_072"
+    },
+    "ending_joint_072": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "你并没有去见Leopold的最后一面，只是在大公府中等待着König的捷报。",
+      "bgTheme": "joint",
+      "next": "ending_joint_073"
+    },
+    "ending_joint_073": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "第二天清晨，王都的钟声依旧准时响起，只是等待加冕的人换了一个。",
+      "bgTheme": "joint",
+      "next": "ending_joint_074",
+      "bgm": "ending-joint2.mp3"
+    },
+    "ending_joint_074": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "昨日还悬挂着皇室徽章的旗帜被全部撤下，取而代之的是斯卡兰的黑狼旗帜，以及奥古斯都家族的银白鸢尾纹章。",
+      "bgTheme": "joint",
+      "next": "ending_joint_075"
+    },
+    "ending_joint_075": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "教堂里坐满了人，全是已经倒向König的贵族们，一个个穿戴得比谁都正式。",
+      "bgTheme": "joint",
+      "next": "ending_joint_076"
+    },
+    "ending_joint_076": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "当沉重的大门打开时，整座教堂安静得落针可闻。",
+      "bgTheme": "joint",
+      "next": "ending_joint_077"
+    },
+    "ending_joint_077": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "König牵着你的手，一步步走向主教。",
+      "bgTheme": "joint",
+      "next": "ending_joint_078"
+    },
+    "ending_joint_078": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "走到最后一级台阶前时，他停下脚步。",
+      "bgTheme": "joint",
+      "next": "ending_joint_079"
+    },
+    "ending_joint_079": {
+      "chapter": "终章 · 共王座",
+      "speaker": "König",
+      "text": "“后悔吗？”",
+      "bgTheme": "joint",
+      "next": "ending_joint_080"
+    },
+    "ending_joint_080": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "偌大的教堂里站着许多人，可他的目光自始至终都只落在你一个人身上。",
+      "bgTheme": "joint",
+      "next": "ending_joint_081"
+    },
+    "ending_joint_081": {
+      "chapter": "终章 · 共王座",
+      "speaker": "{{playerName}}",
+      "text": "“我做决定从不后悔。”",
+      "bgTheme": "joint",
+      "next": "ending_joint_082"
+    },
+    "ending_joint_082": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "主教将那顶象征着整个帝国最高权力的王冠高高举起。",
+      "bgTheme": "joint",
+      "next": "ending_joint_083"
+    },
+    "ending_joint_083": {
+      "chapter": "终章 · 共王座",
+      "speaker": "主教",
+      "text": "“以神明与这片土地的名义——”",
+      "bgTheme": "joint",
+      "next": "ending_joint_084"
+    },
+    "ending_joint_084": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "古老而冗长的祷词回荡在教堂穹顶。",
+      "bgTheme": "joint",
+      "next": "ending_joint_085"
+    },
+    "ending_joint_085": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "König微微俯首，王冠缓缓落在他的头顶。",
+      "bgTheme": "joint",
+      "next": "ending_joint_086"
+    },
+    "ending_joint_086": {
+      "chapter": "终章 · 共王座",
+      "speaker": "主教",
+      "text": "“我在此加冕你为这片土地唯一的君主。”",
+      "bgTheme": "joint",
+      "next": "ending_joint_087"
+    },
+    "ending_joint_087": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "钟声响起。所有贵族同时起身，随后跪下。",
+      "bgTheme": "joint",
+      "next": "ending_joint_088"
+    },
+    "ending_joint_088": {
+      "chapter": "终章 · 共王座",
+      "speaker": "众人",
+      "text": "“吾王万岁——”",
+      "bgTheme": "joint",
+      "next": "ending_joint_089"
+    },
+    "ending_joint_089": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "声音一层层传出教堂，又从广场上传向整座王都。",
+      "bgTheme": "joint",
+      "next": "ending_joint_090"
+    },
+    "ending_joint_090": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "König却并未走向属于他的王座，而是拿起了王后的冠冕。",
+      "bgTheme": "joint",
+      "next": "ending_joint_091"
+    },
+    "ending_joint_091": {
+      "chapter": "终章 · 共王座",
+      "speaker": "{{playerName}}",
+      "text": "“这似乎不符合礼仪。”",
+      "bgTheme": "joint",
+      "next": "ending_joint_092"
+    },
+    "ending_joint_092": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "你也有些没想到。",
+      "bgTheme": "joint",
+      "next": "ending_joint_093"
+    },
+    "ending_joint_093": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "按照原本的仪式，王后应当半跪接受主教的加冕。",
+      "bgTheme": "joint",
+      "next": "ending_joint_094"
+    },
+    "ending_joint_094": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "König笑了笑，径直走到你面前。然后，在所有人的注视下，他替你戴上后冠。",
+      "bgTheme": "joint",
+      "next": "ending_joint_095"
+    },
+    "ending_joint_095": {
+      "chapter": "终章 · 共王座",
+      "speaker": "König",
+      "text": "“什么礼仪敢让你跪？”",
+      "bgTheme": "joint",
+      "next": "ending_joint_096"
+    },
+    "ending_joint_096": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "König再次牵住你的手，十指紧扣。随后，他带着你一起转身。",
+      "bgTheme": "joint",
+      "next": "ending_joint_097"
+    },
+    "ending_joint_097": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "教堂之下，贵族俯首。广场之外，万民跪拜。王都的钟声响彻云霄。",
+      "bgTheme": "joint",
+      "next": "ending_joint_098"
+    },
+    "ending_joint_098": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "很多年以后，史官用无数华丽的辞藻记录这个时代。",
+      "bgTheme": "joint",
+      "next": "ending_joint_099"
+    },
+    "ending_joint_099": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "他们会写旧帝国如何在一夜之间覆灭，写新王朝是如何走向鼎盛，写国王与他的王后是怎样恩爱。",
+      "bgTheme": "joint",
+      "next": "ending_joint_100"
+    },
+    "ending_joint_100": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "但他们永远不会知道，真正决定这个帝国命运的时刻，并不是王冠落在König头顶的那一刻。",
+      "bgTheme": "joint",
+      "next": "ending_joint_101"
+    },
+    "ending_joint_101": {
+      "chapter": "终章 · 共王座",
+      "speaker": "",
+      "text": "而是当初你和他相遇的那一秒。",
+      "bgTheme": "joint",
+      "next": "ending_joint_complete"
+    },
+    "ending_joint_complete": {
+      "chapter": "终章 · 共王座",
+      "bgTheme": "joint",
+      "speaker": "",
+      "text": "",
+      "ending": "共王座"
+    },
+    "ending_joint_intro": {
+      "chapter": "终章 · 共王座",
+      "chapterIntro": {
+        "small": "终章",
+        "title": "共王座",
+        "next": "ending_joint_001"
+      }
+    },
+    "ending_iris_001": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你睁开眼时，看到的就是König撑着脑袋盯着你。他暗红色的发丝凌乱地垂落在额前，充满爱意的眼神简直要把你盯出个洞来。昨夜被你亲吻过的那些旧伤，此刻还残留着若有似无的痕迹。",
+      "bgTheme": "iris",
+      "bgm": "ending-iris1.mp3",
+      "next": "ending_iris_002"
+    },
+    "ending_iris_002": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你在他怀里睁开眼睛，伸手抚上他的脸。",
+      "bgTheme": "iris",
+      "next": "ending_iris_003"
+    },
+    "ending_iris_003": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“什么时候送我回去？”",
+      "bgTheme": "iris",
+      "next": "ending_iris_004"
+    },
+    "ending_iris_004": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "König的动作顿了一下。",
+      "bgTheme": "iris",
+      "next": "ending_iris_005"
+    },
+    "ending_iris_005": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "他显然并不喜欢听到这句话，哪怕昨晚已经同意了你的计划，环在你腰间的手臂还是下意识地收紧了几分。",
+      "bgTheme": "iris",
+      "next": "ending_iris_006"
+    },
+    "ending_iris_006": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "König",
+      "text": "“你要不要再考虑一下。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_007"
+    },
+    "ending_iris_007": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "他低下头，鼻尖轻轻蹭过你的额角。",
+      "bgTheme": "iris",
+      "next": "ending_iris_008"
+    },
+    "ending_iris_008": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "König",
+      "text": "“我直接带人杀进王都，也一样可以把王冠送到你手上。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_009"
+    },
+    "ending_iris_009": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你抬起眼看他。",
+      "bgTheme": "iris",
+      "next": "ending_iris_010"
+    },
+    "ending_iris_010": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“然后呢？让全帝国的人都觉得我是靠斯卡兰军队扶上王座的傀儡？”",
+      "bgTheme": "iris",
+      "next": "ending_iris_011"
+    },
+    "ending_iris_011": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "König没有说话。",
+      "bgTheme": "iris",
+      "next": "ending_iris_012"
+    },
+    "ending_iris_012": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你漫不经心地捏了捏他的下巴，又扯着他的嘴角，让他笑一笑。",
+      "bgTheme": "iris",
+      "next": "ending_iris_013"
+    },
+    "ending_iris_013": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“别丧着个脸。难道你不相信我吗？”",
+      "bgTheme": "iris",
+      "next": "ending_iris_014"
+    },
+    "ending_iris_014": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "他沉默了片刻，最后低低地笑了一声，将你的手拉到唇边亲吻。",
+      "bgTheme": "iris",
+      "next": "ending_iris_015"
+    },
+    "ending_iris_015": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "König",
+      "text": "“怎么可能，我只是舍不得。但……一切都听您的。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_016"
+    },
+    "ending_iris_016": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "König",
+      "text": "“我的女王陛下。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_017"
+    },
+    "ending_iris_017": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "五日后，你穿着一身破破烂烂的长裙，倒在了距离帝国边境哨塔不到半里的雪地里，被巡逻的士兵“奇迹般”地救了回来。",
+      "bgTheme": "iris",
+      "next": "ending_iris_018",
+      "bgm": "ending-iris2.mp3"
+    },
+    "ending_iris_018": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "消息传开以后，整个议事厅彻底沸腾。",
+      "bgTheme": "iris",
+      "next": "ending_iris_019"
+    },
+    "ending_iris_019": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "当印着奥古斯都家族银白鸢尾花纹章的马车驶入王城时，街道两侧挤满了闻讯赶来的民众。所有人都在惊叹你竟然能从那群北境蛮族手中死里逃生。",
+      "bgTheme": "iris",
+      "next": "ending_iris_020"
+    },
+    "ending_iris_020": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你稍稍探出头去，和百姓们微笑致意。毕竟，这以后可都是你的子民。",
+      "bgTheme": "iris",
+      "next": "ending_iris_021"
+    },
+    "ending_iris_021": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "最先赶来见你的，是Leopold。",
+      "bgTheme": "iris",
+      "next": "ending_iris_022"
+    },
+    "ending_iris_022": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "当他看到你虚弱地靠在软榻上时，脸上闪过一丝极淡的诧异，随后立刻换上了一副深情模样。",
+      "bgTheme": "iris",
+      "next": "ending_iris_023"
+    },
+    "ending_iris_023": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "Leopold",
+      "text": "“神明保佑！我的挚爱，你竟然真的逃出来了！”",
+      "bgTheme": "iris",
+      "next": "ending_iris_024"
+    },
+    "ending_iris_024": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "他说着便大步走上前，伸手想要握住你的手。",
+      "bgTheme": "iris",
+      "next": "ending_iris_025"
+    },
+    "ending_iris_025": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你低下头咳嗽了两声，不动声色地避开他的触碰，随后从贴身的暗袋里拿出那份羊皮卷。",
+      "bgTheme": "iris",
+      "next": "ending_iris_026"
+    },
+    "ending_iris_026": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“殿下，我拼死逃回来，是为了把这个交给您。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_027"
+    },
+    "ending_iris_027": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "Leopold的目光落在那份地图上的瞬间，神情一下变了。",
+      "bgTheme": "iris",
+      "next": "ending_iris_028"
+    },
+    "ending_iris_028": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "Leopold",
+      "text": "“这是……”",
+      "bgTheme": "iris",
+      "next": "ending_iris_029"
+    },
+    "ending_iris_029": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“斯卡兰主力的兵力部署图。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_030"
+    },
+    "ending_iris_030": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你将羊皮卷递过去，声音依旧虚弱。",
+      "bgTheme": "iris",
+      "next": "ending_iris_031"
+    },
+    "ending_iris_031": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“我被关押期间，趁他们守卫松懈的时候拿到的。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_032"
+    },
+    "ending_iris_032": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "Leopold一把接了过去。",
+      "bgTheme": "iris",
+      "next": "ending_iris_033"
+    },
+    "ending_iris_033": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "如你所料，他根本没有怀疑。他没有问你是怎么逃出来的，也没有问你究竟受了多少伤，只是迫不及待地展开地图，贪婪地扫视着上面的标记。",
+      "bgTheme": "iris",
+      "next": "ending_iris_034"
+    },
+    "ending_iris_034": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "Leopold",
+      "text": "“你简直是整个帝国最聪明勇敢的女人！”",
+      "bgTheme": "iris",
+      "next": "ending_iris_035"
+    },
+    "ending_iris_035": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "他激动得满脸通红。",
+      "bgTheme": "iris",
+      "next": "ending_iris_036"
+    },
+    "ending_iris_036": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "Leopold",
+      "text": "“有了这个，等我完成加冕，我立刻就能重新整顿军队。到时候，我一定亲自带兵踏平斯卡兰，把那些蛮族全部杀光！”",
+      "bgTheme": "iris",
+      "next": "ending_iris_037"
+    },
+    "ending_iris_037": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你安静地看着他。",
+      "bgTheme": "iris",
+      "next": "ending_iris_038"
+    },
+    "ending_iris_038": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "曾经你或许还会因为他的愚蠢而感到愤怒，但现在，你只是觉得可笑。",
+      "bgTheme": "iris",
+      "next": "ending_iris_039"
+    },
+    "ending_iris_039": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "这样一个人，竟然仅仅因为出生时是个男人，和所谓的血脉，就理所当然地被所有人认为，他可以统治这个国家。",
+      "bgTheme": "iris",
+      "next": "ending_iris_040"
+    },
+    "ending_iris_040": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“那就提前恭喜您了，殿下。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_041"
+    },
+    "ending_iris_041": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你垂下眼睫，遮住眼底的冷意。",
+      "bgTheme": "iris",
+      "next": "ending_iris_042"
+    },
+    "ending_iris_042": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "应付完Leopold以后，你终于回到了奥古斯都府邸。",
+      "bgTheme": "iris",
+      "next": "ending_iris_043"
+    },
+    "ending_iris_043": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "书房的门刚刚关上，父亲便挥手让所有侍从退了出去。他坐在书桌后，沉默地看了你很久。",
+      "bgTheme": "iris",
+      "next": "ending_iris_044"
+    },
+    "ending_iris_044": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "奥古斯都大公",
+      "text": "“地图是假的。斯卡兰的国王，不可能蠢到让真正的兵力部署图落到一个帝国俘虏手里。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_045"
+    },
+    "ending_iris_045": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "他的语气很笃定。",
+      "bgTheme": "iris",
+      "next": "ending_iris_046"
+    },
+    "ending_iris_046": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“是的，父亲。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_047"
+    },
+    "ending_iris_047": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你没有隐瞒。",
+      "bgTheme": "iris",
+      "next": "ending_iris_048"
+    },
+    "ending_iris_048": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "奥古斯都大公",
+      "text": "“所以传闻是真的。那个人是König。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_049"
+    },
+    "ending_iris_049": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“我不知道您从哪里得到的传闻。但是，斯卡兰国王确实是König。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_050"
+    },
+    "ending_iris_050": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你微微挑眉，走到书桌前，直视着这个在帝国政坛上屹立了数十年的男人，你的父亲。",
+      "bgTheme": "iris",
+      "next": "ending_iris_051"
+    },
+    "ending_iris_051": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "奥古斯都大公",
+      "text": "“所以，你准备扶他坐上帝国的王座？”",
+      "bgTheme": "iris",
+      "next": "ending_iris_052"
+    },
+    "ending_iris_052": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“不。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_053"
+    },
+    "ending_iris_053": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你回答得没有一丝犹豫。",
+      "bgTheme": "iris",
+      "next": "ending_iris_054"
+    },
+    "ending_iris_054": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "他的表情不再平静，显然没有理解你的意图。",
+      "bgTheme": "iris",
+      "next": "ending_iris_055"
+    },
+    "ending_iris_055": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“父亲，我从小接受和Leopold一样的教育。政治、财税、历史、外交，我没有任何一样比他差。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_056"
+    },
+    "ending_iris_056": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“甚至因为我是未来的王储妃，我还必须比他更懂得贵族之间的利益关系，更擅长维护家族与王室之间的平衡。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_057"
+    },
+    "ending_iris_057": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“可所有人都默认，我学这些东西，只是为了有朝一日成为一个合格的王后。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_058"
+    },
+    "ending_iris_058": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你的手指轻轻划过书桌上的帝国地图，随即又将手掌整个压在上面。",
+      "bgTheme": "iris",
+      "next": "ending_iris_059"
+    },
+    "ending_iris_059": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“凭什么？”",
+      "bgTheme": "iris",
+      "next": "ending_iris_060"
+    },
+    "ending_iris_060": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“Leopold可以一出生就拥有整个帝国，而我明明比他聪明，比他清醒，却只能等待他赐给我一个后位。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_061"
+    },
+    "ending_iris_061": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你冷冷地勾起嘴角。",
+      "bgTheme": "iris",
+      "next": "ending_iris_062"
+    },
+    "ending_iris_062": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“我不接受。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_063"
+    },
+    "ending_iris_063": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“我要的从来都不是王后的冠冕。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_064"
+    },
+    "ending_iris_064": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“我要的是那个王座。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_065"
+    },
+    "ending_iris_065": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "父亲久久没有说话。只剩壁炉里的木柴烧得噼啪作响。",
+      "bgTheme": "iris",
+      "next": "ending_iris_066"
+    },
+    "ending_iris_066": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "奥古斯都大公",
+      "text": "“那König呢？”",
+      "bgTheme": "iris",
+      "next": "ending_iris_067"
+    },
+    "ending_iris_067": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "他终于开口。",
+      "bgTheme": "iris",
+      "next": "ending_iris_068"
+    },
+    "ending_iris_068": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "奥古斯都大公",
+      "text": "“他现在已经是斯卡兰的王，也有足以攻破王都的军队。他凭什么愿意把帝国交到你手里？”",
+      "bgTheme": "iris",
+      "next": "ending_iris_069"
+    },
+    "ending_iris_069": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你想到他，不自觉地稍微勾了一下唇角。",
+      "bgTheme": "iris",
+      "next": "ending_iris_070"
+    },
+    "ending_iris_070": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“因为这是我们的约定。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_071"
+    },
+    "ending_iris_071": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“König会替我拿下王城，奥古斯都家族则从内部配合他。作为交换，斯卡兰与帝国之间持续多年的战争会彻底结束，这对他只有益处。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_072"
+    },
+    "ending_iris_072": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你顿了顿。",
+      "bgTheme": "iris",
+      "next": "ending_iris_073"
+    },
+    "ending_iris_073": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“而他，会成为我手里最锋利的剑。我从不认为，借助他的力量是我软弱的表现。相反，能让他为我所用，是我的能力。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_074"
+    },
+    "ending_iris_074": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "父亲敏锐地捕捉到了你刚才那一点细微的笑意。",
+      "bgTheme": "iris",
+      "next": "ending_iris_075"
+    },
+    "ending_iris_075": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "奥古斯都大公",
+      "text": "“最锋利的剑？”",
+      "bgTheme": "iris",
+      "next": "ending_iris_076"
+    },
+    "ending_iris_076": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“父亲，这不是重点。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_077"
+    },
+    "ending_iris_077": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "他忽然哈哈大笑。他从书桌后站起来，走到你面前，他拍拍你的肩膀看着你。他的眼神很复杂，又像是父亲看着女儿，又像是政客看着他的接班人",
+      "bgTheme": "iris",
+      "next": "ending_iris_078"
+    },
+    "ending_iris_078": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "奥古斯都大公",
+      "text": "“我一直以为，你最大的野心是成为这个帝国最有权势的王后。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_079"
+    },
+    "ending_iris_079": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "奥古斯都大公",
+      "text": "“看来，是我小看自己的女儿了。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_080"
+    },
+    "ending_iris_080": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你微微扬起下巴。",
+      "bgTheme": "iris",
+      "next": "ending_iris_081"
+    },
+    "ending_iris_081": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“父亲，你不该小看我的。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_082"
+    },
+    "ending_iris_082": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "奥古斯都大公",
+      "text": "“放手去做吧。奥古斯都家族的军队、财富，还有这些年来经营下来的人脉，从今晚开始，全凭你调遣。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_083"
+    },
+    "ending_iris_083": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "加冕典礼前的午夜时分，你披上一件黑色斗篷，从奥古斯都府邸的侧门离开。",
+      "bgTheme": "iris",
+      "next": "ending_iris_084"
+    },
+    "ending_iris_084": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你赶到主城门时，今夜轮值的将领已经在那里等候多时。",
+      "bgTheme": "iris",
+      "next": "ending_iris_085"
+    },
+    "ending_iris_085": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "守城将领",
+      "text": "“{{playerName}}小姐。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_086"
+    },
+    "ending_iris_086": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "他匆匆从塔楼上下来。",
+      "bgTheme": "iris",
+      "next": "ending_iris_087"
+    },
+    "ending_iris_087": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "守城将领",
+      "text": "“公爵大人已经通知我了，今晚无论您下达什么命令，都等同于他的命令。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_088"
+    },
+    "ending_iris_088": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“很好。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_089"
+    },
+    "ending_iris_089": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你抬起眼，看向那扇紧闭的城门。",
+      "bgTheme": "iris",
+      "next": "ending_iris_090"
+    },
+    "ending_iris_090": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“那就打开它。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_091"
+    },
+    "ending_iris_091": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "沉重的锁链开始转动，巨大的铁栓被一点点抽出。驻守在城墙上的士兵面面相觑，却没有一个人阻止。",
+      "bgTheme": "iris",
+      "next": "ending_iris_092"
+    },
+    "ending_iris_092": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "因为今夜控制着这座城门的所有军官，都来自奥古斯都家族。",
+      "bgTheme": "iris",
+      "next": "ending_iris_093"
+    },
+    "ending_iris_093": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "随着厚重的城门缓缓向两侧开启，刺骨的寒风卷着大雪灌进城内。",
+      "bgTheme": "iris",
+      "next": "ending_iris_094"
+    },
+    "ending_iris_094": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "城外漆黑一片。",
+      "bgTheme": "iris",
+      "next": "ending_iris_095"
+    },
+    "ending_iris_095": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "下一秒，那片黑暗开始移动。",
+      "bgTheme": "iris",
+      "next": "ending_iris_096"
+    },
+    "ending_iris_096": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "无数披着黑色盔甲的斯卡兰骑兵静静地站在雪地里，而在最前方，你看见了那个熟悉的身影。",
+      "bgTheme": "iris",
+      "next": "ending_iris_097"
+    },
+    "ending_iris_097": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "König翻身下马，朝你走来。",
+      "bgTheme": "iris",
+      "next": "ending_iris_098"
+    },
+    "ending_iris_098": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "他暗红色的头发被风雪吹得有些凌乱。",
+      "bgTheme": "iris",
+      "next": "ending_iris_099"
+    },
+    "ending_iris_099": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "König",
+      "text": "“好久不见，{{playerName}}小姐。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_100"
+    },
+    "ending_iris_100": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“才几天而已。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_101"
+    },
+    "ending_iris_101": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "König",
+      "text": "“我太想您了。您真的不再考虑一下和我回斯卡兰吗？”",
+      "bgTheme": "iris",
+      "next": "ending_iris_102"
+    },
+    "ending_iris_102": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“然后做你的王后？”",
+      "bgTheme": "iris",
+      "next": "ending_iris_103"
+    },
+    "ending_iris_103": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "König竟然真的认真思考了一下。",
+      "bgTheme": "iris",
+      "next": "ending_iris_104"
+    },
+    "ending_iris_104": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "König",
+      "text": "“如果您愿意的话。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_105"
+    },
+    "ending_iris_105": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你冷笑了一声。",
+      "bgTheme": "iris",
+      "next": "ending_iris_106"
+    },
+    "ending_iris_106": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“做梦。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_107"
+    },
+    "ending_iris_107": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“进城。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_108"
+    },
+    "ending_iris_108": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "König笑了下，握住你的手，低下头，在你的指节上落下一吻。",
+      "bgTheme": "iris",
+      "next": "ending_iris_109"
+    },
+    "ending_iris_109": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "König",
+      "text": "“遵命，我的女王陛下。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_110"
+    },
+    "ending_iris_110": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "这一夜，并没有发生真正意义上的战争。",
+      "bgTheme": "iris",
+      "next": "ending_iris_111"
+    },
+    "ending_iris_111": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "奥古斯都家族控制的军队率先倒戈，王城的粮仓、军械库、议事厅与几处最重要的城防节点很快便全部落入你们手中。",
+      "bgTheme": "iris",
+      "next": "ending_iris_112"
+    },
+    "ending_iris_112": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "那些平日里最喜欢把忠诚挂在嘴边的贵族，在得知斯卡兰军队已经进入王城，而奥古斯都家族又明确倒戈后，一个比一个投降得快。",
+      "bgTheme": "iris",
+      "next": "ending_iris_113"
+    },
+    "ending_iris_113": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "最后，你们在王宫偏殿见到Leopold。",
+      "bgTheme": "iris",
+      "next": "ending_iris_114"
+    },
+    "ending_iris_114": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "昨日还在满心期待自己加冕典礼的王储，此刻衣冠凌乱地跪在地上，被两名斯卡兰士兵死死按住肩膀。",
+      "bgTheme": "iris",
+      "next": "ending_iris_115"
+    },
+    "ending_iris_115": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "他看到你的那一刻，脸上的血色瞬间褪尽。",
+      "bgTheme": "iris",
+      "next": "ending_iris_116"
+    },
+    "ending_iris_116": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "Leopold",
+      "text": "“你……”",
+      "bgTheme": "iris",
+      "next": "ending_iris_117"
+    },
+    "ending_iris_117": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "随后，他看见了站在你身边的König。",
+      "bgTheme": "iris",
+      "next": "ending_iris_118"
+    },
+    "ending_iris_118": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "Leopold",
+      "text": "“是你？！”",
+      "bgTheme": "iris",
+      "next": "ending_iris_119"
+    },
+    "ending_iris_119": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "König缓缓将手搭上剑柄。",
+      "bgTheme": "iris",
+      "next": "ending_iris_120"
+    },
+    "ending_iris_120": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你几乎立刻感觉到了他身上骤然翻涌起来的杀意。",
+      "bgTheme": "iris",
+      "next": "ending_iris_121"
+    },
+    "ending_iris_121": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "他等待这一刻，大概已经等待了很多年。",
+      "bgTheme": "iris",
+      "next": "ending_iris_122"
+    },
+    "ending_iris_122": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "然而长剑真正出鞘之前，他却停下了动作。König偏过头，看向你，像是在等你的决定。",
+      "bgTheme": "iris",
+      "next": "ending_iris_123"
+    },
+    "ending_iris_123": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你安抚地拍拍他紧绷的手背。",
+      "bgTheme": "iris",
+      "next": "ending_iris_124"
+    },
+    "ending_iris_124": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“Leopold……”",
+      "bgTheme": "iris",
+      "next": "ending_iris_125"
+    },
+    "ending_iris_125": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "Leopold",
+      "text": "“你背叛我！”",
+      "bgTheme": "iris",
+      "next": "ending_iris_126"
+    },
+    "ending_iris_126": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“背叛？“",
+      "bgTheme": "iris",
+      "next": "ending_iris_127"
+    },
+    "ending_iris_127": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你忍不住笑了。",
+      "bgTheme": "iris",
+      "next": "ending_iris_128"
+    },
+    "ending_iris_128": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“殿下是不是忘了，是谁在战场上把我丢下的？”",
+      "bgTheme": "iris",
+      "next": "ending_iris_129"
+    },
+    "ending_iris_129": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "Leopold张了张嘴。",
+      "bgTheme": "iris",
+      "next": "ending_iris_130"
+    },
+    "ending_iris_130": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "Leopold",
+      "text": "“那只是为了帝国——”",
+      "bgTheme": "iris",
+      "next": "ending_iris_131"
+    },
+    "ending_iris_131": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“别说得这么好听。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_132"
+    },
+    "ending_iris_132": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你打断了他。",
+      "bgTheme": "iris",
+      "next": "ending_iris_133"
+    },
+    "ending_iris_133": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“你以为我不知道吗？如果我死在斯卡兰手里，你既可以摆脱奥古斯都家族，又可以用我的死激怒父亲，让他替你继续打仗。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_134"
+    },
+    "ending_iris_134": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“可惜。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_135"
+    },
+    "ending_iris_135": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“我活着回来了。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_136"
+    },
+    "ending_iris_136": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "他剧烈地挣扎，想甩开压着他的斯卡兰士兵的控制。",
+      "bgTheme": "iris",
+      "next": "ending_iris_137"
+    },
+    "ending_iris_137": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "König直接拔出佩剑，架在了他的脖子上，他才安静下来。",
+      "bgTheme": "iris",
+      "next": "ending_iris_138"
+    },
+    "ending_iris_138": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你让König收回剑。",
+      "bgTheme": "iris",
+      "next": "ending_iris_139"
+    },
+    "ending_iris_139": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“北境战败、临阵脱逃、抛弃随军贵族，再把他以前那些挪用军费之类的旧账全部翻出来。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_140"
+    },
+    "ending_iris_140": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“丢给审判庭吧。该怎么判，就怎么判。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_141"
+    },
+    "ending_iris_141": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“我们回去，嗯？”",
+      "bgTheme": "iris",
+      "next": "ending_iris_142"
+    },
+    "ending_iris_142": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "König沉默了一会，最终，他松开了握着剑柄的手。",
+      "bgTheme": "iris",
+      "next": "ending_iris_143"
+    },
+    "ending_iris_143": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "König",
+      "text": "“听见了吗？”",
+      "bgTheme": "iris",
+      "next": "ending_iris_144"
+    },
+    "ending_iris_144": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "他垂下眼，看着脸色惨白的Leopold。",
+      "bgTheme": "iris",
+      "next": "ending_iris_145"
+    },
+    "ending_iris_145": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "König",
+      "text": "“你最好感谢她。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_146"
+    },
+    "ending_iris_146": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "König",
+      "text": "“如果今天做决定的人是我，你已经没有机会看见明天的太阳了。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_147"
+    },
+    "ending_iris_147": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "士兵很快将挣扎咒骂的Leopold拖了出去。",
+      "bgTheme": "iris",
+      "next": "ending_iris_148"
+    },
+    "ending_iris_148": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你这才看向König。",
+      "bgTheme": "iris",
+      "next": "ending_iris_149"
+    },
+    "ending_iris_149": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "他有些委屈地开口。",
+      "bgTheme": "iris",
+      "next": "ending_iris_150"
+    },
+    "ending_iris_150": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "König",
+      "text": "“你舍不得吗？”",
+      "bgTheme": "iris",
+      "next": "ending_iris_151"
+    },
+    "ending_iris_151": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你毫不犹豫地一巴掌拍在他脑门上。",
+      "bgTheme": "iris",
+      "next": "ending_iris_152"
+    },
+    "ending_iris_152": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“你在说什么鬼话。脑子清醒点，走了。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_153"
+    },
+    "ending_iris_153": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你不等他，直接迈步离开。",
+      "bgTheme": "iris",
+      "next": "ending_iris_154"
+    },
+    "ending_iris_154": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "König低笑了一声，跨步追上你，又偷偷伸手勾住你的手指，和你并肩一起走。",
+      "bgTheme": "iris",
+      "next": "ending_iris_155"
+    },
+    "ending_iris_155": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "第二日清晨，原本为Leopold准备的加冕典礼依旧如期举行。",
+      "bgTheme": "iris",
+      "next": "ending_iris_156",
+      "bgm": "ending-iris3.mp3"
+    },
+    "ending_iris_156": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "当教堂沉重的大门打开时，坐在两侧的贵族几乎同时安静下来。",
+      "bgTheme": "iris",
+      "next": "ending_iris_157"
+    },
+    "ending_iris_157": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你没有穿那身早已为王储妃准备好的白色礼裙，而是换上了一袭庄重华丽的深色长裙。长长的裙摆上用银线绣着大片盛放的鸢尾花，胸前佩戴着奥古斯都家族的纹章。",
+      "bgTheme": "iris",
+      "next": "ending_iris_158"
+    },
+    "ending_iris_158": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "König走在你的身后半步。",
+      "bgTheme": "iris",
+      "next": "ending_iris_159"
+    },
+    "ending_iris_159": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "再之后，是奥古斯都大公、斯卡兰的将领，以及昨夜已经向你宣誓效忠的帝国贵族。",
+      "bgTheme": "iris",
+      "next": "ending_iris_160"
+    },
+    "ending_iris_160": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "主教站在圣坛前，看着你一步一步向他走来，脸上的表情明显有些僵硬。",
+      "bgTheme": "iris",
+      "next": "ending_iris_161"
+    },
+    "ending_iris_161": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "主教",
+      "text": "“{{playerName}}小姐，按照帝国历代的继承法，王位应当由拥有王室血统的男性……”",
+      "bgTheme": "iris",
+      "next": "ending_iris_162"
+    },
+    "ending_iris_162": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“帝国历代的继承法？”",
+      "bgTheme": "iris",
+      "next": "ending_iris_163"
+    },
+    "ending_iris_163": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你停下脚步。",
+      "bgTheme": "iris",
+      "next": "ending_iris_164"
+    },
+    "ending_iris_164": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“您说的是那个刚刚被赶下王位的旧王室制定的规矩吗？”",
+      "bgTheme": "iris",
+      "next": "ending_iris_165"
+    },
+    "ending_iris_165": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "主教一时哑口无言。",
+      "bgTheme": "iris",
+      "next": "ending_iris_166"
+    },
+    "ending_iris_166": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你继续向前一步，看向教堂里那些神色各异的贵族。",
+      "bgTheme": "iris",
+      "next": "ending_iris_167"
+    },
+    "ending_iris_167": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“北境战败，国库空虚，军队腐败。那个拥有所谓正统血脉的王储，在战场上抛弃自己的士兵和未婚妻独自逃命。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_168"
+    },
+    "ending_iris_168": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“如果到了今天，还有人认为一条已经腐烂的血脉，比治理这个国家的能力更加重要……”",
+      "bgTheme": "iris",
+      "next": "ending_iris_169"
+    },
+    "ending_iris_169": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你微微扬起下巴。",
+      "bgTheme": "iris",
+      "next": "ending_iris_170"
+    },
+    "ending_iris_170": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“现在可以站出来。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_171"
+    },
+    "ending_iris_171": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“不过我想，你们应该没有人会想和我作对。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_172"
+    },
+    "ending_iris_172": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "偌大的教堂里，没有一个人说话。",
+      "bgTheme": "iris",
+      "next": "ending_iris_173"
+    },
+    "ending_iris_173": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "就在这片死一般的寂静中，你身后忽然传来了膝盖触碰大理石地面的声音。",
+      "bgTheme": "iris",
+      "next": "ending_iris_174"
+    },
+    "ending_iris_174": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "König单膝跪在了你的身后。",
+      "bgTheme": "iris",
+      "next": "ending_iris_175"
+    },
+    "ending_iris_175": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "König",
+      "text": "“斯卡兰承认您的王权。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_176"
+    },
+    "ending_iris_176": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "他的声音沉稳地回荡在教堂穹顶之下。",
+      "bgTheme": "iris",
+      "next": "ending_iris_177"
+    },
+    "ending_iris_177": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "König",
+      "text": "“而我，以斯卡兰国王König的名义，向您宣誓效忠。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_178"
+    },
+    "ending_iris_178": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "短暂的死寂过后，越来越多的人屈膝俯首，直到整座教堂只剩下你一个人站着。",
+      "bgTheme": "iris",
+      "next": "ending_iris_179"
+    },
+    "ending_iris_179": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "主教也没有再开口说些讨人厌的话。",
+      "bgTheme": "iris",
+      "next": "ending_iris_180"
+    },
+    "ending_iris_180": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "他转过身，将那顶曾经只属于帝国男性继承人的王冠高高捧起。",
+      "bgTheme": "iris",
+      "next": "ending_iris_181"
+    },
+    "ending_iris_181": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "主教",
+      "text": "“以神明与这片土地的名义——”",
+      "bgTheme": "iris",
+      "next": "ending_iris_182"
+    },
+    "ending_iris_182": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你没有低头，更没有下跪。",
+      "bgTheme": "iris",
+      "next": "ending_iris_183"
+    },
+    "ending_iris_183": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "于是主教微微一顿，直接将那顶王冠郑重地戴在你的头顶。",
+      "bgTheme": "iris",
+      "next": "ending_iris_184"
+    },
+    "ending_iris_184": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "主教",
+      "text": "“我在此加冕您为帝国唯一的君主。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_185"
+    },
+    "ending_iris_185": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "钟声在这一刻响彻王都。",
+      "bgTheme": "iris",
+      "next": "ending_iris_186"
+    },
+    "ending_iris_186": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "教堂里的所有人同时俯首，广场上山呼海啸般的声音随之传来。",
+      "bgTheme": "iris",
+      "next": "ending_iris_187"
+    },
+    "ending_iris_187": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "众人",
+      "text": "“女王陛下万岁——”",
+      "bgTheme": "iris",
+      "next": "ending_iris_188"
+    },
+    "ending_iris_188": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你站在最高处，看着这个从出生起便一直被告诉“有朝一日会以王后的身份拥有”的帝国，如今真正臣服在你的脚下。",
+      "bgTheme": "iris",
+      "next": "ending_iris_189"
+    },
+    "ending_iris_189": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "而König依旧跪在距离你最近的位置。",
+      "bgTheme": "iris",
+      "next": "ending_iris_190"
+    },
+    "ending_iris_190": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你低头看了他片刻，随后朝他伸出手。",
+      "bgTheme": "iris",
+      "next": "ending_iris_191"
+    },
+    "ending_iris_191": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“起来。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_192"
+    },
+    "ending_iris_192": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "他抬起头。",
+      "bgTheme": "iris",
+      "next": "ending_iris_193"
+    },
+    "ending_iris_193": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你握住他的手，将他从地上拉起来。",
+      "bgTheme": "iris",
+      "next": "ending_iris_194"
+    },
+    "ending_iris_194": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“女王的王夫哪有跪着的道理。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_195"
+    },
+    "ending_iris_195": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "König怔了一瞬。随后，他低低地笑了起来。",
+      "bgTheme": "iris",
+      "next": "ending_iris_196"
+    },
+    "ending_iris_196": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "他握紧你的手，站到了你的身边。",
+      "bgTheme": "iris",
+      "next": "ending_iris_197"
+    },
+    "ending_iris_197": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "很多年以后，史官用无数华丽的辞藻记录这个时代。",
+      "bgTheme": "iris",
+      "next": "ending_iris_198"
+    },
+    "ending_iris_198": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "他们写旧王朝如何在一夜之间覆灭，写奥古斯都家的女儿如何成为帝国历史上第一位真正意义上的女王，也写那位曾经被视为不祥之子的斯卡兰国王，如何率领铁骑横扫北境，最终却心甘情愿地成为女王最可靠的盟友。",
+      "bgTheme": "iris",
+      "next": "ending_iris_199"
+    },
+    "ending_iris_199": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你的统治远比那些曾经质疑你的人想象中更加出色。",
+      "bgTheme": "iris",
+      "next": "ending_iris_200"
+    },
+    "ending_iris_200": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "许多旧王朝留下的腐朽制度被一点点废除，女性第一次可以独立继承爵位与领地，持续多年的边境战争也终于结束。",
+      "bgTheme": "iris",
+      "next": "ending_iris_201"
+    },
+    "ending_iris_201": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "至于König，他依旧是那个让敌人闻风丧胆的男人。",
+      "bgTheme": "iris",
+      "next": "ending_iris_202"
+    },
+    "ending_iris_202": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "只是在你的约束下，他也是有所收敛。",
+      "bgTheme": "iris",
+      "next": "ending_iris_203"
+    },
+    "ending_iris_203": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "某个深夜，你处理完最后一份奏报，疲惫地靠在椅背上揉了揉眉心。",
+      "bgTheme": "iris",
+      "next": "ending_iris_204"
+    },
+    "ending_iris_204": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "刚刚结束边境巡视的König甚至没有先回寝殿更衣，就匆匆回来。",
+      "bgTheme": "iris",
+      "next": "ending_iris_205"
+    },
+    "ending_iris_205": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“回来了？”",
+      "bgTheme": "iris",
+      "next": "ending_iris_206"
+    },
+    "ending_iris_206": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "König",
+      "text": "“嗯。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_207"
+    },
+    "ending_iris_207": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "他走到你的面前，像很多年前一样，半跪在你身前，将脑袋靠在你的大腿上。",
+      "bgTheme": "iris",
+      "next": "ending_iris_208"
+    },
+    "ending_iris_208": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你低头看了他一眼，手指习惯性地穿过他暗红色的发丝。",
+      "bgTheme": "iris",
+      "next": "ending_iris_209"
+    },
+    "ending_iris_209": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“今天有人在议会里说，你虐待战俘，像疯狗一样的到处咬人。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_210"
+    },
+    "ending_iris_210": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "König闭着眼睛，丝毫没有生气。",
+      "bgTheme": "iris",
+      "next": "ending_iris_211"
+    },
+    "ending_iris_211": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "König",
+      "text": "“他说得也不算完全错。虐待战俘绝对是没有的事。但，我确实算您忠实的狗。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_212"
+    },
+    "ending_iris_212": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你轻轻扯了一下他的头发。",
+      "bgTheme": "iris",
+      "next": "ending_iris_213"
+    },
+    "ending_iris_213": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“我不养狗。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_214"
+    },
+    "ending_iris_214": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "他终于睁开眼睛看你。",
+      "bgTheme": "iris",
+      "next": "ending_iris_215"
+    },
+    "ending_iris_215": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "你状似头疼般皱眉。",
+      "bgTheme": "iris",
+      "next": "ending_iris_216"
+    },
+    "ending_iris_216": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "{{playerName}}",
+      "text": "“王夫殿下总是不想当人怎么办？”",
+      "bgTheme": "iris",
+      "next": "ending_iris_217"
+    },
+    "ending_iris_217": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "König低低地笑出了声。",
+      "bgTheme": "iris",
+      "next": "ending_iris_218"
+    },
+    "ending_iris_218": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "",
+      "text": "他抓住你的手腕，将你的掌心贴在自己的脸侧，像很多年前那个第一次从泥潭里接过你丝帕的少年一样，眷恋地蹭了蹭。",
+      "bgTheme": "iris",
+      "next": "ending_iris_219"
+    },
+    "ending_iris_219": {
+      "chapter": "终章 · 鸢尾旗",
+      "speaker": "König",
+      "text": "“我爱你，不管是{{playerName}}小姐，还是{{playerName}}女王。我的爱，我的忠诚，始终如一。”",
+      "bgTheme": "iris",
+      "next": "ending_iris_complete"
+    },
+    "ending_iris_complete": {
+      "chapter": "终章 · 鸢尾旗",
+      "bgTheme": "iris",
+      "speaker": "",
+      "text": "",
+      "ending": "鸢尾旗"
+    },
+    "ending_iris_intro": {
+      "chapter": "终章 · 鸢尾旗",
+      "chapterIntro": {
+        "small": "终章",
+        "title": "鸢尾旗",
+        "next": "ending_iris_001"
+      }
     }
   }
 };

@@ -1,23 +1,74 @@
-# König 文游 V12（第四章《斯卡兰》＋V11.1稳定存档系统）
+# König 文游 V13.1 · 第五章《抉择》与四个结局
 
-已加入第四章全部正文、A/B分支、数值和黑屏回标题，已同步最新剧本两个 BAD END 的措辞。
-第三章末节点 `ch3_morning_017` 的 ID 保留，只把 next 从 `current_version_end` 改为 `chapter4_intro`。
-旧有 333 个节点 ID 均保留；保存格式 `SAVE_VERSION=1` 及 localStorage 键名均不变。
+本压缩包为完整**可部署的网页代码（没有原始 JPG/MP3）**，在原 V12.2 基础上加入第五章及四个终章：
 
-## 新增素材文件：仅5个，需你自行添加（压缩包不包含原始媒体）
-- assets/backgrounds/chapter4-snow.jpg：风雪、行军
-- assets/backgrounds/chapter4-tent.jpg：室内军帐
-- assets/backgrounds/chapter4-war.jpg：黎明战场
-- assets/audio/chapter4-music1.mp3：风雪开始；到军帐只换画面、不换歌、不从头播放。
-- assets/audio/chapter4-music2.mp3：剧本原“音乐3”，战场开始播放。
+- 黑化＋依附：**《笼中雀》**
+- 黑化＋野心：**《荆棘冠》**
+- 救赎＋依附：**《共王座》**
+- 救赎＋野心：**《鸢尾旗》**（取代原剧本暂定标题《加冕礼》）
 
-三张 JPG、两首 MP3 都要放入上述文件夹并按上述文件名保存，大小写、扩展名要一致。
-若素材还不是 jpg/mp3，必须实际导出或转换成相应格式，不能只改后缀。
+## 对旧版的兼容
 
-## 更新和存档
-- 新网址第一次发布会产生一套新存档。此后继续使用**完全相同的网址**更新时，存档仍留在该网址的浏览器 localStorage。
-- 不要改已经发布的剧情节点 ID，不要只因加章而升级 SAVE_VERSION。
-- `stable-node-ids.json` 已记录到第四章全部 ID。
-- 每次更新需改 index.html 的资源版本号，且务必检查网站发布是否完成。
-- 本版 JS 与故事节点测试：`node tests/check-saves.js`。
-- 实际手机上播放声音还需允许浏览器音频权限；图片/音乐需要真正添加进 assets 才能听到/看到。
+- **保留第一～四章所有旧节点 ID**，第四章最后一句「啊……他把你丢下了。」之后正式进入第五章，而非返回标题。
+- 保留浏览器现有的自动存档／手动存档、姓名、状态、回看、音乐按钮、650ms 音乐淡入／淡出；`save-system.js` 没有更改。
+- 同一网址 + 同一浏览器的本地存档会继续保留。不同网址的存档仍不能自动迁移。
+- 四个结局按照合作／不合作分支及野心／依附数值判定；相等时用最近的一次野心／依附选择决定。关键的「女王／王后」最终选择获得较大的数值变化，保证剧情与意愿匹配。
+- 结局的**抽象背景已用 CSS 实现**，不需要现在提供四张结局背景图，也没有擅自增加结局场景。
+- 最后一个剧情节点点击继续后，出现结局名称和「返回标题」按钮。
+
+## 新增素材（你自行准备，压缩包里没有图片／音乐原文件）
+
+图片请放到 `assets/backgrounds/`：
+
+| 文件名 | 建议图片内容 |
+| --- | --- |
+| `chapter5-palace.jpg` | 斯卡兰王宫寝殿，夜间／壁炉氛围（第五章中间及对话分支） |
+| `chapter5-palace-day.jpg` | 同一间王宫寝殿的白天版（第五章不合作线次日） |
+
+音乐请放到 `assets/audio/`：
+
+| 文件名 | 剧本曲目 / 播放位置 |
+| --- | --- |
+| `chapter5-music1.mp3` | The deeper level —— 第五章开头雪原，延续到宫殿 |
+| `chapter5-music2.mp3` | Refuge —— 选择合作之后 |
+| `chapter5-music3.mp3` | Charms —— 选择不合作之后 |
+| `ending-cage.mp3` | Lonely ——《笼中雀》 |
+| `ending-thorn.mp3` | Psycho ——《荆棘冠》 |
+| `ending-joint1.mp3` | Una Mattina ——《共王座》开头 |
+| `ending-joint2.mp3` | Young and Beautiful ——《共王座》加冕开始 |
+| `ending-iris1.mp3` | Earned it ——《鸢尾旗》开头 |
+| `ending-iris2.mp3` | Dance for me wallis ——《鸢尾旗》回到王都 |
+| `ending-iris3.mp3` | Say yes to heaven ——《鸢尾旗》女王加冕 |
+
+**新增素材总计：2 张 JPG + 10 首 MP3。** 第五章开头的雪地沿用已有的 `chapter4-war.jpg`，无需重复上传。四个终章各有不同的 CSS 抽象背景，因此**暂不需要结局 JPG**。没准备好图片时页面仍可运行，但宫殿场景会只显示暗色渐变；没准备好 MP3 时相应剧情会没有音乐。
+
+如果原文件不是 JPG/MP3 格式，需实际导出／转码再重命名。请只使用你有权发布的音乐、图片。
+
+## GitHub / Cloudflare Workers 的升级方法
+
+1. 下载 ZIP，**解压**。
+2. 你之前 GitHub 仓库里只需覆盖上传根目录的 `index.html`、`style.css`、`game.js`、`story.js`；建议同时更新 `stable-node-ids.json`，但它不影响网页运行。`save-system.js` 不用更改。
+3. 把上面的两张 JPG 和十首 MP3 分别上传到正确的 `assets` 子目录；原第一～四章的素材**保留不删**。
+4. GitHub 里提交（Commit changes），等待 Cloudflare 的自动发布完成，再刷新网页测试。
+
+也可以直接将完整压缩包**解压后的内部文件与文件夹**上传到仓库根目录，不要多套一层文件夹。不要将 ZIP 本身直接上传代替网站文件。
+
+## 测试
+
+```bash
+node tests/check-saves.js
+node tests/audio-fade.js
+```
+
+本版增加 `tests/ch5-all-endings.js`，模拟从第五章进入四个结局，检查音乐和背景切换、状态分流、手动存档和路线收尾。
+
+> 备注：新剧本的内容按 Word 文档段落逐条纳入；保留了原作者的叙述／对话，不对正文进行文学改写。姓名占位符统一从「」转换为网页所用的 `{{playerName}}`。
+
+
+## V13.1 音乐修复与本地检查
+
+- 修复 `file://` 直接打开网页时，部分 Edge/Chrome 的 Web Audio 图可能导致本地 MP3 无声的问题。本地改用普通 HTMLAudioElement 的 `volume` 调整淡入淡出；正式部署保持原行为。
+- 音乐文件读取错误时显示提示，不再只有静音而不知是哪一首缺失。
+- 新增 `检查素材.html`：可在电脑上检查全部 22 首 MP3、16 张 JPG 并试听标题音乐；不用上传至 GitHub。
+- **本压缩包未包含任何真实 MP3/JPG**。请从你已经补全素材的旧文件夹将整个 `assets` 复制并合并到这个文件夹，注意保留以前章节音乐。
+- V13.1 未更改已发布剧情节点与 `save-system.js`。

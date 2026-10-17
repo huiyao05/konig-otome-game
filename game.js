@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const BUILD_VERSION = "12.1-ch4";
+  const BUILD_VERSION = "13.1-local-audio-fix";
   const SAVE = window.KONIG_SAVE;
   if (!SAVE) throw new Error("save-system.js 未加载，游戏已停止以避免存档损坏");
   console.info(`[König Otome] build ${BUILD_VERSION}`);
@@ -42,9 +42,12 @@
         for (const target of Object.values(node.nextByFlag.cases||{})) check(id,target);
         check(id,node.nextByFlag.fallback);
       }
+      if (node.nextByAxis) {
+        for (const key of ['leftNext','rightNext','fallback']) check(id,node.nextByAxis[key]);
+      }
       for (const choice of node.choices||[]) check(id,choice.next);
       if (!node.next && !node.chapterIntro && !node.nextByFlag && !(node.choices||[]).length &&
-          !node.ending && !node.chapterComplete && !node.currentVersionEnd) broken.push(`${id}: 剧情断在这里`);
+          !node.ending && !node.chapterComplete && !node.currentVersionEnd && !node.nextByAxis) broken.push(`${id}: 剧情断在这里`);
     }
     if (broken.length) throw new Error(`剧情存在失效连接：${broken.slice(0,5).join("；")}`);
   }
@@ -80,13 +83,35 @@
   let state = defaultState();
   let saveMode = "save";
   let currentBg = "";
+  let bgChangeTimer = null;
   let currentBgm = "";
   let musicEnabled = true;
 
   const bgmAudio = new Audio();
   bgmAudio.loop = true;
   bgmAudio.preload = "auto";
-  bgmAudio.volume = Number(CONFIG.defaultVolume ?? 0.45);
+
+  // Web Audio GainNode is used after the first user gesture: iOS Safari ignores
+  // HTMLMediaElement.volume, but does support Web Audio volume control.
+  const BGM_VOLUME = Math.max(0, Math.min(1, Number(CONFIG.defaultVolume ?? 0.45) || 0));
+  const FADE_OUT_MS = 650;
+  const FADE_IN_MS = 650;
+  let audioContext = null;
+  let audioGain = null;
+  let outputLevel = BGM_VOLUME;
+  let activeBgm = ""; // Actual audio source; currentBgm is the desired/saved song.
+  let bgmSuspendedForIntro = false;
+  let fadeToken = 0;
+  let fadeTimer = null;
+  bgmAudio.volume = BGM_VOLUME;
+  const warnedAudioFiles = new Set();
+  bgmAudio.addEventListener?.("error", () => {
+    const filename = activeBgm || currentBgm;
+    if (!filename || warnedAudioFiles.has(filename)) return;
+    warnedAudioFiles.add(filename);
+    console.warn(`[König Otome] 无法加载 assets/audio/${filename}`, bgmAudio.error);
+    toast(`音乐文件无法加载：${filename}，请检查 assets/audio`);
+  });
 
   const $ = (id) => document.getElementById(id);
 
@@ -142,22 +167,46 @@
     els.gameScreen.classList.toggle("hidden", name !== "game");
   }
 
+  function clearBgTransition() {
+    if (bgChangeTimer !== null) window.clearTimeout(bgChangeTimer);
+    bgChangeTimer = null;
+    els.bgLayer.classList.remove("is-changing");
+  }
+
   function setBackground(filename, position = "center center") {
     if (!filename) return;
+    els.bgLayer.classList.remove("ending-theme");
+    delete els.bgLayer.dataset.endingTheme;
     els.bgLayer.style.backgroundPosition = position;
-
     if (filename === currentBg) return;
     currentBg = filename;
-
+    clearBgTransition();
     els.bgLayer.classList.add("is-changing");
-    window.setTimeout(() => {
+    bgChangeTimer = window.setTimeout(() => {
+      // JPG is optional while choosing art. A solid gradient remains behind it.
       els.bgLayer.style.backgroundImage =
         `linear-gradient(165deg, rgba(20,18,17,.18), rgba(8,8,8,.48)), url("assets/backgrounds/${filename}")`;
       els.bgLayer.classList.remove("is-changing");
+      bgChangeTimer = null;
     }, 130);
   }
 
+  // 终章背景由 CSS 直接绘制，未确定最终 CG 也可以完整游玩四条结局。
+  function setEndingBackground(theme) {
+    clearBgTransition();
+    currentBg = "";
+    // Clear inline image so the CSS gradient belonging to this theme can render.
+    els.bgLayer.style.backgroundImage = "";
+    els.bgLayer.style.backgroundPosition = "center center";
+    els.bgLayer.style.backgroundColor = "";
+    els.bgLayer.classList.add("ending-theme");
+    els.bgLayer.dataset.endingTheme = theme;
+  }
+
   function setBlackBackground() {
+    clearBgTransition();
+    els.bgLayer.classList.remove("ending-theme");
+    delete els.bgLayer.dataset.endingTheme;
     currentBg = "";
     els.bgLayer.classList.remove("is-changing");
     els.bgLayer.style.backgroundImage = "none";
@@ -172,87 +221,183 @@
     if (CONFIG.titleBgm) playBgm(CONFIG.titleBgm, false);
   }
 
+  function setOutputLevel(level) {
+    outputLevel = Math.max(0, Math.min(BGM_VOLUME, level));
+    if (audioGain) {
+      // Keep the media element at full volume when connected through Web Audio.
+      bgmAudio.volume = 1;
+      audioGain.gain.value = outputLevel;
+    } else {
+      bgmAudio.volume = outputLevel;
+    }
+  }
+
+  function unlockAudioGraph() {
+    // 部分浏览器直接从 file:// 打开时，Web Audio 会把本地 MP3 静音。
+    // 本地文件使用普通 audio 输出，仍支持音量渐变；网页托管使用 Web Audio。
+    if (window.location && window.location.protocol === "file:") return;
+    if (!audioGain) {
+      const AudioContextCtor = window.AudioContext || window.webkitAudioContext;
+      if (AudioContextCtor) {
+        try {
+          const context = new AudioContextCtor();
+          const source = context.createMediaElementSource(bgmAudio);
+          const gain = context.createGain();
+          source.connect(gain);
+          gain.connect(context.destination);
+          audioContext = context;
+          audioGain = gain;
+          setOutputLevel(outputLevel);
+        } catch (error) {
+          // Older browsers keep using HTML audio volume as a fallback.
+          console.warn("Web Audio 音量控制不可用，继续使用普通音频：", error);
+        }
+      }
+    }
+    if (audioContext && audioContext.state === "suspended") {
+      audioContext.resume().catch(() => {});
+    }
+  }
+
+  function cancelBgmFade() {
+    fadeToken += 1;
+    if (fadeTimer !== null) window.clearTimeout(fadeTimer);
+    fadeTimer = null;
+    return fadeToken;
+  }
+
+  function fadeTo(target, duration, token, onComplete = () => {}) {
+    const start = outputLevel;
+    const steps = Math.max(1, Math.ceil(duration / 50));
+    let step = 0;
+    const tick = () => {
+      if (token !== fadeToken) return; // A newer song/mute/intro superseded this fade.
+      step += 1;
+      setOutputLevel(start + (target - start) * (step / steps));
+      if (step < steps) {
+        fadeTimer = window.setTimeout(tick, duration / steps);
+      } else {
+        fadeTimer = null;
+        onComplete();
+      }
+    };
+    fadeTimer = window.setTimeout(tick, duration / steps);
+  }
+
+  function startBgmTrack(filename, token) {
+    if (token !== fadeToken || !musicEnabled || bgmSuspendedForIntro) return;
+    bgmAudio.pause();
+    activeBgm = filename;
+    setOutputLevel(0);
+    bgmAudio.src = `assets/audio/${filename}`;
+    bgmAudio.play().catch(error => {
+      // 初次进入网页被浏览器自动播放策略拦截时，下次点击将重试。
+      if (error?.name !== "NotAllowedError")
+        console.warn(`[König Otome] 音乐播放失败：${filename}`, error);
+    });
+    fadeTo(BGM_VOLUME, FADE_IN_MS, token);
+  }
+
+  function retryCurrentBgm() {
+    if (!musicEnabled || bgmSuspendedForIntro || !currentBgm ||
+        activeBgm !== currentBgm || !bgmAudio.paused) return;
+    const token = cancelBgmFade();
+    setOutputLevel(0);
+    bgmAudio.play().catch(error => {
+      if (error?.name !== "NotAllowedError") console.warn("[König Otome] 音乐重试失败", error);
+    });
+    fadeTo(BGM_VOLUME, FADE_IN_MS, token);
+  }
+
   function playBgm(filename, rememberInState = true) {
     if (!filename) return;
-
-    if (rememberInState && state && state.playerName) {
-      state.bgm = filename;
-    }
+    if (rememberInState && state && state.playerName) state.bgm = filename;
+    bgmSuspendedForIntro = false;
 
     if (filename === currentBgm) {
-      if (musicEnabled && bgmAudio.paused) {
-        bgmAudio.play().catch(() => {});
-      }
+      // Repeated scene nodes with the same track must never restart playback.
+      retryCurrentBgm();
       return;
     }
 
     currentBgm = filename;
-    bgmAudio.src = `assets/audio/${filename}`;
-
-    if (musicEnabled) {
-      bgmAudio.play().catch(() => {
-        // 手机浏览器可能要求玩家先点击页面后才允许播放音乐。
-      });
+    const token = cancelBgmFade();
+    if (!musicEnabled) {
+      bgmAudio.pause();
+      activeBgm = filename;
+      bgmAudio.src = `assets/audio/${filename}`;
+      setOutputLevel(BGM_VOLUME);
+      return;
     }
+
+    if (activeBgm && !bgmAudio.paused && outputLevel > 0) {
+      // Fade the previous song to silence BEFORE changing its src.
+      fadeTo(0, FADE_OUT_MS, token, () => startBgmTrack(filename, token));
+    } else {
+      startBgmTrack(filename, token);
+    }
+  }
+
+  function fadeOutAndPauseBgm() {
+    bgmSuspendedForIntro = true;
+    const token = cancelBgmFade();
+    if (!musicEnabled || bgmAudio.paused || outputLevel <= 0) {
+      bgmAudio.pause();
+      setOutputLevel(BGM_VOLUME);
+      return;
+    }
+    fadeTo(0, FADE_OUT_MS, token, () => {
+      bgmAudio.pause();
+      setOutputLevel(BGM_VOLUME);
+    });
   }
 
   function restoreBgmForLoadedState() {
     const node = STORY.nodes[state.nodeId];
-
-    // 新版存档会直接记住存档时正在播放的音乐
-    if (state.bgm) {
-      currentBgm = "";
-      playBgm(state.bgm);
-      return;
-    }
-
-    // 兼容 V3 之前已经存在的旧存档
-    if (node?.bgm) {
-      currentBgm = "";
-      playBgm(node.bgm);
-      return;
-    }
-
+    // Do not forcibly reset currentBgm: loading a save with the same song
+    // should preserve playback, while a different saved track fades normally.
+    if (state.bgm) { playBgm(state.bgm); return; }
+    if (node?.bgm) { playBgm(node.bgm); return; }
     if (state.nodeId.startsWith("route_c_")) {
-      currentBgm = "";
-      playBgm("route-c.mp3");
-      return;
+      playBgm("route-c.mp3"); return;
     }
-
-    if (
-      state.nodeId.startsWith("prologue_") ||
-      state.nodeId.startsWith("hunt_") ||
-      state.nodeId === "choice_01"
-    ) {
-      currentBgm = "";
+    if (state.nodeId.startsWith("prologue_") ||
+        state.nodeId.startsWith("hunt_") || state.nodeId === "choice_01") {
       playBgm("forest.mp3");
     }
   }
 
   function setMusicEnabled(enabled) {
+    const changed = musicEnabled !== enabled;
     musicEnabled = enabled;
     els.musicBtn.classList.toggle("is-muted", !enabled);
     els.musicBtn.textContent = enabled ? "♫" : "♩";
+    if (!changed) return;
 
+    const token = cancelBgmFade();
     if (!enabled) {
       bgmAudio.pause();
-    } else if (currentBgm) {
+      // A pending track switch must not revive the previous song on unmute.
+      if (currentBgm && activeBgm !== currentBgm) {
+        activeBgm = currentBgm;
+        bgmAudio.src = `assets/audio/${currentBgm}`;
+      }
+      setOutputLevel(BGM_VOLUME);
+    } else if (currentBgm && !bgmSuspendedForIntro) {
+      if (activeBgm !== currentBgm) {
+        activeBgm = currentBgm;
+        bgmAudio.src = `assets/audio/${currentBgm}`;
+      }
+      setOutputLevel(0);
       bgmAudio.play().catch(() => {});
+      fadeTo(BGM_VOLUME, FADE_IN_MS, token);
     }
   }
 
   function toggleMusic() {
+    unlockAudioGraph();
     setMusicEnabled(!musicEnabled);
   }
-
-
-  // 某些浏览器会在章节转场延迟后重新拦截音频播放。
-  // 玩家之后任意一次点击页面时，如果当前 BGM 被拦住，就自动重试。
-  function retryCurrentBgm() {
-    if (!musicEnabled || !currentBgm || !bgmAudio.paused) return;
-    bgmAudio.play().catch(() => {});
-  }
-
 
   function toast(message) {
     els.toast.textContent = message;
@@ -354,8 +499,12 @@
       return;
     }
 
-    els.bgLayer.style.backgroundColor = "#111";
-    setBackground(node.bg || "forest-autumn.jpg", node.bgPosition || "center center");
+    if (node.bgTheme) {
+      setEndingBackground(node.bgTheme);
+    } else {
+      els.bgLayer.style.backgroundColor = "#111";
+      setBackground(node.bg || "forest-autumn.jpg", node.bgPosition || "center center");
+    }
     if (node.bgm) playBgm(node.bgm);
 
     // 普通剧情可打开菜单；BAD END 会在下面隐藏菜单
@@ -473,6 +622,17 @@
   }
 
   function resolveNext(node) {
+    if (node?.nextByAxis) {
+      const rule = node.nextByAxis;
+      const left = Number(state.stats?.[rule.left] || 0);
+      const right = Number(state.stats?.[rule.right] || 0);
+      if (left > right) return rule.leftNext;
+      if (right > left) return rule.rightNext;
+      const tie = state.flags?.[rule.tieFlag];
+      if (tie === rule.tieLeftValue) return rule.leftNext;
+      if (tie === rule.tieRightValue) return rule.rightNext;
+      return rule.fallback;
+    }
     if (node?.nextByFlag) {
       const { key, cases = {}, fallback = null } = node.nextByFlag;
       const value = state.flags?.[key];
@@ -486,6 +646,7 @@
     const titleVisible = !els.titleScreen.classList.contains("hidden");
     if (!titleVisible || !CONFIG.titleBgm || !musicEnabled) return;
 
+    unlockAudioGraph();
     playBgm(CONFIG.titleBgm, false);
   }
 
@@ -502,7 +663,7 @@
 
   function playChapterIntro(smallText = "序章", titleText = "困兽", nextNode = null) {
     setBlackBackground();
-    bgmAudio.pause();
+    fadeOutAndPauseBgm();
 
     els.chapterIntroSmall.textContent = smallText;
     els.chapterIntroTitle.textContent = titleText;
@@ -529,7 +690,7 @@
   function playCurrentVersionEnd() {
     // 当前版本只暂时写到这里，不当作正式章节结局。
     // 最后一行之后给一个纯黑过渡，然后自动回到标题页。
-    bgmAudio.pause();
+    fadeOutAndPauseBgm();
     setBlackBackground();
 
     els.chapterIntro.classList.remove("play");
@@ -558,7 +719,6 @@
     autoSave();
 
     // 章节标题出现时保持黑屏；正式进入森林后再由第一节点切换森林音乐
-    bgmAudio.pause();
     currentBgm = "";
     setBlackBackground();
     playChapterIntro("序章", "困兽", STORY.startNode);
@@ -796,8 +956,11 @@
   els.titleScreen.addEventListener("click", ensureTitleMusic);
 
   // 全局音频解锁/重试：解决章节标题动画结束后浏览器拒绝自动播放的问题。
-  document.addEventListener("pointerdown", retryCurrentBgm, { passive: true });
-  document.addEventListener("touchstart", retryCurrentBgm, { passive: true });
+  const unlockAndRetryBgm = () => { unlockAudioGraph(); retryCurrentBgm(); };
+  document.addEventListener("pointerdown", unlockAndRetryBgm, { passive: true });
+  document.addEventListener("touchstart", unlockAndRetryBgm, { passive: true });
+  document.addEventListener("keydown", unlockAndRetryBgm);
+  document.addEventListener("click", unlockAndRetryBgm);
 
   els.newGameBtn.addEventListener("click", startNewGame);
   els.continueBtn.addEventListener("click", continueGame);
